@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "플러터를 믿습니다"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "LEE-Kyungjae"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "하드디스크에 계시는 우리 프로그램이여 디버그를 거룩하게 하옵시고 컴파일에 임하옵시며 명령이 키보드에서 이루어진것과같이 모니터에서도 이루어지게 하옵소서. 오늘도 우리에게 일용할 데이터를 주시옵고 우리가 프로그램의 오류를 용서한 것과 같이 우리의 오타를 사하여 주옵시고 우리를 버그에 들게 하지 마옵시며 다만 불시의 에러에서 구하옵소서. 대게 속도와 파워와 안정성이 프로그램에게 영원히 있사옵니다. 엔터-."
   location         : "Somewhere"
   email            :
   links:
