@@ -12,13 +12,30 @@ search: false
   background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0b1120 100%);
 }
 
+.masthead {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.masthead__menu-item a {
+  font-weight: 700;
+}
+
 .layout--splash .archive__item-excerpt {
   min-height: 3.6em;
+}
+
+.layout--splash .archive__item-title {
+  font-weight: 800;
 }
 
 .btn--primary {
   border-radius: 999px;
   font-weight: 700;
+  background-color: #0f172a;
+}
+
+.btn--primary:hover {
+  background-color: #111827;
 }
 
 .page__content table {

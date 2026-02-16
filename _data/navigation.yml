@@ -2,7 +2,11 @@
 main:
   - title: "홈"
     url: /
+  - title: "소개"
+    url: /about/
   - title: "앱·서비스"
     url: /services/
   - title: "법적 문서"
     url: /legal/
+  - title: "연락"
+    url: /contact/
