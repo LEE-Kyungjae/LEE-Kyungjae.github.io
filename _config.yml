@@ -15,12 +15,12 @@ remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "플러터를 믿습니다"
+locale                   : "ko-KR"
+title                    : "LEE-Kyungjae"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "앱과 서비스를 만드는 개발자"
 name                     : "LEE-Kyungjae"
-description              : "An amazing website."
+description              : "개인 프로젝트, 서비스 소개, 개인정보처리방침 및 이용약관을 안내합니다."
 url                      : "https://LEE-Kyungjae.github.io"
 baseurl                  : ""
 # the subpath of your site, e.g. "/blog"
@@ -105,52 +105,22 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "LEE-Kyungjae"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "하드디스크에 계시는 우리 프로그램이여 디버그를 거룩하게 하옵시고 컴파일에 임하옵시며 명령이 키보드에서 이루어진것과같이 모니터에서도 이루어지게 하옵소서. 오늘도 우리에게 일용할 데이터를 주시옵고 우리가 프로그램의 오류를 용서한 것과 같이 우리의 오타를 사하여 주옵시고 우리를 버그에 들게 하지 마옵시며 다만 불시의 에러에서 구하옵소서. 대게 속도와 파워와 안정성이 프로그램에게 영원히 있사옵니다. 엔터-."
-  location         : "Somewhere"
+  bio              : "개인 앱과 서비스를 만들고 운영합니다."
+  location         : "South Korea"
   email            :
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://github.com/LEE-Kyungjae"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://github.com/LEE-Kyungjae"
 
 
 # Reading Files
@@ -257,6 +227,11 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+collections:
+  legal:
+    output: true
+    permalink: /legal/:path/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:

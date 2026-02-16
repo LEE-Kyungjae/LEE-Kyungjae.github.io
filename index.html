@@ -1,4 +1,35 @@
 ---
-layout: home
-author_profile: true
+layout: splash
+permalink: /
+title: "개발자 이경재"
+header:
+  overlay_color: "#0f172a"
+  overlay_filter: "0.45"
+  actions:
+    - label: "앱·서비스 보기"
+      url: "/services/"
+    - label: "법적 문서 보기"
+      url: "/legal/"
+excerpt: "개인 앱과 서비스를 소개하고, 각 서비스의 개인정보처리방침 및 이용약관을 투명하게 제공합니다."
+intro:
+  - excerpt: "필요한 정보만 명확하게 보여주는 개인 개발자 홈페이지로 구성했습니다."
+feature_row:
+  - title: "앱·서비스 소개"
+    excerpt: "출시한 앱과 진행 중인 서비스를 모아서 확인할 수 있습니다."
+    url: "/services/"
+    btn_label: "서비스 페이지"
+    btn_class: "btn--primary"
+  - title: "개인정보처리방침"
+    excerpt: "서비스별 개인정보 수집/이용/보관/파기 기준을 확인할 수 있습니다."
+    url: "/legal/#privacy"
+    btn_label: "정책 보기"
+    btn_class: "btn--primary"
+  - title: "이용약관"
+    excerpt: "서비스 이용 기준, 책임 범위, 문의 채널을 문서로 제공합니다."
+    url: "/legal/#terms"
+    btn_label: "약관 보기"
+    btn_class: "btn--primary"
 ---
+
+{% include feature_row id="intro" type="center" %}
+{% include feature_row %}

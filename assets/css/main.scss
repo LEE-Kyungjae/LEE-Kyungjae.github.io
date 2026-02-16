@@ -7,3 +7,20 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.layout--splash .page__hero--overlay {
+  background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0b1120 100%);
+}
+
+.layout--splash .archive__item-excerpt {
+  min-height: 3.6em;
+}
+
+.btn--primary {
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.page__content table {
+  font-size: 0.95em;
+}
