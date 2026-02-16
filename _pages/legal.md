@@ -5,39 +5,24 @@ permalink: /legal/
 classes: wide
 ---
 
-출시하는 앱/서비스별로 `개인정보처리방침`과 `이용약관`을 이곳에서 제공합니다.
+서비스별 `개인정보처리방침`과 `이용약관`을 한 곳에서 확인할 수 있습니다.
 
-## 개인정보처리방침 {#privacy}
+## 서비스별 문서
 
-{% assign privacy_docs = site.legal | where: "doc_type", "privacy" | sort: "service_name" %}
-{% if privacy_docs.size > 0 %}
-| 서비스 | 문서 | 최종 수정일 |
+| 서비스 | 개인정보처리방침 | 이용약관 |
 | --- | --- | --- |
-{% for doc in privacy_docs %}
-| {{ doc.service_name }} | [{{ doc.title }}]({{ doc.url | relative_url }}) | {{ doc.last_updated }} |
+{% assign services = site.data.services | sort: "order" %}
+{% for service in services %}
+{% assign privacy_doc = site.legal | where: "service_name", service.id | where: "doc_type", "privacy" | first %}
+{% assign terms_doc = site.legal | where: "service_name", service.id | where: "doc_type", "terms" | first %}
+| {{ service.name }} | {% if privacy_doc %}[보기]({{ privacy_doc.url | relative_url }})<br><small>최종 수정: {{ privacy_doc.last_updated }}</small>{% else %}-{% endif %} | {% if terms_doc %}[보기]({{ terms_doc.url | relative_url }})<br><small>최종 수정: {{ terms_doc.last_updated }}</small>{% else %}-{% endif %} |
 {% endfor %}
-{% else %}
-- 등록된 개인정보처리방침이 없습니다.
-{% endif %}
 
-## 이용약관 {#terms}
+## 공통 문서
 
-{% assign terms_docs = site.legal | where: "doc_type", "terms" | sort: "service_name" %}
-{% if terms_docs.size > 0 %}
-| 서비스 | 문서 | 최종 수정일 |
+| 구분 | 문서 | 최종 수정일 |
 | --- | --- | --- |
-{% for doc in terms_docs %}
-| {{ doc.service_name }} | [{{ doc.title }}]({{ doc.url | relative_url }}) | {{ doc.last_updated }} |
-{% endfor %}
-{% else %}
-- 등록된 이용약관이 없습니다.
-{% endif %}
-
-## 문서 추가 위치
-
-- 경로: `_legal/`
-- 파일 유형: Markdown (`.md`)
-- 권장 메타데이터:
-  - `service_name`
-  - `doc_type` (`privacy` 또는 `terms`)
-  - `last_updated` (예: `2026-02-16`)
+{% assign common_privacy = site.legal | where: "service_name", "공통" | where: "doc_type", "privacy" | first %}
+{% assign common_terms = site.legal | where: "service_name", "공통" | where: "doc_type", "terms" | first %}
+| 개인정보처리방침(공통) | {% if common_privacy %}[{{ common_privacy.title }}]({{ common_privacy.url | relative_url }}){% else %}-{% endif %} | {% if common_privacy %}{{ common_privacy.last_updated }}{% else %}-{% endif %} |
+| 이용약관(공통) | {% if common_terms %}[{{ common_terms.title }}]({{ common_terms.url | relative_url }}){% else %}-{% endif %} | {% if common_terms %}{{ common_terms.last_updated }}{% else %}-{% endif %} |
