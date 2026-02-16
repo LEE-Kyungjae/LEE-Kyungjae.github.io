@@ -30,6 +30,9 @@
       <p class="service-card__desc">{{ service.description }}</p>
       <div class="service-card__actions">
         <a class="btn btn--primary" href="{{ service.repo_url }}" rel="noopener noreferrer">GitHub</a>
+        {% if service.download_url %}
+          <a class="btn btn--inverse" href="{{ service.download_url }}" rel="noopener noreferrer">다운로드</a>
+        {% endif %}
         <a class="btn btn--inverse" href="{{ '/legal/' | append: service.id | append: '/privacy/' | relative_url }}">개인정보처리방침</a>
         <a class="btn btn--inverse" href="{{ '/legal/' | append: service.id | append: '/terms/' | relative_url }}">이용약관</a>
       </div>

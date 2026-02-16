@@ -17,6 +17,7 @@
   one_liner: "맥북 터미널-앱 연동 바이브코딩 도구"
   description: "맥북 터미널과 앱을 연결해 앱 안에서 바이브코딩을 진행할 수 있도록 돕는 개발 지원 서비스입니다."
   repo_url: "https://github.com/LEE-Kyungjae/termi"
+  download_url: "https://lee-kyungjae.github.io/termi-agent/"
   featured: true
   order: 2
 
