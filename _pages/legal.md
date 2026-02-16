@@ -27,6 +27,12 @@ classes: wide
           </div>
         </div>
         <div class="legal-doc-list">
+          {% if service.download_url %}
+          <a class="btn btn--primary" href="{{ service.download_url }}" rel="noopener noreferrer">
+            다운로드
+          </a>
+          <small>에이전트/클라이언트 페이지</small>
+          {% endif %}
           <a class="btn btn--inverse" href="{% if privacy_doc %}{{ privacy_doc.url | relative_url }}{% else %}#{% endif %}">
             개인정보처리방침
           </a>
