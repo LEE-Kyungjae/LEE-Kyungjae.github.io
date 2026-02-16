@@ -5,19 +5,20 @@ permalink: /services/
 classes: wide
 ---
 
-현재 운영 중이거나 준비 중인 앱/서비스를 이 페이지에서 관리합니다.
+현재 운영 중인 서비스 목록입니다.
 
-## 서비스 목록
+## 서비스 카드
 
-| 서비스명 | 상태 | 설명 | 링크 |
-| --- | --- | --- | --- |
-| gahyeonbot | Active | 봇/자동화 기반 서비스 | [GitHub](https://github.com/LEE-Kyungjae/gahyeonbot) |
-| termi | Active | 앱/서비스 프로젝트 | [GitHub](https://github.com/LEE-Kyungjae/termi) |
-| zezestudio | Active | 게임 및 디지털 콘텐츠 서비스 | [GitHub](https://github.com/LEE-Kyungjae/zezestudio) |
+{% include service-cards.html %}
 
-## 서비스 등록 체크리스트
+## 상태 기준
 
-1. 서비스 카드(이름/설명/링크) 추가
-2. `_legal/`에 `개인정보처리방침` 문서 추가
-3. `_legal/`에 `이용약관` 문서 추가
-4. `/legal/`에서 노출 확인
+- `Active`: 외부 공개/운영 중
+- `Building`: 개발 진행 중
+- `Archived`: 운영 종료 또는 보관 상태
+
+## 운영 원칙
+
+1. 서비스 공개 시 정책 문서(개인정보처리방침/이용약관)를 함께 공개합니다.
+2. 서비스 상태가 바뀌면 서비스 카드 상태를 즉시 갱신합니다.
+3. 정책 문서 변경 시 `last_updated`를 반드시 업데이트합니다.

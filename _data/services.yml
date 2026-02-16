@@ -1,0 +1,26 @@
+- id: "gahyeonbot"
+  name: "gahyeonbot"
+  status: "Active"
+  one_liner: "봇/자동화 기반 서비스"
+  description: "반복 작업을 줄이고 운영 효율을 높이는 자동화 중심 프로젝트입니다."
+  repo_url: "https://github.com/LEE-Kyungjae/gahyeonbot"
+  featured: true
+  order: 1
+
+- id: "termi"
+  name: "termi"
+  status: "Active"
+  one_liner: "앱/서비스 프로젝트"
+  description: "사용 흐름과 완성도에 집중해 빠르게 개선하는 제품형 프로젝트입니다."
+  repo_url: "https://github.com/LEE-Kyungjae/termi"
+  featured: true
+  order: 2
+
+- id: "zezestudio"
+  name: "zezestudio"
+  status: "Active"
+  one_liner: "게임 및 디지털 콘텐츠 서비스"
+  description: "게임 경험과 디지털 콘텐츠 판매/운영 정책을 함께 다루는 서비스입니다."
+  repo_url: "https://github.com/LEE-Kyungjae/zezestudio"
+  featured: true
+  order: 3

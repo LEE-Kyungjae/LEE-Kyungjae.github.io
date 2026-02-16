@@ -109,6 +109,98 @@ h1, h2, h3, h4, h5 {
   font-weight: 800;
 }
 
+.landing-section {
+  margin-top: 1.8rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.landing-section > h2 {
+  margin-top: 0.2rem;
+}
+
+.landing-section > p {
+  margin-bottom: 1rem;
+}
+
+.landing-section--split {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.landing-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.landing-panel h2 {
+  margin-top: 0.1rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.service-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.service-card__header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.service-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.service-card__one-liner {
+  margin-top: 0.65rem;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.service-card__desc {
+  min-height: 3.4rem;
+  color: #334155;
+}
+
+.service-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-card__actions .btn {
+  margin: 0;
+}
+
 .btn--primary {
   border-radius: 12px;
   font-weight: 700;
@@ -120,6 +212,12 @@ h1, h2, h3, h4, h5 {
 .btn--primary:hover {
   filter: brightness(1.02);
   transform: translateY(-1px);
+}
+
+.btn--inverse {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #f8fbff;
 }
 
 .page__content table {
@@ -151,6 +249,14 @@ h1, h2, h3, h4, h5 {
   .layout--single .page {
     padding: 0.25rem 0.25rem 0.8rem;
   }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .landing-section--split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -166,5 +272,13 @@ h1, h2, h3, h4, h5 {
   .btn--primary {
     width: 100%;
     text-align: center;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-section--split {
+    grid-template-columns: 1fr;
   }
 }
