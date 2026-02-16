@@ -9,7 +9,7 @@ classes: wide
 
 ## 서비스 카드
 
-{% include service-cards.html %}
+{% include service-cards.html enable_filters=true instance="services-hub" %}
 
 ## 상태 기준
 

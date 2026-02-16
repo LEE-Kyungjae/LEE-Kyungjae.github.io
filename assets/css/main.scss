@@ -149,12 +149,62 @@ h1, h2, h3, h4, h5 {
   gap: 1rem;
 }
 
+.service-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.service-filter {
+  border: 1px solid var(--line);
+  background: #f8fbff;
+  color: #1f2937;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.service-filter.is-active {
+  border-color: #1d4ed8;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
 .service-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
   box-shadow: var(--shadow);
   padding: 1rem;
+}
+
+.service-card__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+
+.service-card__logo--indigo {
+  background: linear-gradient(140deg, #4f46e5, #1d4ed8);
+}
+
+.service-card__logo--sky {
+  background: linear-gradient(140deg, #0ea5e9, #0284c7);
+}
+
+.service-card__logo--mint {
+  background: linear-gradient(140deg, #14b8a6, #0f766e);
 }
 
 .service-card__header {
