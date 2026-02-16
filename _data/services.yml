@@ -3,8 +3,8 @@
   status: "Active"
   logo_text: "GB"
   logo_style: "indigo"
-  one_liner: "봇/자동화 기반 서비스"
-  description: "반복 작업을 줄이고 운영 효율을 높이는 자동화 중심 프로젝트입니다."
+  one_liner: "취침예약 디스코드 봇"
+  description: "디스코드에서 취침 시간을 예약하고 알림/자동화 흐름을 관리할 수 있도록 만든 봇 서비스입니다."
   repo_url: "https://github.com/LEE-Kyungjae/gahyeonbot"
   featured: true
   order: 1
@@ -14,19 +14,19 @@
   status: "Active"
   logo_text: "TM"
   logo_style: "sky"
-  one_liner: "앱/서비스 프로젝트"
-  description: "사용 흐름과 완성도에 집중해 빠르게 개선하는 제품형 프로젝트입니다."
+  one_liner: "맥북 터미널-앱 연동 바이브코딩 도구"
+  description: "맥북 터미널과 앱을 연결해 앱 안에서 바이브코딩을 진행할 수 있도록 돕는 개발 지원 서비스입니다."
   repo_url: "https://github.com/LEE-Kyungjae/termi"
   featured: true
   order: 2
 
 - id: "zezestudio"
-  name: "zezestudio"
+  name: "삐뚜루빠뚜루 (zezestudio)"
   status: "Active"
   logo_text: "ZZ"
   logo_style: "mint"
-  one_liner: "게임 및 디지털 콘텐츠 서비스"
-  description: "게임 경험과 디지털 콘텐츠 판매/운영 정책을 함께 다루는 서비스입니다."
+  one_liner: "5대5 결투 게임 서비스"
+  description: "zezestudio 프로젝트의 핵심 서비스인 삐뚜루빠뚜루는 팀 기반 5대5 결투를 중심으로 한 게임입니다."
   repo_url: "https://github.com/LEE-Kyungjae/zezestudio"
   featured: true
   order: 3
