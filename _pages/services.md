@@ -11,7 +11,9 @@ classes: wide
 
 | 서비스명 | 상태 | 설명 | 링크 |
 | --- | --- | --- | --- |
-| 준비 중 | Planning | 공개 준비 중입니다. | - |
+| gahyeonbot | Active | 봇/자동화 기반 서비스 | [GitHub](https://github.com/LEE-Kyungjae/gahyeonbot) |
+| termi | Active | 앱/서비스 프로젝트 | [GitHub](https://github.com/LEE-Kyungjae/termi) |
+| zezestudio | Active | 게임 및 디지털 콘텐츠 서비스 | [GitHub](https://github.com/LEE-Kyungjae/zezestudio) |
 
 ## 서비스 등록 체크리스트
 
