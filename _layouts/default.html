@@ -1,41 +1,67 @@
----
----
-
 <!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+<html lang="{{ site.locale | slice: 0, 2 | default: 'ko' }}">
   <head>
-    {% include head.html %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f6f8">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+    <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     {% include head/custom.html %}
   </head>
+  <body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-    {% include_cached skip-links.html %}
-    {% include_cached masthead.html %}
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Kyungjae Lee 홈">
+          <span class="brand-mark" aria-hidden="true">KJ</span>
+          <span>Kyungjae Lee</span>
+        </a>
 
-    <div class="initial-content">
-      {{ content }}
-    </div>
+        <nav class="desktop-nav" aria-label="주 메뉴">
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Work</a>
+          <a href="{{ '/services/' | relative_url }}"{% if page.url == '/services/' %} aria-current="page"{% endif %}>Services</a>
+          <a href="{{ '/legal/' | relative_url }}"{% if page.url == '/legal/' %} aria-current="page"{% endif %}>Legal</a>
+          <a class="nav-github" href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
 
-    {% if site.search == true %}
-      <div class="search-content">
-        {% include_cached search/search_form.html %}
+        <details class="mobile-nav">
+          <summary aria-label="메뉴 열기">
+            <span></span><span></span>
+          </summary>
+          <nav aria-label="모바일 메뉴">
+            <a href="{{ '/' | relative_url }}">Work</a>
+            <a href="{{ '/services/' | relative_url }}">Services</a>
+            <a href="{{ '/legal/' | relative_url }}">Legal</a>
+            <a href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </nav>
+        </details>
       </div>
-    {% endif %}
+    </header>
 
-    <div id="footer" class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include_cached footer.html %}
-      </footer>
-    </div>
+    <main id="main">
+      {{ content }}
+    </main>
 
-    {% include scripts.html %}
-
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>Kyungjae Lee</p>
+        <div class="footer-links">
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+          <a href="{{ '/legal/' | relative_url }}">Legal</a>
+          <a href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <p class="footer-note">Think · Act · Recover</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,14 +1,94 @@
 ---
-layout: single
+layout: default
 permalink: /
-title: "서비스 정책/리소스 허브"
-classes: wide
+body_class: home
 ---
 
-이 홈페이지는 포트폴리오 목적이 아니라, 운영 중인 서비스의 `개인정보처리방침`, `이용약관`, 다운로드 리소스를 제공하는 문서 허브입니다.
+<section class="hero shell">
+  <div class="hero-copy">
+    <p class="eyebrow hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> Software engineer · Seoul</p>
+    <h1>Systems that<br><span>think, act</span><br>&amp; recover.</h1>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#selected-work">Selected work <span aria-hidden="true">↓</span></a>
+      <a class="text-link" href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
 
-## 빠른 이동
+  <div class="signal-panel" aria-label="시스템 실행 흐름">
+    <div class="signal-head">
+      <span>RUN / 0027</span>
+      <span class="signal-state">healthy</span>
+    </div>
+    <ol class="signal-flow">
+      <li><span>01</span><strong>Observe</strong><small>context received</small></li>
+      <li><span>02</span><strong>Reason</strong><small>hypothesis checked</small></li>
+      <li><span>03</span><strong>Act</strong><small>tool boundary approved</small></li>
+      <li class="is-live"><span>04</span><strong>Recover</strong><small>state persisted</small></li>
+    </ol>
+    <div class="signal-line" aria-hidden="true"><i></i></div>
+  </div>
+</section>
 
-- 서비스 및 리소스: [앱·서비스]({{ '/services/' | relative_url }})
-- 서비스별 정책 문서: [법적 문서]({{ '/legal/' | relative_url }})
-- termi-agent 다운로드: [termi-agent]({{ '/termi-agent/' | relative_url }})
+<section class="focus-strip" aria-label="핵심 역량">
+  <div class="shell focus-grid">
+    <div><span>01</span><strong>Agent systems</strong></div>
+    <div><span>02</span><strong>Backend engineering</strong></div>
+    <div><span>03</span><strong>Developer tools</strong></div>
+  </div>
+</section>
+
+<section class="shell work-section" id="selected-work">
+  <header class="section-heading">
+    <p class="eyebrow">Selected work</p>
+    <h2>Built to be inspected,<br>not just demonstrated.</h2>
+  </header>
+
+  <div class="work-list">
+    <article class="work-card work-card-featured">
+      <div class="work-index">01</div>
+      <div class="work-body">
+        <div class="work-title-row">
+          <h3>Palamedes</h3>
+          <span class="project-state">Research beta</span>
+        </div>
+        <p>Autonomous pre-planner for mission discovery, falsification and selection.</p>
+        <div class="tags" aria-label="기술">
+          <span>Python</span><span>TypeScript</span><span>Multi-agent</span>
+        </div>
+      </div>
+      <a class="work-arrow" href="https://github.com/LEE-Kyungjae/Palamedes" target="_blank" rel="noreferrer" aria-label="Palamedes GitHub 열기">↗</a>
+    </article>
+
+    <article class="work-card">
+      <div class="work-index">02</div>
+      <div class="work-body">
+        <div class="work-title-row">
+          <h3>GahyeonBot</h3>
+          <span class="project-state">Active</span>
+        </div>
+        <p>Discord-native AI assistant for text, voice and everyday automation.</p>
+        <div class="tags" aria-label="기술">
+          <span>Java 21</span><span>Spring Boot</span><span>Voice AI</span>
+        </div>
+      </div>
+      <a class="work-arrow" href="https://github.com/LEE-Kyungjae/gahyeonbot" target="_blank" rel="noreferrer" aria-label="GahyeonBot GitHub 열기">↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="shell principles">
+  <p class="eyebrow">Practice</p>
+  <div class="principle-grid">
+    <p>Trace the<br><strong>decision.</strong></p>
+    <p>Bound the<br><strong>execution.</strong></p>
+    <p>Design for<br><strong>recovery.</strong></p>
+  </div>
+</section>
+
+<section class="shell service-cta">
+  <div>
+    <p class="eyebrow">Products & resources</p>
+    <h2>Services, downloads<br>and policies.</h2>
+  </div>
+  <a class="button button-secondary" href="{{ '/services/' | relative_url }}">Browse services <span aria-hidden="true">→</span></a>
+</section>

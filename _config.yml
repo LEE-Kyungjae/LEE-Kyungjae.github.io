@@ -16,18 +16,18 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "LEE-Kyungjae"
+title                    : "Kyungjae Lee"
 title_separator          : "-"
-subtitle                 : "서비스 정책 및 리소스 허브"
+subtitle                 : "Agentic systems and backend engineering"
 name                     : "LEE-Kyungjae"
-description              : "운영 서비스의 이용약관, 개인정보처리방침, 다운로드 리소스를 제공합니다."
+description              : "Kyungjae Lee — agentic systems, backend engineering and developer tools."
 url                      : "https://LEE-Kyungjae.github.io"
 baseurl                  : ""
 # the subpath of your site, e.g. "/blog"
 repository               : "LEE-Kyungjae/LEE-Kyungjae.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "LEE-Kyungjae"
+masthead_title           : "Kyungjae Lee"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "LEE-Kyungjae"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "개인 앱과 서비스를 만들고 운영합니다."
+  bio              : "Agentic systems and backend engineering."
   location         : "South Korea"
   email            :
   links:
