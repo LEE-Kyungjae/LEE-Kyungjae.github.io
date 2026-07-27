@@ -1,8 +1,10 @@
 ---
-title: "termi-agent"
+title: "아델리 터미널 에이전트"
 layout: single
 permalink: /termi-agent/
-kicker: "Download"
+kicker: "다운로드"
+lang: ko
+alternate_url: /en/termi-agent/
 ---
 
 [macOS Apple Silicon 다운로드 ↓]({{ '/assets/downloads/termi-agent/termi-agent-macos-arm64.zip' | relative_url }}){: .prose-action }

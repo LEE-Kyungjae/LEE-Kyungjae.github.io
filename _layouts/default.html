@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="{{ site.locale | slice: 0, 2 | default: 'ko' }}">
+{% assign is_en = false %}{% if page.lang == "en" %}{% assign is_en = true %}{% endif %}
+<html lang="{% if is_en %}en{% else %}ko{% endif %}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,10 @@
     <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
+    {% if page.alternate_url %}
+    <link rel="alternate" hreflang="{% if is_en %}ko{% else %}en{% endif %}" href="{{ page.alternate_url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{% if is_en %}{{ page.alternate_url | absolute_url }}{% else %}{{ page.url | absolute_url }}{% endif %}">
+    {% endif %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
     <meta property="og:type" content="website">
@@ -18,30 +23,32 @@
     {% include head/custom.html %}
   </head>
   <body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
-    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <a class="skip-link" href="#main">{% if is_en %}Skip to content{% else %}본문으로 건너뛰기{% endif %}</a>
 
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Kyungjae Lee 홈">
+        <a class="brand" href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Kyungjae Lee {% if is_en %}home{% else %}홈{% endif %}">
           <span class="brand-mark" aria-hidden="true">KJ</span>
           <span>Kyungjae Lee</span>
         </a>
 
-        <nav class="desktop-nav" aria-label="주 메뉴">
-          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Work</a>
-          <a href="{{ '/services/' | relative_url }}"{% if page.url == '/services/' %} aria-current="page"{% endif %}>Services</a>
-          <a href="{{ '/legal/' | relative_url }}"{% if page.url == '/legal/' %} aria-current="page"{% endif %}>Legal</a>
+        <nav class="desktop-nav" aria-label="{% if is_en %}Main navigation{% else %}주 메뉴{% endif %}">
+          <a href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}"{% if page.nav_key == 'work' %} aria-current="page"{% endif %}>{% if is_en %}Work{% else %}작업{% endif %}</a>
+          <a href="{% if is_en %}{{ '/en/services/' | relative_url }}{% else %}{{ '/services/' | relative_url }}{% endif %}"{% if page.nav_key == 'services' %} aria-current="page"{% endif %}>{% if is_en %}Services{% else %}서비스{% endif %}</a>
+          <a href="{% if is_en %}{{ '/en/legal/' | relative_url }}{% else %}{{ '/legal/' | relative_url }}{% endif %}"{% if page.nav_key == 'legal' %} aria-current="page"{% endif %}>{% if is_en %}Legal{% else %}정책{% endif %}</a>
+          {% if page.alternate_url %}<a class="language-link" href="{{ page.alternate_url | relative_url }}" hreflang="{% if is_en %}ko{% else %}en{% endif %}" lang="{% if is_en %}ko{% else %}en{% endif %}">{% if is_en %}한국어{% else %}EN{% endif %}</a>{% endif %}
           <a class="nav-github" href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
         </nav>
 
         <details class="mobile-nav">
-          <summary aria-label="메뉴 열기">
+          <summary aria-label="{% if is_en %}Open menu{% else %}메뉴 열기{% endif %}">
             <span></span><span></span>
           </summary>
-          <nav aria-label="모바일 메뉴">
-            <a href="{{ '/' | relative_url }}">Work</a>
-            <a href="{{ '/services/' | relative_url }}">Services</a>
-            <a href="{{ '/legal/' | relative_url }}">Legal</a>
+          <nav aria-label="{% if is_en %}Mobile navigation{% else %}모바일 메뉴{% endif %}">
+            <a href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if is_en %}Work{% else %}작업{% endif %}</a>
+            <a href="{% if is_en %}{{ '/en/services/' | relative_url }}{% else %}{{ '/services/' | relative_url }}{% endif %}">{% if is_en %}Services{% else %}서비스{% endif %}</a>
+            <a href="{% if is_en %}{{ '/en/legal/' | relative_url }}{% else %}{{ '/legal/' | relative_url }}{% endif %}">{% if is_en %}Legal{% else %}정책{% endif %}</a>
+            {% if page.alternate_url %}<a href="{{ page.alternate_url | relative_url }}" hreflang="{% if is_en %}ko{% else %}en{% endif %}" lang="{% if is_en %}ko{% else %}en{% endif %}">{% if is_en %}한국어{% else %}English{% endif %}</a>{% endif %}
             <a href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub ↗</a>
           </nav>
         </details>
@@ -56,11 +63,11 @@
       <div class="shell footer-inner">
         <p>Kyungjae Lee</p>
         <div class="footer-links">
-          <a href="{{ '/contact/' | relative_url }}">Contact</a>
-          <a href="{{ '/legal/' | relative_url }}">Legal</a>
+          <a href="{% if is_en %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% if is_en %}Contact{% else %}연락{% endif %}</a>
+          <a href="{% if is_en %}{{ '/en/legal/' | relative_url }}{% else %}{{ '/legal/' | relative_url }}{% endif %}">{% if is_en %}Legal{% else %}정책{% endif %}</a>
           <a href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
-        <p class="footer-note">Think · Act · Recover</p>
+        <p class="footer-note">{% if is_en %}Think · Act · Recover{% else %}생각 · 실행 · 복구{% endif %}</p>
       </div>
     </footer>
   </body>

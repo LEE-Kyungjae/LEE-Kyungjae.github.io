@@ -1,13 +1,15 @@
 ---
-title: "gahyeonbot 이용약관"
+title: "가현봇 이용약관"
 layout: single
 service_name: "gahyeonbot"
 doc_type: "terms"
+lang: "ko"
+alternate_url: "/en/legal/gahyeonbot/terms/"
 last_updated: "2026-02-16"
 permalink: /legal/gahyeonbot/terms/
 ---
 
-gahyeonbot(이하 "서비스") 이용약관입니다.
+가현봇(이하 "서비스") 이용약관입니다.
 
 ## 1. 목적
 

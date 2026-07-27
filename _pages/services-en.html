@@ -1,0 +1,26 @@
+---
+title: "Services"
+layout: default
+permalink: /en/services/
+lang: en
+nav_key: services
+alternate_url: /services/
+body_class: services-page
+---
+
+<section class="shell page-intro compact-intro"><p class="eyebrow">Products &amp; resources</p><h1>Services.</h1></section>
+<section class="shell service-list">
+  {% assign services = site.data.services | sort: "order" %}
+  {% for service in services %}
+  <article class="service-row">
+    <div class="service-monogram service-monogram-{{ service.logo_style }}" aria-hidden="true">{{ service.logo_text }}</div>
+    <div class="service-info"><div class="service-title"><h2>{{ service.name_en }}</h2><span class="status-badge"><i></i>{{ service.status_en }}</span></div><p>{{ service.one_liner_en }}</p></div>
+    <div class="service-actions">
+      {% if service.product_url %}<a href="{{ service.product_url }}" target="_blank" rel="noreferrer">Open ↗</a>{% endif %}
+      {% if service.repo_url %}<a href="{{ service.repo_url }}" target="_blank" rel="noreferrer">GitHub ↗</a>{% endif %}
+      {% if service.download_url_en %}<a class="service-download" href="{{ service.download_url_en }}">Download ↓</a>{% endif %}
+      {% unless service.id == 'zaeze' %}<a href="{{ '/en/legal/' | relative_url }}#{{ service.id }}">Policy →</a>{% endunless %}
+    </div>
+  </article>
+  {% endfor %}
+</section>

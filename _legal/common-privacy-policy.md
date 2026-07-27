@@ -3,6 +3,8 @@ title: "공통 개인정보처리방침"
 layout: single
 service_name: "공통"
 doc_type: "privacy"
+lang: "ko"
+alternate_url: "/en/legal/common/privacy/"
 last_updated: "2026-02-16"
 permalink: /legal/common/privacy/
 ---

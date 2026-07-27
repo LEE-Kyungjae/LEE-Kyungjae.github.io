@@ -1,13 +1,15 @@
 ---
-title: "termi 개인정보처리방침"
+title: "아델리 터미널 개인정보처리방침"
 layout: single
 service_name: "termi"
 doc_type: "privacy"
+lang: "ko"
+alternate_url: "/en/legal/termi/privacy/"
 last_updated: "2026-02-16"
 permalink: /legal/termi/privacy/
 ---
 
-termi(이하 "서비스")의 개인정보처리방침입니다.
+아델리 터미널(이하 "서비스")의 개인정보처리방침입니다.
 
 ## 1. 수집하는 개인정보 항목
 

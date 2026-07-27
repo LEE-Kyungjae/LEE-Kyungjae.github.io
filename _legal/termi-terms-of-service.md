@@ -1,13 +1,15 @@
 ---
-title: "termi 이용약관"
+title: "아델리 터미널 이용약관"
 layout: single
 service_name: "termi"
 doc_type: "terms"
+lang: "ko"
+alternate_url: "/en/legal/termi/terms/"
 last_updated: "2026-02-16"
 permalink: /legal/termi/terms/
 ---
 
-termi(이하 "서비스") 이용약관입니다.
+아델리 터미널(이하 "서비스") 이용약관입니다.
 
 ## 1. 목적
 

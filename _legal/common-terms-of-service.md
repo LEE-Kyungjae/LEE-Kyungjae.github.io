@@ -3,6 +3,8 @@ title: "공통 이용약관"
 layout: single
 service_name: "공통"
 doc_type: "terms"
+lang: "ko"
+alternate_url: "/en/legal/common/terms/"
 last_updated: "2026-02-16"
 permalink: /legal/common/terms/
 ---
