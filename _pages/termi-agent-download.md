@@ -1,16 +1,11 @@
 ---
-title: "termi-agent 다운로드"
+title: "termi-agent"
 layout: single
 permalink: /termi-agent/
-classes: wide
+kicker: "Download"
 ---
 
-`termi` 모바일 앱 연결용 `termi-agent` 다운로드 페이지입니다.
-
-## 빠른 다운로드
-
-- macOS (Apple Silicon, M1/M2/M3)
-  - [termi-agent-macos-arm64.zip]({{ '/assets/downloads/termi-agent/termi-agent-macos-arm64.zip' | relative_url }})
+[macOS Apple Silicon 다운로드 ↓]({{ '/assets/downloads/termi-agent/termi-agent-macos-arm64.zip' | relative_url }}){: .prose-action }
 
 ## 사용 방법
 
@@ -18,13 +13,6 @@ classes: wide
 2. 터미널에서 폴더 이동
 3. `./start-agent.sh` 실행
 4. 출력되는 `Tailscale URL`을 앱 페어링 화면에 입력
-
-## 포함 파일
-
-- `termi-agent-bin`
-- `start-agent.sh`
-- `stop-agent.sh`
-- `README.txt`
 
 ## 참고
 

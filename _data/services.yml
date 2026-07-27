@@ -3,8 +3,8 @@
   status: "Active"
   logo_text: "GB"
   logo_style: "indigo"
-  one_liner: "취침예약 디스코드 봇"
-  description: "디스코드에서 취침 시간을 예약하고 알림/자동화 흐름을 관리할 수 있도록 만든 봇 서비스입니다."
+  one_liner: "Discord-native AI assistant"
+  description: "텍스트와 음성으로 대화하고 일상 작업을 돕는 Discord 기반 AI 비서입니다."
   repo_url: "https://github.com/LEE-Kyungjae/gahyeonbot"
   featured: true
   order: 1
