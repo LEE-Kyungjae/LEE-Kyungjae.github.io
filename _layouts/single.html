@@ -5,7 +5,7 @@ layout: default
   <header class="page-heading">
     {% if page.kicker %}<p class="eyebrow">{{ page.kicker }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
-    {% if page.last_updated %}<p class="page-date">Updated {{ page.last_updated }}</p>{% endif %}
+    {% if page.last_updated %}<p class="page-date">{% if page.lang == 'en' %}Updated{% else %}최종 수정{% endif %} {{ page.last_updated }}</p>{% endif %}
   </header>
   <div class="prose">
     {{ content }}

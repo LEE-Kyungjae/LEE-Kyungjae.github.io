@@ -1,13 +1,15 @@
 ---
-title: "zezestudio 개인정보처리방침"
+title: "삐뚜루빠뚜라 개인정보처리방침"
 layout: single
 service_name: "zezestudio"
 doc_type: "privacy"
+lang: "ko"
+alternate_url: "/en/legal/zezestudio/privacy/"
 last_updated: "2026-02-16"
 permalink: /legal/zezestudio/privacy/
 ---
 
-zezestudio(이하 "서비스") 개인정보처리방침입니다.
+삐뚜루빠뚜라(이하 "서비스") 개인정보처리방침입니다.
 
 ## 1. 수집 항목
 

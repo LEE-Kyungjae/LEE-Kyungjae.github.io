@@ -1,13 +1,15 @@
 ---
-title: "gahyeonbot 개인정보처리방침"
+title: "가현봇 개인정보처리방침"
 layout: single
 service_name: "gahyeonbot"
 doc_type: "privacy"
+lang: "ko"
+alternate_url: "/en/legal/gahyeonbot/privacy/"
 last_updated: "2026-02-16"
 permalink: /legal/gahyeonbot/privacy/
 ---
 
-gahyeonbot(이하 "서비스")의 개인정보처리방침입니다.
+가현봇(이하 "서비스")의 개인정보처리방침입니다.
 
 ## 1. 수집하는 개인정보 항목
 

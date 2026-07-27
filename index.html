@@ -1,29 +1,30 @@
 ---
 layout: default
 permalink: /
+lang: ko
+nav_key: work
+alternate_url: /en/
 body_class: home
+title: ""
 ---
 
 <section class="hero shell">
   <div class="hero-copy">
-    <p class="eyebrow hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> Software engineer · Seoul</p>
-    <h1>Systems that<br><span>think, act</span><br>&amp; recover.</h1>
+    <p class="eyebrow hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> 소프트웨어 엔지니어 · 서울</p>
+    <h1>생각하고,<br><span>실행하고,</span><br>복구하는 시스템.</h1>
     <div class="hero-actions">
-      <a class="button button-primary" href="#selected-work">Selected work <span aria-hidden="true">↓</span></a>
+      <a class="button button-primary" href="#selected-work">주요 작업 <span aria-hidden="true">↓</span></a>
       <a class="text-link" href="https://github.com/LEE-Kyungjae" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 
   <div class="signal-panel" aria-label="시스템 실행 흐름">
-    <div class="signal-head">
-      <span>RUN / 0027</span>
-      <span class="signal-state">healthy</span>
-    </div>
+    <div class="signal-head"><span>실행 / 0027</span><span class="signal-state">정상</span></div>
     <ol class="signal-flow">
-      <li><span>01</span><strong>Observe</strong><small>context received</small></li>
-      <li><span>02</span><strong>Reason</strong><small>hypothesis checked</small></li>
-      <li><span>03</span><strong>Act</strong><small>tool boundary approved</small></li>
-      <li class="is-live"><span>04</span><strong>Recover</strong><small>state persisted</small></li>
+      <li><span>01</span><strong>관찰</strong><small>맥락 수신</small></li>
+      <li><span>02</span><strong>판단</strong><small>가설 검증</small></li>
+      <li><span>03</span><strong>실행</strong><small>도구 경계 승인</small></li>
+      <li class="is-live"><span>04</span><strong>복구</strong><small>상태 저장</small></li>
     </ol>
     <div class="signal-line" aria-hidden="true"><i></i></div>
   </div>
@@ -31,64 +32,87 @@ body_class: home
 
 <section class="focus-strip" aria-label="핵심 역량">
   <div class="shell focus-grid">
-    <div><span>01</span><strong>Agent systems</strong></div>
-    <div><span>02</span><strong>Backend engineering</strong></div>
-    <div><span>03</span><strong>Developer tools</strong></div>
+    <div><span>01</span><strong>에이전트 시스템</strong></div>
+    <div><span>02</span><strong>백엔드 엔지니어링</strong></div>
+    <div><span>03</span><strong>개발자 도구</strong></div>
   </div>
 </section>
 
-<section class="shell work-section" id="selected-work">
-  <header class="section-heading">
-    <p class="eyebrow">Selected work</p>
-    <h2>Built to be inspected,<br>not just demonstrated.</h2>
-  </header>
+<section class="shell builder-statement">
+  <p class="eyebrow">서비스 개발자</p>
+  <div class="builder-grid">
+    <h2>쓰이는 서비스를 만들고,<br><span>오래 개선합니다.</span></h2>
+    <div class="operation-loop" aria-label="서비스 운영 주기">
+      <span>만들기</span><i>→</i><span>출시</span><i>→</i><span>운영</span><i>→</i><span class="loop-highlight">개선</span>
+    </div>
+  </div>
+</section>
 
+<section class="shell profile-grid" aria-label="경력과 역량">
+  <article class="profile-panel profile-timeline">
+    <p class="eyebrow">경력과 기반</p>
+    <ol>
+      <li class="timeline-current"><time>2025—현재</time><div><strong>KoreaPDS</strong><span>IT서비스 연구원</span></div></li>
+      <li><time>2023</time><div><strong>리츠메이칸대학교</strong><span>정보시스템공학 학사</span></div></li>
+      <li><time>자격</time><div><strong>SQLD</strong><span>SQL 개발자</span></div></li>
+    </ol>
+  </article>
+  <article class="profile-panel capability-panel">
+    <p class="eyebrow">경험 범위</p>
+    <div class="capability-map">
+      <span>에이전트 시스템</span><span>풀스택</span><span>백엔드</span><span>서비스 운영</span>
+    </div>
+    <p class="panel-note">PoC에서 멈추지 않고 직접 쓰며 운영하는 서비스로 발전시킵니다.</p>
+  </article>
+</section>
+
+<section class="shell work-section" id="selected-work">
+  <header class="section-heading"><p class="eyebrow">주요 작업</p><h2>시연보다 검증을 위해<br>만듭니다.</h2></header>
   <div class="work-list">
     <article class="work-card work-card-featured">
       <div class="work-index">01</div>
       <div class="work-body">
-        <div class="work-title-row">
-          <h3>Palamedes</h3>
-          <span class="project-state">Research beta</span>
-        </div>
-        <p>Autonomous pre-planner for mission discovery, falsification and selection.</p>
-        <div class="tags" aria-label="기술">
-          <span>Python</span><span>TypeScript</span><span>Multi-agent</span>
-        </div>
+        <div class="work-title-row"><h3>Palamedes</h3><span class="project-state">연구 베타</span></div>
+        <p>임무를 발견하고 반증하며 선택하는 자율형 AI 사전 계획기.</p>
+        <div class="tags" aria-label="기술"><span>Python</span><span>TypeScript</span><span>Multi-agent</span></div>
       </div>
       <a class="work-arrow" href="https://github.com/LEE-Kyungjae/Palamedes" target="_blank" rel="noreferrer" aria-label="Palamedes GitHub 열기">↗</a>
     </article>
-
     <article class="work-card">
       <div class="work-index">02</div>
       <div class="work-body">
-        <div class="work-title-row">
-          <h3>GahyeonBot</h3>
-          <span class="project-state">Active</span>
-        </div>
-        <p>Discord-native AI assistant for text, voice and everyday automation.</p>
-        <div class="tags" aria-label="기술">
-          <span>Java 21</span><span>Spring Boot</span><span>Voice AI</span>
-        </div>
+        <div class="work-title-row"><h3>가현봇</h3><span class="project-state">운영 중</span></div>
+        <p>텍스트와 음성으로 대화하고 일상 작업을 돕는 Discord AI 비서.</p>
+        <div class="tags" aria-label="기술"><span>Java 21</span><span>Spring Boot</span><span>Voice AI</span></div>
       </div>
-      <a class="work-arrow" href="https://github.com/LEE-Kyungjae/gahyeonbot" target="_blank" rel="noreferrer" aria-label="GahyeonBot GitHub 열기">↗</a>
+      <a class="work-arrow" href="https://github.com/LEE-Kyungjae/gahyeonbot" target="_blank" rel="noreferrer" aria-label="가현봇 GitHub 열기">↗</a>
     </article>
+    <article class="work-card work-card-compact">
+      <div class="work-index">03</div>
+      <div class="work-body"><div class="work-title-row"><h3>아델리 터미널</h3><span class="project-state">운영 중</span></div><p>웹·앱에서 개발 환경에 원격으로 접속하는 바이브코딩 서버 인터페이스.</p><div class="tags" aria-label="형태"><span>Web</span><span>Mobile</span><span>Remote</span></div></div>
+      <a class="work-arrow" href="{{ '/termi-agent/' | relative_url }}" aria-label="아델리 터미널 다운로드 열기">→</a>
+    </article>
+    <article class="work-card work-card-compact work-card-blue">
+      <div class="work-index">04</div>
+      <div class="work-body"><div class="work-title-row"><h3>zaeze</h3><span class="project-state">운영 중</span></div><p>사용자의 일상에 자연스럽게 남는 웹 서비스를 만들고 개선합니다.</p><div class="tags" aria-label="형태"><span>Product</span><span>Web</span><span>Operate</span></div></div>
+      <a class="work-arrow" href="https://zaeze-web.vercel.app" target="_blank" rel="noreferrer" aria-label="zaeze 열기">↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="stack-section">
+  <div class="shell stack-inner">
+    <p class="eyebrow">기술 스택</p>
+    <div class="stack-cloud"><span>Spring</span><span>Kafka</span><span>Redis</span><span>k3s</span><span>PHP</span><span>Python</span><span>Java</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span></div>
   </div>
 </section>
 
 <section class="shell principles">
-  <p class="eyebrow">Practice</p>
-  <div class="principle-grid">
-    <p>Trace the<br><strong>decision.</strong></p>
-    <p>Bound the<br><strong>execution.</strong></p>
-    <p>Design for<br><strong>recovery.</strong></p>
-  </div>
+  <p class="eyebrow">작업 원칙</p>
+  <div class="principle-grid"><p>판단을<br><strong>기록합니다.</strong></p><p>실행에<br><strong>경계를 둡니다.</strong></p><p>복구를<br><strong>설계합니다.</strong></p></div>
 </section>
 
 <section class="shell service-cta">
-  <div>
-    <p class="eyebrow">Products & resources</p>
-    <h2>Services, downloads<br>and policies.</h2>
-  </div>
-  <a class="button button-secondary" href="{{ '/services/' | relative_url }}">Browse services <span aria-hidden="true">→</span></a>
+  <div><p class="eyebrow">제품과 리소스</p><h2>서비스, 다운로드,<br>운영 정책.</h2></div>
+  <a class="button button-secondary" href="{{ '/services/' | relative_url }}">서비스 보기 <span aria-hidden="true">→</span></a>
 </section>
