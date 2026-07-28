@@ -33,12 +33,12 @@ title: ""
 
     <div class="system-browser" data-mode="service">
       <div class="project-tabs" role="tablist" aria-label="프로젝트 선택">
-        <button type="button" role="tab" aria-selected="true" aria-controls="project-panel" data-project="palamedes"><span>01</span>Palamedes<small>Research beta</small></button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="project-panel" data-project="gahyeon"><span>02</span>가현봇<small>Active</small></button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="project-panel" data-project="adelie"><span>03</span>아델리 터미널<small>Active</small></button>
+        <button type="button" id="project-tab-palamedes" role="tab" aria-selected="true" aria-controls="project-panel" tabindex="0" data-project="palamedes"><span>01</span>Palamedes<small>Research beta</small></button>
+        <button type="button" id="project-tab-gahyeon" role="tab" aria-selected="false" aria-controls="project-panel" tabindex="-1" data-project="gahyeon"><span>02</span>가현봇<small>Active</small></button>
+        <button type="button" id="project-tab-adelie" role="tab" aria-selected="false" aria-controls="project-panel" tabindex="-1" data-project="adelie"><span>03</span>아델리 터미널<small>Active</small></button>
       </div>
 
-      <article class="project-stage" id="project-panel" role="tabpanel" tabindex="0">
+      <article class="project-stage" id="project-panel" role="tabpanel" aria-labelledby="project-tab-palamedes" tabindex="0">
         <div class="stage-top"><span class="stage-status"><i></i><b data-field="status">RESEARCH BETA</b></span><span class="stage-count"><b data-field="number">01</b> / 03</span></div>
         <div class="stage-content">
           <div class="stage-copy">
