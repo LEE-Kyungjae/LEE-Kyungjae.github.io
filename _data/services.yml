@@ -7,6 +7,9 @@
   logo_style: "indigo"
   one_liner_ko: "텍스트와 음성으로 함께하는 Discord AI 비서"
   one_liner_en: "Discord-native AI assistant for text and voice"
+  platforms:
+    - id: "discord"
+      label: "Discord"
   repo_url: "https://github.com/LEE-Kyungjae/gahyeonbot"
   featured: true
   order: 1
@@ -20,6 +23,17 @@
   logo_style: "sky"
   one_liner_ko: "웹·앱에서 원격으로 접속하는 바이브코딩 서버 인터페이스"
   one_liner_en: "Remote vibe-coding server interface for web and mobile"
+  platforms:
+    - id: "web"
+      label: "Web"
+    - id: "ios"
+      label: "iOS"
+    - id: "android"
+      label: "Android"
+    - id: "macos"
+      label: "macOS"
+    - id: "windows"
+      label: "Windows"
   download_url: "https://lee-kyungjae.github.io/termi-agent/"
   download_url_en: "https://lee-kyungjae.github.io/en/termi-agent/"
   featured: true
@@ -34,6 +48,13 @@
   logo_style: "mint"
   one_liner_ko: "5대5 결투 게임"
   one_liner_en: "A 5v5 battle game"
+  platforms:
+    - id: "web"
+      label: "Web"
+    - id: "ios"
+      label: "iOS"
+    - id: "android"
+      label: "Android"
   featured: true
   order: 3
 
@@ -46,6 +67,13 @@
   logo_style: "orange"
   one_liner_ko: "웹 서비스"
   one_liner_en: "Web service"
+  platforms:
+    - id: "web"
+      label: "Web"
+    - id: "ios"
+      label: "iOS"
+    - id: "android"
+      label: "Android"
   product_url: "https://zaeze-web.vercel.app"
   featured: true
   order: 4
