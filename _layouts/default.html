@@ -28,7 +28,12 @@
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Kyungjae Lee {% if is_en %}home{% else %}홈{% endif %}">
-          <span class="brand-mark" aria-hidden="true">KJ</span>
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <path class="brand-glyph" d="M9 8v16M9 17l7-9M9 17l7 7M22.5 8v10.5c0 3.7-1.8 5.5-5.5 5.5"/>
+              <circle cx="23" cy="8" r="1.5"/>
+            </svg>
+          </span>
           <span>Kyungjae Lee</span>
         </a>
 

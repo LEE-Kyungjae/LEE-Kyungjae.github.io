@@ -14,7 +14,13 @@ body_class: services-page
   {% for service in services %}
   <article class="service-row">
     <div class="service-monogram service-monogram-{{ service.logo_style }}" aria-hidden="true">{{ service.logo_text }}</div>
-    <div class="service-info"><div class="service-title"><h2>{{ service.name_en }}</h2><span class="status-badge"><i></i>{{ service.status_en }}</span></div><p>{{ service.one_liner_en }}</p></div>
+    <div class="service-info">
+      <div class="service-title"><h2>{{ service.name_en }}</h2><span class="status-badge"><i></i>{{ service.status_en }}</span></div>
+      <p>{{ service.one_liner_en }}</p>
+      <ul class="platform-list" aria-label="Supported platforms">
+        {% for platform in service.platforms %}<li>{% include platform-icon.html platform=platform.id %}<span>{{ platform.label }}</span></li>{% endfor %}
+      </ul>
+    </div>
     <div class="service-actions">
       {% if service.product_url %}<a href="{{ service.product_url }}" target="_blank" rel="noreferrer">Open ↗</a>{% endif %}
       {% if service.repo_url %}<a href="{{ service.repo_url }}" target="_blank" rel="noreferrer">GitHub ↗</a>{% endif %}

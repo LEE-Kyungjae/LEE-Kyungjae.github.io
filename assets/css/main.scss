@@ -54,7 +54,12 @@ p, li { text-wrap: pretty; }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .brand { min-height: 44px; display: inline-flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 600; letter-spacing: -0.025em; }
 .brand > span:last-child { white-space: nowrap; }
-.brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 9px; color: #fff; background: var(--ink); font: 500 11px/1 var(--mono); letter-spacing: -0.06em; }
+.brand-mark { position: relative; display: grid; place-items: center; width: 34px; height: 34px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); border-radius: 10px 10px 10px 3px; color: #fff; background: linear-gradient(145deg, #292f3a 0%, #101318 62%, #3157e2 180%); box-shadow: 0 6px 16px -9px rgba(13,18,28,.72), inset 0 1px rgba(255,255,255,.08); transition: transform 180ms ease, box-shadow 180ms ease; }
+.brand-mark::after { content: ""; position: absolute; right: -7px; bottom: -8px; width: 18px; height: 18px; border-radius: 50%; background: var(--blue); opacity: .72; filter: blur(7px); }
+.brand-mark svg { position: relative; z-index: 1; width: 27px; height: 27px; overflow: visible; }
+.brand-mark .brand-glyph { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.brand-mark circle { fill: #8eabff; }
+.brand:hover .brand-mark { transform: rotate(-2deg) translateY(-1px); box-shadow: 0 9px 20px -10px rgba(13,18,28,.8), inset 0 1px rgba(255,255,255,.1); }
 .desktop-nav { display: flex; align-items: center; gap: 8px; }
 .desktop-nav a { position: relative; min-height: 44px; display: inline-flex; align-items: center; padding: 0 13px; color: var(--muted); font-size: 14px; font-weight: 600; transition-property: color, background-color, scale; transition-duration: 160ms; border-radius: 9px; }
 .desktop-nav a:hover, .desktop-nav a[aria-current="page"] { color: var(--ink); background: rgba(255, 255, 255, 0.66); }
@@ -194,6 +199,10 @@ p, li { text-wrap: pretty; }
 .service-title { display: flex; align-items: center; gap: 12px; }
 .service-title h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: -.04em; }
 .service-info p { margin: 5px 0 0; color: var(--muted); }
+.platform-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0 0; padding: 0; list-style: none; }
+.platform-list li { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; padding: 0 8px 0 7px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); background: rgba(255,255,255,.48); font: 600 10px/1 var(--mono); white-space: nowrap; }
+.platform-list svg { width: 14px; height: 14px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.platform-list .platform-icon-filled { fill: currentColor; stroke: none; }
 .status-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 6px; color: #3d6859; background: #e2f5ee; font: 500 9px/1 var(--mono); text-transform: uppercase; }
 .status-badge i { width: 5px; height: 5px; border-radius: 50%; background: #28a879; }
 .service-actions { display: flex; gap: 8px; }
