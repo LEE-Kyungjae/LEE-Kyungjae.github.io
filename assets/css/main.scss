@@ -198,7 +198,7 @@ p, li { text-wrap: pretty; }
 .service-monogram-orange { color: #3f2111; background: #ffad78; }
 .service-title { display: flex; align-items: center; gap: 12px; }
 .service-title h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: -.04em; }
-.service-info p { margin: 5px 0 0; color: var(--muted); }
+.service-info p { margin: 5px 0 0; color: var(--muted); word-break: keep-all; }
 .platform-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0 0; padding: 0; list-style: none; }
 .platform-list li { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; padding: 0 8px 0 7px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); background: rgba(255,255,255,.48); font: 600 10px/1 var(--mono); white-space: nowrap; }
 .platform-list svg { width: 14px; height: 14px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }

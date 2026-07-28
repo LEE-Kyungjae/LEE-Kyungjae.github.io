@@ -65,8 +65,8 @@
   status_en: "Active"
   logo_text: "ZE"
   logo_style: "orange"
-  one_liner_ko: "웹 서비스"
-  one_liner_en: "Web service"
+  one_liner_ko: "웹과 앱에서 이어지는 서비스"
+  one_liner_en: "A service available across web and mobile"
   platforms:
     - id: "web"
       label: "Web"
