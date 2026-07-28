@@ -66,15 +66,6 @@
     });
   }
 
-  document.querySelectorAll('.lifecycle button').forEach((button, index, buttons) => button.addEventListener('click', () => {
-    buttons.forEach((item) => item.classList.toggle('is-active', item === button));
-    const progress = document.querySelector('.lifecycle-line b');
-    if (progress) {
-      if (window.matchMedia('(max-width: 640px)').matches) progress.style.height = `${(index + .5) * 20}%`;
-      else progress.style.width = `${(index + .5) * 20}%`;
-    }
-  }));
-
   const revealItems = document.querySelectorAll('.systems-head, .system-browser, .lifecycle-section header, .lifecycle, .capability-evidence, .career-section, .service-cta');
   revealItems.forEach((item) => item.classList.add('reveal-item'));
   if (reducedMotion || !('IntersectionObserver' in window)) revealItems.forEach((item) => item.classList.add('is-visible'));
