@@ -5,37 +5,38 @@ service_name: "termi"
 doc_type: "privacy"
 lang: "en"
 alternate_url: "/legal/termi/privacy/"
-last_updated: "2026-02-16"
+last_updated: "2026-07-28"
 permalink: /en/legal/termi/privacy/
 ---
 
-This is the privacy policy for Adelie Terminal (the “Service”).
+Zeze Studio, represented by Kyungjae Lee (the “Operator”), operates Adelie Terminal, an interface for remote access to development environments (the “Service”).
 
-## 1. Information we collect
+## 1. Information that may be processed
 
-- The minimum information required to provide the Service
-- Technical logs used for performance improvement and incident response
-- Contact information provided for support inquiries
+- Agent identifier, device name, operating system and version, app version and connection status
+- A Tailscale URL or other address entered by the user, pairing information, authentication or session tokens and connection time
+- Terminal commands and displayed output, which may transit or be processed temporarily between the user device and agent depending on configuration
+- Available IP address, connection, error, security and performance logs
+- Support email, inquiry and user-provided diagnostics
 
-## 2. How we use information
+Users should not unnecessarily expose passwords, API keys, SSH keys or private keys in commands or support requests.
 
-- Provide and operate the Service
-- Maintain security and reliability
-- Respond to inquiries and deliver notices
+## 2. Purposes and retention
 
-## 3. Retention and deletion
+Information is used to pair an agent with web or mobile clients, maintain sessions, relay requested commands, prevent unauthorized access, diagnose incidents and provide support. Information processed directly in a user-installed agent or Tailscale environment is governed by that environment. Operator-held logs are retained only as long as needed. If persistent command-history storage is introduced, its location, encryption and retention will be disclosed before activation.
 
-- Information is retained for any period required by applicable law.
-- Information is deleted without delay when the retention period ends or its purpose is fulfilled.
+## 3. External services and transfers
 
-## 4. Third-party sharing
+Tailscale or another user-selected network service has its own terms and privacy policy. Before the Operator outsources processing or transfers personal information internationally, the recipient, purpose, information, country, method and period will be disclosed and required safeguards completed. Information is not otherwise disclosed without consent or legal authority.
 
-- Personal information is not shared with third parties without consent unless required by law.
+## 4. Rights, security and contact
 
-## 5. Your rights
+Users may request access, correction, deletion, suspension or withdrawal of consent. Safeguards include token protection, least-privilege access, protected transport, secret separation, access logs and security updates. Users must also protect connection URLs and tokens and keep devices and agents updated.
 
-- You may request access, correction or deletion of your personal information.
+- Privacy officer: Kyungjae Lee, Representative of Zeze Studio
+- Email: [ze2@kakao.com](mailto:ze2@kakao.com)
 
-## 6. Contact
+Changes are normally announced seven days in advance, or 30 days for material changes affecting user rights.
 
-- GitHub: [https://github.com/LEE-Kyungjae](https://github.com/LEE-Kyungjae)
+- Announced: July 28, 2026
+- Effective: August 4, 2026

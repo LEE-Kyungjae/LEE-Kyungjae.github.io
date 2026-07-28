@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/zezestudio/privacy/
 ---
 
-ZaeZae Studio, represented by Kyungjae Lee (the “Operator”), operates Ppituruppatura (the “Service”) and processes personal information in accordance with Korea’s Personal Information Protection Act and other applicable laws.
+Zeze Studio, represented by Kyungjae Lee (the “Operator”), operates Ppituruppatura (the “Service”) and processes personal information in accordance with Korea’s Personal Information Protection Act and other applicable laws.
 
 ## 1. Information processed
 
@@ -83,7 +83,7 @@ Reasonable safeguards include least-privilege access, password encryption, trans
 ## 10. Privacy contact
 
 - Privacy officer: Kyungjae Lee
-- Role: Representative, ZaeZae Studio
+- Role: Representative, Zeze Studio
 - Email: [ze2@kakao.com](mailto:ze2@kakao.com)
 
 ## 11. Changes
