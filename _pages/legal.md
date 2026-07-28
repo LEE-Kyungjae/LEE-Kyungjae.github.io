@@ -14,7 +14,7 @@ body_class: legal-page
   {% for service in services %}{% unless service.id == 'zaeze' %}
   {% assign privacy_doc = site.legal | where: "service_name", service.id | where: "doc_type", "privacy" | where: "lang", "ko" | first %}
   {% assign terms_doc = site.legal | where: "service_name", service.id | where: "doc_type", "terms" | where: "lang", "ko" | first %}
-  <article class="policy-row" id="{{ service.id }}"><div><p class="policy-label">서비스</p><h2>{{ service.name_ko }}</h2></div><div class="policy-links">{% if privacy_doc %}<a href="{{ privacy_doc.url | relative_url }}"><span>개인정보처리방침</span><small>{{ privacy_doc.last_updated }}</small><b aria-hidden="true">→</b></a>{% endif %}{% if terms_doc %}<a href="{{ terms_doc.url | relative_url }}"><span>이용약관</span><small>{{ terms_doc.last_updated }}</small><b aria-hidden="true">→</b></a>{% endif %}</div></article>
+  <article class="policy-row" id="{{ service.id }}"><div><p class="policy-label">서비스</p><h2>{{ service.name_ko }}</h2></div><div class="policy-links">{% if privacy_doc %}<a href="{{ privacy_doc.url | relative_url }}"><span>개인정보처리방침</span><small>{{ privacy_doc.last_updated }}</small><b aria-hidden="true">→</b></a>{% endif %}{% if terms_doc %}<a href="{{ terms_doc.url | relative_url }}"><span>{% if service.id == 'zezestudio' %}이용약관·환불정책{% else %}이용약관{% endif %}</span><small>{{ terms_doc.last_updated }}</small><b aria-hidden="true">→</b></a>{% endif %}</div></article>
   {% endunless %}{% endfor %}
   {% assign common_privacy = site.legal | where: "service_name", "공통" | where: "doc_type", "privacy" | where: "lang", "ko" | first %}
   {% assign common_terms = site.legal | where: "service_name", "공통" | where: "doc_type", "terms" | where: "lang", "ko" | first %}
