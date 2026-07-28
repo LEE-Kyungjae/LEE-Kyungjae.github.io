@@ -5,37 +5,39 @@ service_name: "공통"
 doc_type: "privacy"
 lang: "en"
 alternate_url: "/legal/common/privacy/"
-last_updated: "2026-02-16"
+last_updated: "2026-07-28"
 permalink: /en/legal/common/privacy/
 ---
 
-This policy provides the common privacy standards for apps and services operated by Kyungjae Lee. A service-specific policy takes precedence when one exists.
+This policy sets the common privacy standards for services provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”). A service-specific policy prevails where one exists.
 
-## 1. Information we collect
+## 1. Information and purposes
 
-- The minimum information required to provide and operate a service
-- Technical logs used for error analysis and quality improvement
+- Account identifiers for identification and account management
+- Usage, access and error logs and device information for delivery, security and reliability
+- Email and inquiry details for support and disputes
+- Where purchases exist, order, payment and refund records for delivery and legal compliance
 
-## 2. How we use information
+Additional information, purposes and retention periods are disclosed in each service policy. Optional marketing occurs only with separate consent.
 
-- Identify users and provide services
-- Respond to inquiries and deliver notices
-- Improve security, reliability and performance
+## 2. Retention and deletion
 
-## 3. Retention and deletion
+Information is deleted when its purpose ends or an account closes. Records required by law are segregated, including contract, withdrawal, payment and supply records for five years and consumer complaint records for three years. Electronic files are securely deleted and paper records are destroyed.
 
-- Information is retained for any period required by applicable law.
-- Information is deleted without delay after its purpose has been fulfilled.
+## 3. Disclosure, processors and transfers
 
-## 4. Third-party sharing and processing
+Information is not disclosed without consent or a legal basis. If processing is outsourced or information is transferred internationally, the relevant recipient, purpose, information, country, method and period are disclosed with appropriate safeguards.
 
-- Personal information is not shared with third parties without consent unless required by law.
-- Applicable laws and consent requirements are followed when processing is delegated.
+## 4. Rights and security
 
-## 5. Your rights
+Users may request access, correction, deletion, suspension, withdrawal of consent and, where applicable, transmission. Reasonable safeguards include least-privilege access, encryption, transport protection, access logs, security updates and backups.
 
-- You may request access, correction, deletion or suspension of processing for your personal information.
+## 5. Contact and changes
 
-## 6. Contact
+- Privacy officer: Kyungjae Lee, Representative of Zeze Studio
+- Email: [ze2@kakao.com](mailto:ze2@kakao.com)
 
-- GitHub: [https://github.com/LEE-Kyungjae](https://github.com/LEE-Kyungjae)
+Changes are normally announced seven days in advance, or 30 days for material changes affecting user rights.
+
+- Announced: July 28, 2026
+- Effective: August 4, 2026

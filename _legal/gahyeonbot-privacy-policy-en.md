@@ -5,38 +5,38 @@ service_name: "gahyeonbot"
 doc_type: "privacy"
 lang: "en"
 alternate_url: "/legal/gahyeonbot/privacy/"
-last_updated: "2026-02-16"
+last_updated: "2026-07-28"
 permalink: /en/legal/gahyeonbot/privacy/
 ---
 
-This is the privacy policy for GahyeonBot (the “Service”).
+Zeze Studio, represented by Kyungjae Lee (the “Operator”), operates GahyeonBot, a Discord-based AI assistant (the “Service”).
 
-## 1. Information we collect
+## 1. Information processed
 
-- The minimum information required to use the Service
-- Access and error logs used to maintain service reliability
-- Contact information provided for support inquiries
+- Discord user, server, channel and message IDs, display name, roles and bot-permission information
+- Commands, questions, conversation content and necessary attachments sent to the bot
+- For voice features, voice-channel identifiers and audio transmitted during processing. If the Operator offers separate recording storage, its purpose and period will be disclosed before use.
+- Command results, timestamps, error and security logs, and support email and inquiry history
 
-## 2. How we use information
+The Service does not process general Discord conversations for surveillance. Processing is limited to bot invocation, requested features and security. Users should not submit passwords, payment data or unnecessary sensitive information.
 
-- Provide and operate Service features
-- Improve quality and respond to incidents
-- Respond to inquiries and deliver notices
+## 2. Purposes and retention
 
-## 3. Retention and deletion
+Information is used to provide text, voice and AI functions, retain user or server settings, check permissions, prevent abuse, diagnose incidents and respond to support. It is retained only as long as needed for those purposes. When the bot is removed or deletion is requested, information is deleted unless a legal, security or active-dispute basis requires temporary retention.
 
-- Information is retained for any period required by applicable law.
-- Information is deleted without delay after the purpose of retention has been fulfilled.
+## 3. Discord, AI providers and transfers
 
-## 4. Third-party sharing and processing
+Discord’s own terms and privacy policy also apply. Before an external AI or voice processor begins processing personal information or an international transfer occurs, the Operator will disclose the provider, purpose, information, country, method and period and complete any required consent and safeguards. Information is not otherwise disclosed without consent or legal authority.
 
-- Personal information is not shared with third parties without consent unless required by law.
-- Applicable laws are followed when external processing is required to operate the Service.
+## 4. Rights, security and contact
 
-## 5. Your rights
+Users may request access, correction, deletion, suspension or withdrawal of consent. Safeguards include least-privilege bot permissions, access control, protected transport, secret management, access logs and security updates.
 
-- You may request access, correction, deletion or suspension of processing for your personal information.
+- Privacy officer: Kyungjae Lee, Representative of Zeze Studio
+- Email: [ze2@kakao.com](mailto:ze2@kakao.com)
+- Repository: [GitHub](https://github.com/LEE-Kyungjae/gahyeonbot)
 
-## 6. Contact
+Changes are normally announced seven days in advance, or 30 days for material changes affecting user rights.
 
-- GitHub: [https://github.com/LEE-Kyungjae/gahyeonbot](https://github.com/LEE-Kyungjae/gahyeonbot)
+- Announced: July 28, 2026
+- Effective: August 4, 2026

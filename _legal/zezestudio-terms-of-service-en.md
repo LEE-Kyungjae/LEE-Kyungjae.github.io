@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/zezestudio/terms/
 ---
 
-These terms govern Ppituruppatura and related services (the “Service”) provided by ZaeZae Studio, represented by Kyungjae Lee (the “Operator”).
+These terms govern Ppituruppatura and related services (the “Service”) provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”).
 
 ## 1. Scope and governing rules
 

@@ -5,33 +5,38 @@ service_name: "gahyeonbot"
 doc_type: "terms"
 lang: "en"
 alternate_url: "/legal/gahyeonbot/terms/"
-last_updated: "2026-02-16"
+last_updated: "2026-07-28"
 permalink: /en/legal/gahyeonbot/terms/
 ---
 
-These are the terms of service for GahyeonBot (the “Service”).
+These terms govern GahyeonBot, a Discord-based AI assistant (the “Service”) provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”).
 
-## 1. Purpose
+## 1. Service and external platforms
 
-- These terms define the rights, responsibilities and obligations of the operator and users.
+The Service provides text and voice commands, AI responses and related features through Discord. Discord’s terms and policies also apply. Discord or external AI and voice services may change or fail, limiting some features.
 
-## 2. Use of the Service
+## 2. User responsibilities
 
-- Users must comply with applicable laws and these terms.
-- The operator may change Service features when required for operation or quality improvement.
+Users must have authority to invite the bot and grant permissions. They must not submit passwords, tokens, payment data or another person’s sensitive information, or use the Service for unlawful content, harassment, impersonation, spam, infringement, security bypass or overload. AI output must be independently checked before important use.
 
-## 3. Restrictions
+## 3. AI output and user content
 
-- Access may be restricted for infringement, disruption of service or abnormal access.
+AI output may be inaccurate and is not a substitute for professional legal, medical or financial advice. Users must have the right to submit their content. The Operator processes it only as required for delivery, security and incident response.
 
-## 4. Limitation of liability
+## 4. Changes and restrictions
 
-- Liability may be limited for damage caused by force majeure, including natural disasters or external system failures.
+Features may change or pause for maintenance, security, external-platform changes or operational needs. Proportionate measures for violations may include warning, command restriction, server blocking or termination. Except in urgent harm-prevention cases, the reason and appeal route will be provided.
 
-## 5. Changes to these terms
+## 5. Paid features and liability
 
-- Changes will be announced through the Service or its repository.
+If paid features are offered, price, period, delivery, withdrawal and refund terms will be shown before payment. The Ppituruppatura refund policy does not apply to GahyeonBot features that involve no separate purchase. The Operator is responsible for loss caused by its intent or negligence under law, but not for external-service failures or user settings where it is not at fault. Mandatory rights are not excluded.
 
-## 6. Contact
+## 6. Changes, termination and contact
 
-- GitHub: [https://github.com/LEE-Kyungjae/gahyeonbot](https://github.com/LEE-Kyungjae/gahyeonbot)
+Changes are normally announced seven days in advance, or 30 days for material or unfavorable changes. Users may remove the bot and request deletion.
+
+- Email: [ze2@kakao.com](mailto:ze2@kakao.com)
+- Repository: [GitHub](https://github.com/LEE-Kyungjae/gahyeonbot)
+
+- Announced: July 28, 2026
+- Effective: August 4, 2026
