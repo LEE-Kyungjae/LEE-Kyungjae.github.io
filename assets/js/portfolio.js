@@ -33,17 +33,37 @@
       }, reducedMotion ? 0 : 130);
     }));
 
-    projectButtons.forEach((button) => button.addEventListener('click', () => {
+    const selectProject = (button, moveFocus = false) => {
       const data = projects[language][button.dataset.project];
-      projectButtons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
+      projectButtons.forEach((item) => {
+        const selected = item === button;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
       const stage = browser.querySelector('.project-stage');
+      stage.setAttribute('aria-labelledby', button.id);
+      if (moveFocus) button.focus();
       stage.classList.add('is-updating');
       window.setTimeout(() => {
         ['number', 'title', 'status', 'service', 'system', 'role', 'surface', 'stack'].forEach((field) => setText(field, data[field]));
         const link = browser.querySelector('[data-field="link"]'); link.href = data.link;
         stage.classList.remove('is-updating');
       }, reducedMotion ? 0 : 150);
-    }));
+    };
+
+    projectButtons.forEach((button, index) => {
+      button.addEventListener('click', () => selectProject(button));
+      button.addEventListener('keydown', (event) => {
+        let nextIndex = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % projectButtons.length;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + projectButtons.length) % projectButtons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = projectButtons.length - 1;
+        if (nextIndex === null) return;
+        event.preventDefault();
+        selectProject(projectButtons[nextIndex], true);
+      });
+    });
   }
 
   document.querySelectorAll('.lifecycle button').forEach((button, index, buttons) => button.addEventListener('click', () => {
