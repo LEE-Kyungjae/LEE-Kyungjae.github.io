@@ -53,7 +53,7 @@ export default function HomePage({ language }: { language: Language }) {
   const home = language === 'ko' ? '/' : '/en/';
   const prefix = language === 'ko' ? '' : '/en';
 
-  return <div className="site-frame">
+  return <div className={`site-frame lang-${language}`}>
     <header className="topbar">
       <a className="brand" href={home}><span className="brand-dot" aria-hidden="true"/><span>이경재</span></a>
       <nav><a href="#work">{t.nav[0]}</a><a href={`${prefix}/services/`}>{t.nav[1]}</a><a href={`${prefix}/legal/`}>{t.nav[2]}</a></nav>
