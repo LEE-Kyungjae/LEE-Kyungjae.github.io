@@ -13,7 +13,7 @@ function sourceEntries(): Entry[] {
     const parsed = matter(fs.readFileSync(full, 'utf8'));
     return {
       permalink: String(parsed.data.permalink || ''),
-      title: String(parsed.data.title || 'Kyungjae Lee'),
+      title: String(parsed.data.title || '이경재'),
       lang: parsed.data.lang === 'en' ? 'en' : 'ko',
       content: parsed.content,
       file,
@@ -29,7 +29,7 @@ export function generateStaticParams() {
 
 function Header({ lang }: { lang: 'ko' | 'en' }) {
   const prefix = lang === 'en' ? '/en' : '';
-  return <header className="sub-header"><a href={`${prefix}/`}><b>KJ</b> Kyungjae Lee</a><nav><a href={`${prefix}/`}>{lang === 'ko' ? '작업' : 'Work'}</a><a href={`${prefix}/services/`}>{lang === 'ko' ? '서비스' : 'Services'}</a><a href={`${prefix}/legal/`}>{lang === 'ko' ? '정책' : 'Legal'}</a></nav><a href={lang === 'ko' ? '/en/' : '/'}>{lang === 'ko' ? 'EN' : 'KO'}</a></header>;
+  return <header className="sub-header"><a href={`${prefix}/`}><b aria-hidden="true"/>이경재</a><nav><a href={`${prefix}/`}>{lang === 'ko' ? '작업' : 'Work'}</a><a href={`${prefix}/services/`}>{lang === 'ko' ? '서비스' : 'Services'}</a><a href={`${prefix}/legal/`}>{lang === 'ko' ? '정책' : 'Legal'}</a></nav><a href={lang === 'ko' ? '/en/' : '/'}>{lang === 'ko' ? 'EN' : 'KO'}</a></header>;
 }
 
 const serviceData = [
