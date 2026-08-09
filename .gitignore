@@ -1,2 +1,8 @@
 /ref/
 /.palamedes/
+/node_modules/
+/.next/
+/out/
+/.playwright-cli/
+/output/
+/public/
