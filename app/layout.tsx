@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kyungjae Lee',
+  title: '이경재',
   description: 'Agentic systems, backend engineering and developer tools.',
 };
 

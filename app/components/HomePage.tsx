@@ -55,7 +55,7 @@ export default function HomePage({ language }: { language: Language }) {
 
   return <div className="site-frame">
     <header className="topbar">
-      <a className="brand" href={home}><span className="brand-dot">KJ</span><span>Kyungjae Lee</span></a>
+      <a className="brand" href={home}><span className="brand-dot" aria-hidden="true"/><span>이경재</span></a>
       <nav><a href="#work">{t.nav[0]}</a><a href={`${prefix}/services/`}>{t.nav[1]}</a><a href={`${prefix}/legal/`}>{t.nav[2]}</a></nav>
       <div className="nav-actions"><a className="lang" href={language === 'ko' ? '/en/' : '/'}>{t.language}</a><a className="github" href="https://github.com/LEE-Kyungjae">GitHub ↗</a></div>
     </header>
@@ -71,7 +71,7 @@ export default function HomePage({ language }: { language: Language }) {
         </div>
         <div className="system-map" aria-label="Live system map">
           <div className="map-head"><span>LIVE SYSTEM MAP</span><span>37° N / 127° E</span></div>
-          <div className="radar"><div className="core"><strong>KJ</strong><small>BUILD / OPERATE</small></div><span className="node n1">AGENT</span><span className="node n2">BACKEND</span><span className="node n3">INTERFACE</span><span className="node n4">OPS</span><i className="packet p1"/><i className="packet p2"/></div>
+          <div className="radar"><div className="core"><strong>LIVE</strong><small>BUILD / OPERATE</small></div><span className="node n1">AGENT</span><span className="node n2">BACKEND</span><span className="node n3">INTERFACE</span><span className="node n4">OPS</span><i className="packet p1"/><i className="packet p2"/></div>
           <div className="map-foot"><span>DESIGN</span><i/><span>BUILD</span><i/><span>SHIP</span><i/><b>OPERATE</b></div>
         </div>
         <div className="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
@@ -102,6 +102,6 @@ export default function HomePage({ language }: { language: Language }) {
 
       <section className="cta"><p>STILL RUNNING</p><h2>{t.running.split('\n').map((x,i)=><span key={x}>{x}{i===0&&<br/>}</span>)}</h2><a href={`${prefix}/services/`}>{t.services} →</a></section>
     </main>
-    <footer className="footer"><strong>Kyungjae Lee</strong><nav><a href={`${prefix}/contact/`}>Contact</a><a href={`${prefix}/legal/`}>Legal</a><a href="https://github.com/LEE-Kyungjae">GitHub ↗</a></nav><span>THINK · ACT · RECOVER</span></footer>
+    <footer className="footer"><strong>이경재</strong><nav><a href={`${prefix}/contact/`}>Contact</a><a href={`${prefix}/legal/`}>Legal</a><a href="https://github.com/LEE-Kyungjae">GitHub ↗</a></nav><span>THINK · ACT · RECOVER</span></footer>
   </div>;
 }
