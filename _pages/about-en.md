@@ -9,4 +9,4 @@ alternate_url: /about/
 
 Agent systems · Full-stack development · Long-term operation
 
-[View on GitHub ↗](https://github.com/LEE-Kyungjae){: .prose-action }
+<a class="prose-action" href="https://github.com/LEE-Kyungjae">View on GitHub ↗</a>

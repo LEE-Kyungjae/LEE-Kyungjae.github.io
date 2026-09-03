@@ -39,28 +39,9 @@
   featured: true
   order: 2
 
-- id: "zezestudio"
-  name_ko: "삐뚜루빠뚜라"
-  name_en: "Ppituruppatura"
-  status_ko: "운영 중"
-  status_en: "Active"
-  logo_text: "PP"
-  logo_style: "mint"
-  one_liner_ko: "5대5 결투 게임"
-  one_liner_en: "A 5v5 battle game"
-  platforms:
-    - id: "web"
-      label: "Web"
-    - id: "ios"
-      label: "iOS"
-    - id: "android"
-      label: "Android"
-  featured: true
-  order: 3
-
 - id: "zaeze"
-  name_ko: "zaeze"
-  name_en: "zaeze"
+  name_ko: "zaeze.com"
+  name_en: "zaeze.com"
   status_ko: "운영 중"
   status_en: "Active"
   logo_text: "ZE"
@@ -74,6 +55,6 @@
       label: "iOS"
     - id: "android"
       label: "Android"
-  product_url: "https://zaeze-web.vercel.app"
+  product_url: "https://zaeze.com"
   featured: true
-  order: 4
+  order: 3

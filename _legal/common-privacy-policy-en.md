@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/common/privacy/
 ---
 
-This policy sets the common privacy standards for services provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”). A service-specific policy prevails where one exists.
+This policy sets the common privacy standards for services provided by zaeze.com, represented by Kyungjae Lee (the “Operator”). A service-specific policy prevails where one exists.
 
 ## 1. Information and purposes
 
@@ -34,7 +34,7 @@ Users may request access, correction, deletion, suspension, withdrawal of consen
 
 ## 5. Contact and changes
 
-- Privacy officer: Kyungjae Lee, Representative of Zeze Studio
+- Privacy officer: Kyungjae Lee, Representative of zaeze.com
 - Email: [ze2@kakao.com](mailto:ze2@kakao.com)
 
 Changes are normally announced seven days in advance, or 30 days for material changes affecting user rights.

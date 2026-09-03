@@ -7,4 +7,4 @@ lang: ko
 alternate_url: /en/contact/
 ---
 
-[GitHub에서 연락하기 ↗](https://github.com/LEE-Kyungjae){: .prose-action }
+<a class="prose-action" href="https://github.com/LEE-Kyungjae">GitHub에서 연락하기 ↗</a>
