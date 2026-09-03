@@ -54,5 +54,9 @@ export default async function LegacyPage({ params }: { params: Promise<{ slug: s
   }
 
   const html = await marked.parse(entry.content);
-  return <><Header lang={lang}/><main className={`document lang-${lang}`}><p className="sub-kicker">DOCUMENT / {entry.file.replace(/\.(md|html)$/,'')}</p><h1>{entry.title}</h1><div className="prose" dangerouslySetInnerHTML={{ __html: html }}/><a className="back-link" href={`${prefix}/legal/`}>← {lang === 'ko' ? '목록으로' : 'Back to list'}</a></main></>;
+  const isDownload = permalink.includes('/termi-agent/');
+  const isLegal = permalink.includes('/legal/');
+  const backHref = isDownload ? `${prefix}/services/` : isLegal ? `${prefix}/legal/` : `${prefix}/`;
+  const backLabel = lang === 'ko' ? '목록으로' : 'Back to list';
+  return <><Header lang={lang}/><main className={`document lang-${lang}`}><p className="sub-kicker">DOCUMENT / {entry.file.replace(/\.(md|html)$/,'')}</p><h1>{entry.title}</h1><div className="prose" dangerouslySetInnerHTML={{ __html: html }}/><a className="back-link" href={backHref}>← {backLabel}</a></main></>;
 }

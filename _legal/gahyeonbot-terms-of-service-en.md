@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/gahyeonbot/terms/
 ---
 
-These terms govern GahyeonBot, a Discord-based AI assistant (the “Service”) provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”).
+These terms govern GahyeonBot, a Discord-based AI assistant (the “Service”) provided by zaeze.com, represented by Kyungjae Lee (the “Operator”).
 
 ## 1. Service and external platforms
 
@@ -29,7 +29,7 @@ Features may change or pause for maintenance, security, external-platform change
 
 ## 5. Paid features and liability
 
-If paid features are offered, price, period, delivery, withdrawal and refund terms will be shown before payment. The Ppituruppatura refund policy does not apply to GahyeonBot features that involve no separate purchase. The Operator is responsible for loss caused by its intent or negligence under law, but not for external-service failures or user settings where it is not at fault. Mandatory rights are not excluded.
+If paid features are offered, price, period, delivery, withdrawal and refund terms will be shown before payment. Refund procedures do not apply to features that involve no separate purchase. The Operator is responsible for loss caused by its intent or negligence under law, but not for external-service failures or user settings where it is not at fault. Mandatory rights are not excluded.
 
 ## 6. Changes, termination and contact
 

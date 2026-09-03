@@ -1,107 +1,69 @@
-'use client';
-
-import { useState } from 'react';
-
 type Language = 'ko' | 'en';
-type ProjectKey = 'palamedes' | 'gahyeon' | 'adelie';
-
-const projects = {
-  palamedes: {
-    number: '01', title: 'Palamedes', state: 'RESEARCH BETA',
-    ko: { summary: '실행 방법보다 먼저, 계획할 가치가 있는 임무를 발견하는 자율형 AI 사전 계획기.', detail: '경쟁 해석과 증거·반증을 거쳐 살아남은 임무만 실행 계층으로 전달합니다.' },
-    en: { summary: 'An autonomous pre-planner that finds the mission worth pursuing before deciding how to execute.', detail: 'Competing interpretations, evidence and falsification filter missions before they reach execution.' },
-    stack: 'Python · TypeScript · Multi-agent', href: 'https://github.com/LEE-Kyungjae/Palamedes', accent: 'mission'
-  },
-  gahyeon: {
-    number: '02', title: 'GahyeonBot', state: 'ACTIVE',
-    ko: { summary: 'Discord 안에서 텍스트와 음성으로 대화하며 일상 작업을 이어가는 AI 비서.', detail: 'Discord 이벤트, Spring 서비스 로직과 음성 AI를 하나의 운영 가능한 시스템으로 연결했습니다.' },
-    en: { summary: 'A Discord-native AI assistant that carries everyday work across text and voice.', detail: 'Discord events, Spring services and voice AI operate as one connected system.' },
-    stack: 'Java 21 · Spring Boot · Voice AI', href: 'https://github.com/LEE-Kyungjae/gahyeonbot', accent: 'voice'
-  },
-  adelie: {
-    number: '03', title: 'Adelie Terminal', state: 'ACTIVE',
-    ko: { summary: '웹과 모바일에서 원격 개발 세션을 이어가는 개발자용 서버 인터페이스.', detail: '원격 세션과 서버를 여러 클라이언트에 안전하게 연결하고 직접 운영합니다.' },
-    en: { summary: 'A server interface for continuing remote development sessions from web and mobile.', detail: 'Remote sessions and servers stay connected across clients as an operated product.' },
-    stack: 'Server · Web · Mobile', href: '/termi-agent/', accent: 'terminal'
-  }
-} as const;
 
 const copy = {
   ko: {
-    nav: ['작업', '서비스', '정책'], status: 'KoreaPDS IT서비스 연구원 · 2025—현재',
-    heroA: '서비스를 만들고,', heroB: '끝까지 운영합니다.', lede: '에이전트부터 백엔드와 인터페이스까지. 직접 쓰이고 오래 남는 시스템을 설계합니다.',
-    explore: '프로젝트 보기', selected: 'Selected systems', projectTitle: '결과와 구조를\n한 화면에.', surface: '무엇을 만드는가', inside: '어떻게 작동하는가', open: '프로젝트 열기',
-    process: 'How I build', processTitle: '출시가 끝이 아니라\n운영의 시작입니다.',
-    steps: [['01','구상','쓸 이유를 찾습니다.'],['02','구축','끝까지 연결합니다.'],['03','출시','사용 가능한 상태로 냅니다.'],['04','운영','실패를 관찰하고 복구합니다.'],['05','진화','다시 쓰기 좋게 만듭니다.']],
-    capabilities: 'Capability, with evidence', career: 'Career', running: '만든 서비스는\n계속 움직입니다.', services: '서비스 보기', language: 'EN'
+    nav: ['시스템', '경력', '연락'], role: 'SYSTEMS ENGINEER · SEOUL',
+    titleA: '목표를 발견하고,', titleB: '기억하고,', titleC: '계속 작동하게.',
+    intro: '에이전트의 판단부터 실시간 캐릭터와 운영 백엔드까지. 저는 빠르게 만든 데모가 아니라, 근거를 남기고 실패에서 복구하는 시스템을 설계합니다.',
+    inspect: '시스템 보기', workLabel: 'SELECTED SYSTEMS / 2026', workTitle: '주장보다 구조를 먼저 보여줍니다.', evidence: '확인된 근거', boundary: '현재 한계', source: '소스 보기',
+    palamedesBody: '실행 에이전트가 어떻게 만들지 계획하기 전에, 무엇을 추구할 가치가 있는지 발견하고 검토하는 로컬 우선 미션 인텔리전스 계층입니다.',
+    palamedesEvidence: '수정·복원 가능한 plan-state kernel, bounded handoff, 블라인드 모델 검토 9표 중 8표.',
+    palamedesLimit: 'Research Alpha. 외부 성과와 사람 수준 창의성은 아직 입증되지 않았습니다.',
+    gahyeonBody: '하나의 Core가 Discord에서는 음성 비서로, Desktop과 Unreal에서는 지속되는 실시간 AI 캐릭터로 나타나는 멀티 클라이언트 시스템입니다.',
+    gahyeonEvidence: 'Core/Application/Adapter 분리, 영속 World, bounded runtime, Desktop·Unreal 프로토콜.',
+    gahyeonLimit: 'Unreal 실기 패키징과 최종 hero mesh·물리 장치 검증은 진행 중입니다.',
+    architecture: 'ONE PRACTICE / TWO SYSTEMS', architectureTitle: '판단은 기록되고, 실행은 경계를 넘지 않습니다.',
+    architectureBody: 'Palamedes와 Gahyeon은 서로 다른 제품이지만 같은 태도를 공유합니다. 상태를 남기고, 권한을 분리하며, 실패를 다음 판단의 입력으로 되돌립니다.',
+    signals: '신호', observation: '관찰', decision: '결정', execution: '실행', outcome: '결과',
+    principles: ['근거와 추론을 분리', '승인과 실행 권한을 보존', '결과를 다음 상태로 환류'],
+    career: 'SYSTEMS IN PRACTICE', careerTitle: '제품의 첫 화면부터 운영의 마지막 경보까지.',
+    careerBody: 'Java와 Spring 기반 백엔드, React 인터페이스, PostgreSQL·Redis·Kafka, 컨테이너 운영을 하나의 제품 흐름으로 다룹니다.',
+    contact: '함께 만들 시스템이 있다면', contactLink: 'GitHub에서 대화하기',
   },
   en: {
-    nav: ['Work', 'Services', 'Legal'], status: 'IT Service Researcher at KoreaPDS · 2025—Present',
-    heroA: 'I build services', heroB: 'and keep them running.', lede: 'From agents to backends and interfaces, I design systems made to be used and improved over time.',
-    explore: 'Explore projects', selected: 'Selected systems', projectTitle: 'See the result.\nThen see inside.', surface: 'What it does', inside: 'How it works', open: 'Open project',
-    process: 'How I build', processTitle: 'Shipping is not the end.\nIt starts operations.',
-    steps: [['01','Frame','Find a reason to exist.'],['02','Build','Connect the whole path.'],['03','Ship','Make it usable.'],['04','Operate','Observe and recover.'],['05','Evolve','Make it better again.']],
-    capabilities: 'Capability, with evidence', career: 'Career', running: 'The services I build\nkeep moving.', services: 'View services', language: 'KO'
-  }
-} as const;
+    nav: ['Systems', 'Experience', 'Contact'], role: 'SYSTEMS ENGINEER · SEOUL',
+    titleA: 'Discover direction.', titleB: 'Keep memory.', titleC: 'Stay alive.',
+    intro: 'From agent judgment to real-time characters and operational backends, I design systems that preserve evidence, recover from failure, and improve over time.',
+    inspect: 'Inspect systems', workLabel: 'SELECTED SYSTEMS / 2026', workTitle: 'Structure before claims.', evidence: 'Verified evidence', boundary: 'Current boundary', source: 'View source',
+    palamedesBody: 'A local-first mission intelligence layer that discovers and reviews what is worth pursuing before execution agents plan how to build it.',
+    palamedesEvidence: 'Revisionable plan-state kernel, bounded handoff, and 8 of 9 votes in an origin-blinded model review.',
+    palamedesLimit: 'Research Alpha. Better external outcomes and human-level creativity are not proven.',
+    gahyeonBody: 'A multi-client system where one Core appears as a voice assistant in Discord and as a persistent real-time AI character on Desktop and Unreal.',
+    gahyeonEvidence: 'Separated Core/Application/Adapters, persistent World, bounded runtime, and Desktop/Unreal protocols.',
+    gahyeonLimit: 'Packaged Unreal acceptance, the final hero mesh, and physical-device verification remain in progress.',
+    architecture: 'ONE PRACTICE / TWO SYSTEMS', architectureTitle: 'Decisions leave a record. Execution keeps its boundaries.',
+    architectureBody: 'Palamedes and Gahyeon are different products with the same discipline: preserve state, separate authority, and return failure as input to the next decision.',
+    signals: 'Signals', observation: 'Observe', decision: 'Decide', execution: 'Execute', outcome: 'Outcome',
+    principles: ['Separate evidence from inference', 'Preserve approval and execution authority', 'Return outcomes to persistent state'],
+    career: 'SYSTEMS IN PRACTICE', careerTitle: 'From the first screen to the last production alert.',
+    careerBody: 'I work across Java and Spring backends, React interfaces, PostgreSQL, Redis, Kafka, and container operations as one product flow.',
+    contact: 'Have a system worth building?', contactLink: 'Start on GitHub',
+  },
+};
+
+function ArrowIcon() { return <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>; }
+
+function EvidenceLoop({ language }: { language: Language }) {
+  const t = copy[language];
+  const nodes = [t.signals, t.observation, t.decision, t.execution, t.outcome];
+  return <div className="evidence-loop" aria-label={language === 'ko' ? '신호에서 결과까지 이어지고 다시 관찰로 돌아오는 흐름' : 'A flow from signals to outcomes and back to observation'}>
+    <svg className="loop-routes" viewBox="0 0 1000 250" preserveAspectRatio="none" aria-hidden="true"><path className="route-base" d="M95 120H905"/><path className="route-return" d="M905 120V210H300V120"/><path className="route-trace" d="M95 120H905V210H300V120"/></svg>
+    {nodes.map((node, index) => <div className={`loop-node n${index + 1}`} key={node}><span>0{index + 1}</span><strong>{node}</strong></div>)}
+  </div>;
+}
 
 export default function HomePage({ language }: { language: Language }) {
-  const t = copy[language];
-  const [selected, setSelected] = useState<ProjectKey>('palamedes');
-  const [mode, setMode] = useState<'surface' | 'inside'>('surface');
-  const project = projects[selected];
-  const home = language === 'ko' ? '/' : '/en/';
-  const prefix = language === 'ko' ? '' : '/en';
-
-  return <div className={`site-frame lang-${language}`}>
-    <header className="topbar">
-      <a className="brand" href={home}><span className="brand-dot" aria-hidden="true"/><span>이경재</span></a>
-      <nav><a href="#work">{t.nav[0]}</a><a href={`${prefix}/services/`}>{t.nav[1]}</a><a href={`${prefix}/legal/`}>{t.nav[2]}</a></nav>
-      <div className="nav-actions"><a className="lang" href={language === 'ko' ? '/en/' : '/'}>{t.language}</a><a className="github" href="https://github.com/LEE-Kyungjae">GitHub ↗</a></div>
-    </header>
-
-    <main>
-      <section className="hero">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-copy">
-          <p className="eyebrow"><i />{t.status}</p>
-          <h1>{t.heroA}<br/><em>{t.heroB}</em></h1>
-          <p className="hero-lede">{t.lede}</p>
-          <div className="hero-actions"><a href="#work" className="primary">{t.explore}<span>↓</span></a><a href="https://github.com/LEE-Kyungjae" className="plain">GitHub ↗</a></div>
-        </div>
-        <div className="system-map" aria-label="Live system map">
-          <div className="map-head"><span>LIVE SYSTEM MAP</span><span>37° N / 127° E</span></div>
-          <div className="radar"><div className="core"><strong>LIVE</strong><small>BUILD / OPERATE</small></div><span className="node n1">AGENT</span><span className="node n2">BACKEND</span><span className="node n3">INTERFACE</span><span className="node n4">OPS</span><i className="packet p1"/><i className="packet p2"/></div>
-          <div className="map-foot"><span>DESIGN</span><i/><span>BUILD</span><i/><span>SHIP</span><i/><b>OPERATE</b></div>
-        </div>
-        <div className="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
-      </section>
-
-      <section className="proof"><div><span>01 / SCOPE</span><strong>Agent · Backend · Interface</strong></div><div><span>02 / PRACTICE</span><strong>Design → Build → Operate</strong></div><div><span>03 / STATUS</span><strong><i/> Systems in production</strong></div></section>
-
-      <section className="work" id="work">
-        <div className="section-head"><div><p>{t.selected}</p><h2>{t.projectTitle.split('\n').map((x,i)=><span key={x}>{x}{i===0&&<br/>}</span>)}</h2></div><div className="mode-switch"><button className={mode==='surface'?'active':''} onClick={()=>setMode('surface')}>SERVICE</button><button className={mode==='inside'?'active':''} onClick={()=>setMode('inside')}>SYSTEM</button></div></div>
-        <div className="project-browser">
-          <div className="project-tabs">{(Object.keys(projects) as ProjectKey[]).map(key=><button key={key} className={selected===key?'active':''} onClick={()=>setSelected(key)}><span>{projects[key].number}</span><strong>{projects[key].title}</strong><small>{projects[key].state}</small></button>)}</div>
-          <article className="project-card">
-            <div className="project-top"><span><i/>{project.state}</span><b>{project.number} / 03</b></div>
-            <div className="project-main">
-              <div className="project-copy"><small>{mode==='surface'?t.surface:t.inside}</small><h3>{project.title}</h3><p>{project[language][mode==='surface'?'summary':'detail']}</p><a href={project.href}>{t.open} ↗</a></div>
-              <div className={`project-visual ${project.accent}`}><span>{project.stack}</span><div className="visual-lines"><i/><i/><i/></div><strong>{mode==='surface'?'BUILD THE SERVICE':'SEE THE SYSTEM'}</strong></div>
-            </div>
-            <footer><div><span>ROLE</span><b>Design · Build · Operate</b></div><div><span>STACK</span><b>{project.stack}</b></div><div><span>OWNERSHIP</span><b>End to end</b></div></footer>
-          </article>
-        </div>
-      </section>
-
-      <section className="process"><div className="process-head"><p>{t.process}</p><h2>{t.processTitle.split('\n').map((x,i)=><span key={x}>{x}{i===0&&<br/>}</span>)}</h2></div><ol>{t.steps.map(step=><li key={step[0]}><span>{step[0]}</span><strong>{step[1]}</strong><small>{step[2]}</small></li>)}</ol></section>
-
-      <section className="evidence"><p>{t.capabilities}</p><div>{[['01','Agent systems','Palamedes · GahyeonBot','Planning · Tools · Voice'],['02','Backend systems','Spring · Kafka · Redis','Events · State · Recovery'],['03','Full-stack product','Web · Mobile · Server','Experience through deployment'],['04','Service operations','k3s · Docker · PostgreSQL','Operations after launch']].map(row=><article key={row[0]}><span>{row[0]}</span><h3>{row[1]}</h3><p>{row[2]}</p><b>{row[3]}</b></article>)}</div></section>
-
-      <section className="career"><p>{t.career}</p><div><time>2025—{language==='ko'?'현재':'Present'}</time><strong>KoreaPDS <i/></strong><span>{language==='ko'?'IT서비스 연구원':'IT Service Researcher'}</span></div><div><time>2023</time><strong>立命館大学</strong><span>情報システム工学 学士</span></div><div><time>{language==='ko'?'자격':'Certificate'}</time><strong>SQLD</strong><span>SQL Developer</span></div></section>
-
-      <section className="cta"><p>STILL RUNNING</p><h2>{t.running.split('\n').map((x,i)=><span key={x}>{x}{i===0&&<br/>}</span>)}</h2><a href={`${prefix}/services/`}>{t.services} →</a></section>
-    </main>
-    <footer className="footer"><strong>이경재</strong><nav><a href={`${prefix}/contact/`}>Contact</a><a href={`${prefix}/legal/`}>Legal</a><a href="https://github.com/LEE-Kyungjae">GitHub ↗</a></nav><span>THINK · ACT · RECOVER</span></footer>
-  </div>;
+  const t = copy[language]; const prefix = language === 'en' ? '/en' : '';
+  return <main>
+    <header className="site-header"><a className="wordmark" href={`${prefix}/`} aria-label="Kyungjae Lee home"><b>KJ</b><span>LEE KYUNGJAE<br/>SYSTEMS</span></a><nav>{t.nav.map((item, index) => <a href={['#systems', '#experience', '#contact'][index]} key={item}>{item}</a>)}</nav><a className="language" href={language === 'ko' ? '/en/' : '/'}>{language === 'ko' ? 'EN' : 'KO'}</a></header>
+    <section className="hero"><div className="hero-meta"><span>{t.role}</span><span>AVAILABLE FOR SERIOUS SYSTEMS</span></div><h1><span>{t.titleA}</span><span>{t.titleB}</span><span className="outline">{t.titleC}</span></h1><div className="hero-bottom"><p>{t.intro}</p><a href="#systems">{t.inspect}<ArrowIcon/></a></div><div className="hero-signal" aria-hidden="true"><i/><i/><i/><i/><i/></div></section>
+    <section className="systems" id="systems"><div className="section-intro"><p>{t.workLabel}</p><h2>{t.workTitle}</h2></div>
+      <article className="project palamedes"><div className="project-id"><span>PALAMEDES</span><b>RESEARCH ALPHA</b></div><div className="project-copy"><p className="project-index">P—01</p><h3>Before tasks,<br/><em>choose the mission.</em></h3><p className="project-body">{t.palamedesBody}</p><dl><div><dt>{t.evidence}</dt><dd>{t.palamedesEvidence}</dd></div><div><dt>{t.boundary}</dt><dd>{t.palamedesLimit}</dd></div></dl><a href="https://github.com/LEE-Kyungjae/palamedes">{t.source}<ArrowIcon/></a></div><figure className="project-visual"><img src="/assets/projects/palamedes.png" alt="Palamedes project identity"/><figcaption>GOAL DISCOVERY · REVISION · FALSIFICATION</figcaption></figure></article>
+      <article className="project gahyeon"><div className="project-id"><span>GAHYEON</span><b>ACTIVE DEVELOPMENT</b></div><figure className="project-visual gahyeon-visual"><div className="orbit"><i/><i/><i/><img src="/assets/projects/gahyeon.png" alt="Gahyeon character portrait"/></div><figcaption>ONE CORE · DISCORD · DESKTOP · UNREAL</figcaption></figure><div className="project-copy"><p className="project-index">G—02</p><h3>One mind,<br/><em>many presences.</em></h3><p className="project-body">{t.gahyeonBody}</p><dl><div><dt>{t.evidence}</dt><dd>{t.gahyeonEvidence}</dd></div><div><dt>{t.boundary}</dt><dd>{t.gahyeonLimit}</dd></div></dl><a href="https://github.com/LEE-Kyungjae/gahyeon">{t.source}<ArrowIcon/></a></div></article>
+    </section>
+    <section className="architecture"><div className="architecture-copy"><p>{t.architecture}</p><h2>{t.architectureTitle}</h2><div><p>{t.architectureBody}</p><ol>{t.principles.map(item => <li key={item}>{item}</li>)}</ol></div></div><EvidenceLoop language={language}/></section>
+    <section className="experience" id="experience"><p>{t.career}</p><h2>{t.careerTitle}</h2><div><p>{t.careerBody}</p><ul><li>BACKEND / JAVA · SPRING · EVENT SYSTEMS</li><li>AGENTS / MISSION · MEMORY · TOOL RUNTIME</li><li>OPERATIONS / CONTAINERS · DATA · OBSERVABILITY</li></ul></div></section>
+    <section className="contact" id="contact"><p>{t.contact}</p><a href="https://github.com/LEE-Kyungjae">{t.contactLink}<ArrowIcon/></a></section>
+    <footer><span>© 2026 LEE KYUNGJAE</span><nav><a href={`${prefix}/services/`}>Services</a><a href={`${prefix}/legal/`}>Legal</a><a href={`${prefix}/contact/`}>Contact</a></nav><span>SEOUL · KST</span></footer>
+  </main>;
 }

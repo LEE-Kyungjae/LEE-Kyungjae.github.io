@@ -7,4 +7,4 @@ lang: en
 alternate_url: /contact/
 ---
 
-[Contact me on GitHub ↗](https://github.com/LEE-Kyungjae){: .prose-action }
+<a class="prose-action" href="https://github.com/LEE-Kyungjae">Contact me on GitHub ↗</a>

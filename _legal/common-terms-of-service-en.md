@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/common/terms/
 ---
 
-These terms set the common conditions for services provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”). Service-specific terms prevail where applicable, and mandatory law always applies.
+These terms set the common conditions for services provided by zaeze.com, represented by Kyungjae Lee (the “Operator”). Service-specific terms prevail where applicable, and mandatory law always applies.
 
 ## 1. Acceptable use
 

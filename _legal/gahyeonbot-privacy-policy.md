@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /legal/gahyeonbot/privacy/
 ---
 
-재재스튜디오(대표 이경재, 이하 "운영자")는 Discord 기반 AI 비서 가현봇(이하 "서비스")을 운영하며 「개인정보 보호법」 등 관계 법령을 준수합니다.
+zaeze.com(대표 이경재, 이하 "운영자")은 Discord 기반 AI 비서 가현봇(이하 "서비스")을 운영하며 「개인정보 보호법」 등 관계 법령을 준수합니다.
 
 ## 1. 처리하는 정보
 
@@ -46,7 +46,7 @@ Discord에서 일반 대화를 감시하기 위한 목적으로 정보를 처리
 
 ## 6. 문의와 변경
 
-- 개인정보 보호책임자: 이경재 / 재재스튜디오 대표
+- 개인정보 보호책임자: 이경재 / zaeze.com 대표
 - 이메일: [ze2@kakao.com](mailto:ze2@kakao.com)
 - 저장소: [GitHub](https://github.com/LEE-Kyungjae/gahyeonbot)
 

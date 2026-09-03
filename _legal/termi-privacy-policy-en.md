@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/termi/privacy/
 ---
 
-Zeze Studio, represented by Kyungjae Lee (the “Operator”), operates Adelie Terminal, an interface for remote access to development environments (the “Service”).
+zaeze.com, represented by Kyungjae Lee (the “Operator”), operates Adelie Terminal, an interface for remote access to development environments (the “Service”).
 
 ## 1. Information that may be processed
 
@@ -33,7 +33,7 @@ Tailscale or another user-selected network service has its own terms and privacy
 
 Users may request access, correction, deletion, suspension or withdrawal of consent. Safeguards include token protection, least-privilege access, protected transport, secret separation, access logs and security updates. Users must also protect connection URLs and tokens and keep devices and agents updated.
 
-- Privacy officer: Kyungjae Lee, Representative of Zeze Studio
+- Privacy officer: Kyungjae Lee, Representative of zaeze.com
 - Email: [ze2@kakao.com](mailto:ze2@kakao.com)
 
 Changes are normally announced seven days in advance, or 30 days for material changes affecting user rights.

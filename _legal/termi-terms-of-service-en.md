@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/termi/terms/
 ---
 
-These terms govern Adelie Terminal, a remote development-terminal interface (the “Service”) provided by Zeze Studio, represented by Kyungjae Lee (the “Operator”).
+These terms govern Adelie Terminal, a remote development-terminal interface (the “Service”) provided by zaeze.com, represented by Kyungjae Lee (the “Operator”).
 
 ## 1. Service scope
 

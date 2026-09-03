@@ -7,7 +7,7 @@ lang: ko
 alternate_url: /en/termi-agent/
 ---
 
-[macOS Apple Silicon 다운로드 ↓]({{ '/assets/downloads/termi-agent/termi-agent-macos-arm64.zip' | relative_url }}){: .prose-action }
+<a class="prose-action" href="/assets/downloads/termi-agent/termi-agent-macos-arm64.zip" download>macOS Apple Silicon 다운로드 ↓</a>
 
 ## 사용 방법
 

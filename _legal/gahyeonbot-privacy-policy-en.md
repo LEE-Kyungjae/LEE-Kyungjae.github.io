@@ -9,7 +9,7 @@ last_updated: "2026-07-28"
 permalink: /en/legal/gahyeonbot/privacy/
 ---
 
-Zeze Studio, represented by Kyungjae Lee (the “Operator”), operates GahyeonBot, a Discord-based AI assistant (the “Service”).
+zaeze.com, represented by Kyungjae Lee (the “Operator”), operates GahyeonBot, a Discord-based AI assistant (the “Service”).
 
 ## 1. Information processed
 
@@ -32,7 +32,7 @@ Discord’s own terms and privacy policy also apply. Before an external AI or vo
 
 Users may request access, correction, deletion, suspension or withdrawal of consent. Safeguards include least-privilege bot permissions, access control, protected transport, secret management, access logs and security updates.
 
-- Privacy officer: Kyungjae Lee, Representative of Zeze Studio
+- Privacy officer: Kyungjae Lee, Representative of zaeze.com
 - Email: [ze2@kakao.com](mailto:ze2@kakao.com)
 - Repository: [GitHub](https://github.com/LEE-Kyungjae/gahyeonbot)
 

@@ -12,5 +12,9 @@ for (const file of files) {
   if (existsSync(source)) await copyFile(source, path.join(publicDir, file));
 }
 
-const downloads = path.join(root, 'assets', 'downloads');
-if (existsSync(downloads)) await cp(downloads, path.join(publicDir, 'assets', 'downloads'), { recursive: true });
+for (const assetGroup of ['downloads', 'projects']) {
+  const source = path.join(root, 'assets', assetGroup);
+  if (existsSync(source)) {
+    await cp(source, path.join(publicDir, 'assets', assetGroup), { recursive: true });
+  }
+}
