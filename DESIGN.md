@@ -80,3 +80,36 @@ Every project record contains a problem, a mechanism, an honest status, a primar
 - Do keep all primary projects visible without requiring tabs.
 - Don't add GitHub statistics, technology clouds, invented metrics, or decorative node maps.
 - Don't describe Palamedes as proven AGI or Gahyeon as a finished AAA character.
+
+
+## 2026-10-27 home revision
+
+The home now uses an ivory surface with deep green and mint, a compact header, a scroll-driven 3D brain composition, selectable project nodes, and two-column project cards. The earlier dark editorial treatment above remains relevant to existing document pages only. Implementation and asset provenance: `docs/portfolio-reference-integration-20261027.md`.
+
+## Copy and interaction corrections (2026-10-27, latest user decisions)
+
+- Write for someone evaluating this developer's work: what the project does, what was implemented, and where to inspect it. Keep implementation limits where materially relevant.
+- No rhetorical paired titles (e.g. “문제 정의부터 실패 복구까지”), middle-dot keyword chains, decorative English labels, generic competence claims, or repeated summaries across hero, cards and case studies.
+- Use a short factual section name. Do not fill removed copy with replacement slogans, subtitles or explanatory text.
+- The homepage hero offers brief project identifiers. Cards explain each project's purpose and development status. Implementation cases describe specific behavior and link to source code. Each layer has a separate job.
+- Engineering devices animate at rest. Hover or keyboard navigation alone does not activate or brighten them. Click/tap/Enter/Space activates a device.
+- Energy moves toward the newly activated center. A rapid subsequent activation redirects the SAME moving particle with position, velocity and clock retained; it must not restart at the previous device or pause between rapid inputs. The final clicked device receives the arrival pulse.
+
+### 2026-10-27 floating-island circuit direction
+- Each engineering structure sits on its own generated transparent rocky island. Shared slab retired. Azure sky, white cumulus, warm upper-left sun. Keep art separate for ambient floating.
+- User rejected lightning entirely. Use stable orthogonal gold circuit traces from the previous island floor to the clicked island floor. Fill all three ascending building traces before energizing the building (1.05 seconds after floor arrival).
+- Click selection changes content immediately; visual activation waits for the completed charge. Hover/focus alone do not activate. Retarget the light from its current position during rapid clicks. No new UI copy.
+
+### 2026-10-27 correction: ground-local energy only (supersedes transfer direction)
+- No visible energy between islands. No circuits climbing the buildings.
+- Previous island: light radiates outward from the ground center. Clicked island: light gathers inward along ground circuits, then the building activates.
+- Ground paths share an oblique projection, are clipped inside the top surface, and render behind the structure. Buildings reduced to 70% of their prior width, with bases kept on the island surface.
+
+### Building placement correction
+Center each building's ground-contact footprint on its island top, not the square artwork bounds. Keep the approved 70% scale. Per-artwork top offsets compensate for different footprint locations; floor circuits remain centered at (50,94) in the island frame.
+
+### Smaller buildings, denser circuits, moving clouds
+Buildings now use 58% of the island frame width (previously 70%), with footprint-center offsets recalculated per artwork. Ground paths expanded from 6 to 24 with screen-space stroke widths, preserving projected ground clipping. Two transparent imagegen cloud layers drift independently behind islands at 130/75 seconds; offscreen and reduced-motion playback are respected. No new UI copy.
+
+### Island focus and circuit spacing
+Clicking an island focuses the scene at 1.1 scale around that island. Clicking empty sky or Escape returns to the wide composition; clicking the same active island can focus again without restarting activation. Mobile uses its own two-row focus origins. Empty control layout boxes do not intercept sky clicks. Circuits reduced to 12 separate routes with spaced starts/bends, retaining local ground projection and spread/gather directions.

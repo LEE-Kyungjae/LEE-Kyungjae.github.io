@@ -1,0 +1,30 @@
+{
+  "tool": "image_gen",
+  "selectedBy": "agent",
+  "grid": [
+    4,
+    4
+  ],
+  "frames": 16,
+  "prompts": [
+    [
+      "transfer",
+      "Production VFX SPRITE ATLAS for a real web animation, not an illustration or contact sheet. EXACT 4 columns by 4 rows of 16 equal square cells, 2048x2048 total. Row-major frames. Each cell precisely 512x512, with the effect centered at (256,256), same fixed camera, same scale throughout; all pixels stay 48px inside each cell. NO grid lines, NO borders, NO labels, NO numerals, NO background. TRUE transparent RGBA canvas between and through the effects. Film-quality fine filaments, amber gold and restrained pale cyan energy, refined realistic game VFX matching the supplied brass/teal machine. Cells are consecutive frames of ONE seamless animation, no unrelated variants. A small horizontal energy packet / comet pointing RIGHT. A compact bright amber core at center, long fine tapering filaments and a few sparks trailing to LEFT, small cyan fringe. In frames 1-16 the core pulses subtly and flowing filaments curl continuously, so tiled playback makes a living traveling electric packet. Keep the core fixed at exact center in every frame; the website handles travel. No machine, no ring, no huge flare."
+    ],
+    [
+      "condense",
+      "Production VFX SPRITE ATLAS for a real web animation, not an illustration or contact sheet. EXACT 4 columns by 4 rows of 16 equal square cells, 2048x2048 total. Row-major frames. Each cell precisely 512x512, with the effect centered at (256,256), same fixed camera, same scale throughout; all pixels stay 48px inside each cell. NO grid lines, NO borders, NO labels, NO numerals, NO background. TRUE transparent RGBA canvas between and through the effects. Film-quality fine filaments, amber gold and restrained pale cyan energy, refined realistic game VFX matching the supplied brass/teal machine. Cells are consecutive frames of ONE seamless animation, no unrelated variants. An energy CONDENSATION sequence. Viewed frontally as a softly tilted sphere. Frame1 scattered fine amber motes occupy a 300px circle. Frames2-5 spiral inward, frames6-10 stream in toward center, frames11-13 become an intensely condensed tiny bright core with delicate filaments. Frames14-16 core releases into a soft sparse expanding halo returning to initial radius. Smooth progressive changes, fixed center, no device or solid object."
+    ],
+    [
+      "orbit",
+      "Production VFX SPRITE ATLAS for a real web animation, not an illustration or contact sheet. EXACT 4 columns by 4 rows of 16 equal square cells, 2048x2048 total. Row-major frames. Each cell precisely 512x512, with the effect centered at (256,256), same fixed camera, same scale throughout; all pixels stay 48px inside each cell. NO grid lines, NO borders, NO labels, NO numerals, NO background. TRUE transparent RGBA canvas between and through the effects. Film-quality fine filaments, amber gold and restrained pale cyan energy, refined realistic game VFX matching the supplied brass/teal machine. Cells are consecutive frames of ONE seamless animation, no unrelated variants. An isolated brass mechanical orbital attachment: a delicate thin elliptical horizontal ring seen elevated 30 degrees, with three tiny solid brass satellites (one larger, two small) spaced around it. 16 consecutive animation frames in which satellites move CLOCKWISE by exactly 22.5 degrees each frame around the fixed ellipse; ring and camera do NOT rotate or wobble. Short amber light trails follow satellites. Ellipse centered and identical width in all frames. Clear real metallic satellites, not only sparks. No base, no machine, no scenery."
+    ],
+    [
+      "runtime",
+      "Production VFX SPRITE ATLAS for a real web animation, not an illustration or contact sheet. EXACT 4 columns by 4 rows of 16 equal square cells, 2048x2048 total. Row-major frames. Each cell precisely 512x512, with the effect centered at (256,256), same fixed camera, same scale throughout; all pixels stay 48px inside each cell. NO grid lines, NO borders, NO labels, NO numerals, NO background. TRUE transparent RGBA canvas between and through the effects. Film-quality fine filaments, amber gold and restrained pale cyan energy, refined realistic game VFX matching the supplied brass/teal machine. Cells are consecutive frames of ONE seamless animation, no unrelated variants. A cyan energy circulation sequence: three thin holographic elliptical horizontal rings stacked vertically around a transparent empty cylindrical center, seen elevated 30 degrees. A small cyan pulse travels clockwise on the bottom ring then ascends as filaments to middle and top rings over 16 consecutive frames, looping back. Keep the ring locations perfectly fixed in every cell. Delicate teal filaments, bright tiny traveling nodes, no machine, no text, no opaque background."
+    ]
+  ],
+  "rejected": {
+    "orbit": "Satellites and ellipse drift between generated frames. Preserved in output/imagegen/engineering-vfx-20261027; replaced with a separate top-down rotor and deterministic clockwise rotation."
+  }
+}

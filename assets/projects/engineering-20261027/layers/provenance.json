@@ -1,0 +1,28 @@
+{
+  "tool": "image_gen",
+  "reference": "output/repo-analysis-20261027/engineering-original.png",
+  "selectedBy": "agent",
+  "reason": "Independent alpha devices preserve the original visual language and become the actual scene controls; empty environment prevents baked-in duplicate objects.",
+  "prompts": [
+    [
+      "background",
+      "Create the background plate for an interactive layered scene, using this exact reference composition and dark teal atmosphere. REMOVE ALL FOUR MACHINES entirely including their individual raised bases. Retain ONLY the wide floating graphite stone platform, its underside machinery, distant teal fog. Clear unobstructed level upper platform surface, no cables, no glowing lines, no devices, no text. Same elevated front camera angle, full platform contained in wide 2:1 frame. Surface spans x 5-95% and y 55-77%, dark atmospheric empty space above it. Beautiful high quality game environment render."
+    ],
+    [
+      "lens",
+      "Extract and recreate ONLY the far left brass observation lens machine with suspended circular glass lens and stacked amber glass sheets on its small square plinth. Same materials and elevated front camera angle as reference. One isolated entire machine, centered, all extremities visible, consistent premium game asset rendering. Square canvas, object fills 85% of frame, small margin. TRUE TRANSPARENT RGBA background, no scenery, no shared large platform, no cables extending beyond plinth, no text, no cast shadow beyond silhouette."
+    ],
+    [
+      "gate",
+      "Extract and recreate ONLY the second machine: two dark stone upright pillars enclosing an amber luminous diamond and circular brass gateway, including its small plinth. Same materials and elevated front camera angle as reference. One isolated entire machine, centered, all extremities visible, consistent premium game asset rendering. Square canvas, object fills 85% of frame, small margin. TRUE TRANSPARENT RGBA background, no scenery, no shared large platform, no cables extending beyond plinth, no text, no cast shadow beyond silhouette."
+    ],
+    [
+      "runtime",
+      "Extract and recreate ONLY the third machine: tall silver cylindrical runtime tower with three cyan transparent glass displays, including its small plinth. Same materials and elevated front camera angle as reference. One isolated entire machine, centered, all extremities visible, consistent premium game asset rendering. Square canvas, object fills 85% of frame, small margin. TRUE TRANSPARENT RGBA background, no scenery, no shared large platform, no cables extending beyond plinth, no text, no cast shadow beyond silhouette."
+    ],
+    [
+      "recovery",
+      "Extract and recreate ONLY the rightmost machine: circular armillary orbit gyroscope with amber glowing core and bronze orbital rings, including its small plinth. Same materials and elevated front camera angle as reference. One isolated entire machine, centered, all extremities visible, consistent premium game asset rendering. Square canvas, object fills 85% of frame, small margin. TRUE TRANSPARENT RGBA background, no scenery, no shared large platform, no cables extending beyond plinth, no text, no cast shadow beyond silhouette."
+    ]
+  ]
+}

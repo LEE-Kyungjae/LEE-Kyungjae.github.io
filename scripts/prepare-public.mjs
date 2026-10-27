@@ -12,9 +12,14 @@ for (const file of files) {
   if (existsSync(source)) await copyFile(source, path.join(publicDir, file));
 }
 
-for (const assetGroup of ['downloads', 'projects']) {
+for (const assetGroup of ['downloads', 'projects', 'brain']) {
   const source = path.join(root, 'assets', assetGroup);
   if (existsSync(source)) {
     await cp(source, path.join(publicDir, 'assets', assetGroup), { recursive: true });
   }
 }
+
+// Ship the decoder locally so the 3D scene also works on static GitHub Pages.
+await mkdir(path.join(publicDir, 'assets', 'draco'), { recursive: true });
+await cp(path.join(root, 'node_modules/three/examples/jsm/libs/draco/gltf'), path.join(publicDir, 'assets', 'draco'), { recursive: true });
+await copyFile(path.join(root, 'node_modules/three/LICENSE'), path.join(publicDir, 'assets', 'draco', 'THREE-LICENSE.txt'));
