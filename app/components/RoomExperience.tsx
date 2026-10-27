@@ -26,18 +26,18 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
   const sun=new T.DirectionalLight('#fff3ce',4);sun.position.set(3,10,6);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-8,right:8,top:8,bottom:-8});sun.shadow.bias=-.001;scene.add(sun);
   const fill=new T.DirectionalLight('#9de5dd',1.5);fill.position.set(-6,4,1);scene.add(fill);
   const make=(geo:T.BufferGeometry,color:string,pos:number[])=>{const o=new T.Mesh(geo,new T.MeshStandardMaterial({color,roughness:.82}));o.position.set(...pos as [number,number,number]);o.receiveShadow=true;o.castShadow=true;room.add(o);return o;};
-  const floor=make(new T.BoxGeometry(8.8,.28,6.8),'#e8dac4',[0,-.2,0]);
-  make(new T.BoxGeometry(8.8,3.7,.18),'#accbc0',[0,1.55,-3.4]);
-  make(new T.BoxGeometry(.18,3.7,6.8),'#d7e3d8',[-4.4,1.55,0]);
-  make(new T.BoxGeometry(8.6,.15,.12),'#507e75',[0,.02,-3.25]);make(new T.BoxGeometry(.12,.15,6.5),'#507e75',[-4.25,.02,0]);
+  const floor=make(new T.BoxGeometry(12,.28,12),'#e8dac4',[0,-.2,0]);
+  make(new T.BoxGeometry(12,6.6,.22),'#accbc0',[0,3.16,-6]);
+  make(new T.BoxGeometry(.22,6.6,12),'#d7e3d8',[-6,3.16,0]);
+  make(new T.BoxGeometry(11.8,.15,.12),'#507e75',[0,.02,-5.84]);make(new T.BoxGeometry(.12,.15,11.8),'#507e75',[-5.84,.02,0]);
   // Window recess, mullions, and a sun patch put the figure in a real miniature room.
-  make(new T.BoxGeometry(2.25,1.8,.12),'#f7eccf',[1.65,2.1,-3.23]);
-  for(const x of [.55,1.65,2.75])make(new T.BoxGeometry(.07,1.86,.16),'#f8f4e7',[x,2.1,-3.12]);
-  make(new T.BoxGeometry(2.28,.08,.16),'#f8f4e7',[1.65,2.1,-3.12]);
+  make(new T.BoxGeometry(2.25,1.8,.12),'#f7eccf',[2.6,3.5,-5.84]);
+  for(const x of [1.5,2.6,3.7])make(new T.BoxGeometry(.07,1.86,.16),'#f8f4e7',[x,3.5,-5.72]);
+  make(new T.BoxGeometry(2.28,.08,.16),'#f8f4e7',[2.6,3.5,-5.72]);
   const rug=make(new T.CylinderGeometry(2.1,2.1,.025,64),'#8cafa0',[0,-.035,.3]);rug.scale.z=.72;
   const furniture=createRoomProps();room.add(furniture.root);
-  make(new T.CylinderGeometry(.27,.21,.48,24),'#bc795c',[-3.5,.22,-2.5]);
-  for(let i=0;i<5;i++){const leaf=make(new T.SphereGeometry(1,20,12),'#477a68',[-3.5+Math.sin(i*2)*.19,.83+i*.09,-2.5+Math.cos(i*2)*.18]);leaf.scale.set(.17,.43,.13);leaf.rotation.z=Math.sin(i*2)*.5;}
+  make(new T.CylinderGeometry(.27,.21,.48,24),'#bc795c',[-4.8,.22,-4.7]);
+  for(let i=0;i<5;i++){const leaf=make(new T.SphereGeometry(1,20,12),'#477a68',[-4.8+Math.sin(i*2)*.19,.83+i*.09,-4.7+Math.cos(i*2)*.18]);leaf.scale.set(.17,.43,.13);leaf.rotation.z=Math.sin(i*2)*.5;}
   const avatar=createRoomAvatar();avatar.ready.then(()=>{if(disposed)return;avatarReady=true;el.dataset.avatar='ready';el.dataset.avatarModel='skinned-bean';el.dataset.avatarBones=String(avatar.root.userData.bones);if(brainReady)setStatus('ready');}).catch(()=>{if(!disposed)setStatus('error');});scene.add(avatar.root);avatar.root.position.set(0,0,.6);avatar.root.rotation.y=.24;
   const brain=new T.Group();brain.visible=false;scene.add(brain);brain.position.set(0,3.3,0);
   const brainMaterial=new T.MeshStandardMaterial({color:'#e9dbb5',roughness:.37,metalness:.03});
@@ -47,7 +47,7 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    new GLTFLoader().setDRACOLoader(decoder).load('/assets/brain/brain.glb',gltf=>{
     if(disposed){gltf.scene.traverse(o=>{const m=o as T.Mesh;if(m.isMesh){m.geometry.dispose();(Array.isArray(m.material)?m.material:[m.material]).forEach(x=>x.dispose());}});return;}
     const bounds=new T.Box3();gltf.scene.traverse(o=>{const m=o as T.Mesh;if(!m.isMesh)return;const category=m.userData.bx_cat||m.parent?.userData.bx_cat;m.visible=['cortex','cerebellum','brainstem','white_matter','deep_grey','diencephalon'].includes(category);if(m.visible)bounds.expandByObject(m);(Array.isArray(m.material)?m.material:[m.material]).forEach(x=>x.dispose());m.material=brainMaterial;});
-    const size=bounds.getSize(new T.Vector3()),center=bounds.getCenter(new T.Vector3()),scale=1.18/Math.max(size.x,size.y,size.z);gltf.scene.scale.setScalar(scale);gltf.scene.position.copy(center).multiplyScalar(-scale);const pivot=new T.Group();pivot.rotation.y=Math.PI;pivot.add(gltf.scene);brain.add(pivot);brainReady=true;if(avatarReady)setStatus('ready');decoder.dispose();
+    const size=bounds.getSize(new T.Vector3()),center=bounds.getCenter(new T.Vector3()),scale=1.18/Math.max(size.x,size.y,size.z);gltf.scene.scale.setScalar(scale);gltf.scene.position.copy(center).multiplyScalar(-scale);const pivot=new T.Group();pivot.rotation.y=0;pivot.add(gltf.scene);brain.add(pivot);brainReady=true;if(avatarReady)setStatus('ready');decoder.dispose();
    },undefined,()=>{if(!disposed)setStatus('error');});
   })().catch(()=>{if(!disposed)setStatus('error');});
   const destination=avatar.root.position.clone(),keys=new Set<string>(),ray=new T.Raycaster(),pointer=new T.Vector2();
@@ -55,34 +55,34 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
   const setModeNow=(next:Mode)=>{modeNow=next;setMode(next);el.dataset.mode=next;};
   const syncHash=()=>{if(['palamedes','gahyeon','backend','systems','experience','brain'].includes(location.hash.slice(1)))setModeNow('brain');};syncHash();window.addEventListener('hashchange',syncHash);
   const wrapAngle=(angle:number)=>Math.atan2(Math.sin(angle),Math.cos(angle));
-  const restBrain=new T.Quaternion(),leaveBrain=new T.Quaternion(),dragRotation=new T.Quaternion();
-  const vertical=new T.Vector3(0,1,0),horizontal=new T.Vector3(1,0,0);
+  let orbitYaw=0,orbitPitch=0,leaveYaw=0,leavePitch=0;
   let entryRotation=.24,brainZoom=1,zoomTarget=1,leaveZoom=1,dragPointer:number|null=null,dragX=0,dragY=0;
   const stopDrag=()=>{if(dragPointer!==null&&renderer.domElement.hasPointerCapture(dragPointer))renderer.domElement.releasePointerCapture(dragPointer);dragPointer=null;delete el.dataset.dragging;};
   const sittingStart=new T.Vector3(),standingEnd=new T.Vector3();let sittingYaw=0;
   const sit=()=>{if(modeNow!=='room'||!avatarReady)return;keys.clear();sittingStart.copy(avatar.root.position);standingEnd.copy(furniture.approach);sittingYaw=wrapAngle(avatar.root.rotation.y);transitionStart=performance.now();setModeNow('sitting');};
   const stand=()=>{if(modeNow!=='computer')return;transitionStart=performance.now();setModeNow('standing');if(!frame)frame=requestAnimationFrame(draw);};
-  const enter=()=>{if(modeNow!=='room'||!avatarReady||!brainReady)return;keys.clear();destination.copy(avatar.root.position);entryRotation=wrapAngle(avatar.root.rotation.y);avatar.root.rotation.y=entryRotation;brain.quaternion.identity();brainZoom=zoomTarget=1;transitionStart=performance.now();setModeNow('entering');};
-  const leave=()=>{if(modeNow!=='brain')return;stopDrag();leaveBrain.copy(brain.quaternion);leaveZoom=brainZoom;transitionStart=performance.now();setModeNow('leaving');};
-  control.current={enter,leave,sit,stand,move:(x,z)=>{if(modeNow==='room')destination.set(T.MathUtils.clamp(destination.x+x,-2.65,2.65),0,T.MathUtils.clamp(destination.z+z,-1.7,2.5));}};
+  const enter=()=>{if(modeNow!=='room'||!avatarReady||!brainReady)return;keys.clear();destination.copy(avatar.root.position);entryRotation=wrapAngle(avatar.root.rotation.y);avatar.root.rotation.y=entryRotation;orbitYaw=orbitPitch=0;brainZoom=zoomTarget=1;transitionStart=performance.now();setModeNow('entering');};
+  const leave=()=>{if(modeNow!=='brain')return;stopDrag();leaveYaw=wrapAngle(orbitYaw);leavePitch=orbitPitch;leaveZoom=brainZoom;transitionStart=performance.now();setModeNow('leaving');};
+  control.current={enter,leave,sit,stand,move:(x,z)=>{if(modeNow==='room')destination.set(T.MathUtils.clamp(destination.x+x,-4.7,4.7),0,T.MathUtils.clamp(destination.z+z,-4.7,4.7));}};
   let downX=0,downY=0;
   const down=(e:PointerEvent)=>{if(e.button!==0)return;downX=e.clientX;downY=e.clientY;if(modeNow!=='brain'||dragPointer!==null)return;dragPointer=e.pointerId;dragX=e.clientX;dragY=e.clientY;renderer.domElement.setPointerCapture(e.pointerId);el.dataset.dragging='true';};
-  const drag=(e:PointerEvent)=>{if(modeNow!=='brain'||e.pointerId!==dragPointer)return;const sensitivity=Math.PI*2/Math.max(el.clientWidth,320);brain.quaternion.premultiply(dragRotation.setFromAxisAngle(vertical,(e.clientX-dragX)*sensitivity));brain.quaternion.premultiply(dragRotation.setFromAxisAngle(horizontal,(e.clientY-dragY)*sensitivity));brain.quaternion.normalize();dragX=e.clientX;dragY=e.clientY;};
+  const drag=(e:PointerEvent)=>{if(modeNow!=='brain'||e.pointerId!==dragPointer)return;const sensitivity=Math.PI*2/Math.max(el.clientWidth,320);orbitYaw=wrapAngle(orbitYaw-(e.clientX-dragX)*sensitivity);orbitPitch=T.MathUtils.clamp(orbitPitch+(e.clientY-dragY)*sensitivity,-.85,.85);dragX=e.clientX;dragY=e.clientY;};
   const wheel=(e:WheelEvent)=>{if(modeNow!=='brain')return;e.preventDefault();const pixels=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?el.clientHeight:1);zoomTarget=T.MathUtils.clamp(zoomTarget*Math.exp(-T.MathUtils.clamp(pixels,-200,200)*.0015),.75,1.6);};
-  const up=(e:PointerEvent)=>{if(e.pointerId===dragPointer){stopDrag();return;}if(e.button!==0)return;if(modeNow!=='room'||Math.hypot(e.clientX-downX,e.clientY-downY)>8)return;const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(pointer,camera);if(ray.intersectObject(furniture.chair,true).length){sit();return;}if(ray.intersectObject(avatar.root,true).length){enter();return;}const hit=ray.intersectObject(floor)[0];if(hit)destination.set(T.MathUtils.clamp(hit.point.x,-2.65,2.65),0,T.MathUtils.clamp(hit.point.z,-1.7,2.5));};
-  const keydown=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(modeNow==='computer')stand();else leave();return;}if(modeNow!=='room'||!visible||document.activeElement?.tagName==='INPUT')return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d'].includes(e.key)){if(document.activeElement?.tagName==='BUTTON'||document.activeElement?.tagName==='A')return;e.preventDefault();keys.add(e.key);}};
-  const keyup=(e:KeyboardEvent)=>keys.delete(e.key),blur=()=>{keys.clear();stopDrag();};
+  const up=(e:PointerEvent)=>{if(e.pointerId===dragPointer){stopDrag();return;}if(e.button!==0)return;if(modeNow!=='room'||Math.hypot(e.clientX-downX,e.clientY-downY)>8)return;const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(pointer,camera);if(ray.intersectObject(furniture.chair,true).length){sit();return;}if(ray.intersectObject(avatar.root,true).length){enter();return;}const hit=ray.intersectObject(floor)[0];if(hit)destination.set(T.MathUtils.clamp(hit.point.x,-4.7,4.7),0,T.MathUtils.clamp(hit.point.z,-4.7,4.7));};
+  const moveKey=(e:KeyboardEvent)=>({KeyW:'w',KeyA:'a',KeyS:'s',KeyD:'d'} as Record<string,string>)[e.code]??e.key;
+  const keydown=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(modeNow==='computer')stand();else leave();return;}const target=document.activeElement as HTMLElement|null;if(modeNow!=='room'||!visible||target?.matches('input,textarea,select,[contenteditable=true]'))return;const key=moveKey(e);if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d'].includes(key)){e.preventDefault();keys.add(key);}};
+  const keyup=(e:KeyboardEvent)=>keys.delete(moveKey(e)),blur=()=>{keys.clear();stopDrag();};
   renderer.domElement.addEventListener('pointerdown',down);renderer.domElement.addEventListener('pointerup',up);renderer.domElement.addEventListener('pointermove',drag);renderer.domElement.addEventListener('pointercancel',stopDrag);renderer.domElement.addEventListener('lostpointercapture',stopDrag);el.addEventListener('wheel',wheel,{passive:false});window.addEventListener('keydown',keydown);window.addEventListener('keyup',keyup);window.addEventListener('blur',blur);
   const resize=()=>{const w=el.clientWidth,h=el.clientHeight;renderer.setSize(w,h);camera.aspect=w/Math.max(h,1);camera.updateProjectionMatrix();renderer.render(scene,camera);};
   const observer=new ResizeObserver(resize);observer.observe(el);
   const projection=(p:T.Vector3)=>{p.project(camera);return {x:(p.x+1)*el.clientWidth/2,y:(1-p.y)*el.clientHeight/2};};
   const draw=(now:number)=>{
    frame=0;if(disposed||!visible||document.hidden)return;const dt=Math.min((now-last)/1000,.05);last=now;const mobile=el.clientWidth<600;
-   homeCamera.set(10,8,mobile?17:14);homeTarget.set(mobile?.8:0,1.35,0);camera.position.copy(homeCamera);look.copy(homeTarget);
+   homeCamera.set(mobile?20:17,mobile?14.5:12.5,mobile?34:25.5);homeTarget.set(mobile?.7:0,2.1,0);camera.position.copy(homeCamera);look.copy(homeTarget);
    if(modeNow==='room'){
     const dx=Number(keys.has('d')||keys.has('ArrowRight'))-Number(keys.has('a')||keys.has('ArrowLeft')),dz=Number(keys.has('s')||keys.has('ArrowDown'))-Number(keys.has('w')||keys.has('ArrowUp'));
     if(dx||dz)destination.copy(avatar.root.position).add(new T.Vector3(dx,0,dz).normalize().multiplyScalar(dt*3));
-    destination.x=T.MathUtils.clamp(destination.x,-2.65,2.65);destination.z=T.MathUtils.clamp(destination.z,-1.7,2.5);
+    destination.x=T.MathUtils.clamp(destination.x,-4.7,4.7);destination.z=T.MathUtils.clamp(destination.z,-4.7,4.7);
     const delta=destination.clone().sub(avatar.root.position),distance=delta.length();
     if(distance>.015){avatar.root.position.add(delta.normalize().multiplyScalar(Math.min(distance,dt*2.5)));const target=Math.atan2(delta.x,delta.z);avatar.root.rotation.y+=Math.atan2(Math.sin(target-avatar.root.rotation.y),Math.cos(target-avatar.root.rotation.y))*Math.min(1,dt*12);}
     avatar.root.rotation.y=wrapAngle(avatar.root.rotation.y);
@@ -101,9 +101,9 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    const align=smooth(morph/.48),push=smooth((morph-.3)/.7),reveal=smooth((morph-.52)/.40);
    const aligned=new T.Vector3(head.x,3.65,head.z+(mobile?7.6:6.6));
    if(modeNow==='brain')brainZoom=calmRef.current?zoomTarget:T.MathUtils.damp(brainZoom,zoomTarget,12,dt);
-   if(modeNow==='leaving'){const returning=1-smooth(morph);brain.quaternion.slerpQuaternions(leaveBrain,restBrain,returning);brainZoom=T.MathUtils.lerp(leaveZoom,1,returning);}
-   if(modeNow==='room'){brain.quaternion.identity();brainZoom=zoomTarget=1;}
-   const close=new T.Vector3(head.x,3.42,head.z+(mobile?3.65:3.05)/brainZoom);
+   if(modeNow==='leaving'){const returning=1-smooth(morph);orbitYaw=leaveYaw*(1-returning);orbitPitch=leavePitch*(1-returning);brainZoom=T.MathUtils.lerp(leaveZoom,1,returning);}
+   if(modeNow==='room'){orbitYaw=orbitPitch=0;brainZoom=zoomTarget=1;}
+   const close=new T.Vector3(0,.04,(mobile?3.65:3.05)/brainZoom).applyEuler(new T.Euler(-orbitPitch,orbitYaw,0,'YXZ')).add(head);
    if(morph>0){camera.position.lerp(aligned,align).lerp(close,push);look.lerp(head,align);avatar.root.rotation.y=entryRotation*(1-align);}
    brain.position.set(avatar.root.position.x,3.3,avatar.root.position.z);brain.visible=reveal>0;
    brainMaterial.transparent=reveal<1;brainMaterial.opacity=reveal;avatar.setGhost(reveal);avatar.root.visible=true;
@@ -128,7 +128,7 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    avatar.update(now,dt,(modeNow==='room'||modeNow==='sitting'||modeNow==='standing')&&moving,calmRef.current,seated);el.dataset.seated=seated.toFixed(3);el.dataset.gait=String(avatar.root.userData.gait??0);
    const roomFade=smooth((morph-.35)/.5);
    room.visible=roomFade<1;room.traverse(o=>{const m=o as T.Mesh;if(!m.isMesh)return;const material=m.material as T.MeshStandardMaterial;const transparent=roomFade>0;if(material.transparent!==transparent){material.transparent=transparent;material.needsUpdate=true;}material.opacity=1-roomFade;material.depthWrite=roomFade<.05;});
-   el.dataset.brainQuaternion=brain.quaternion.toArray().join(',');el.dataset.brainZoom=brainZoom.toFixed(3);el.dataset.avatarYaw=avatar.root.rotation.y.toFixed(5);
+   el.dataset.orbit=`${orbitYaw.toFixed(4)},${orbitPitch.toFixed(4)}`;el.dataset.cameraPosition=camera.position.toArray().join(',');el.dataset.brainOrientation='front-positive-z';el.dataset.roomSize='12,6.6,12';el.dataset.brainQuaternion=brain.quaternion.toArray().join(',');el.dataset.brainZoom=brainZoom.toFixed(3);el.dataset.avatarYaw=avatar.root.rotation.y.toFixed(5);
    el.dataset.morph=morph.toFixed(3);el.dataset.reveal=reveal.toFixed(3);el.dataset.cameraDistance=camera.position.distanceTo(head).toFixed(3);
    camera.lookAt(look);camera.updateMatrixWorld();scene.updateMatrixWorld(true);
    const cp=projection(furniture.seat.clone().add(new T.Vector3(0,2.5,0)));if(chairHint.current){chairHint.current.style.left=`${cp.x}px`;chairHint.current.style.top=`${cp.y}px`;}

@@ -1,0 +1,30 @@
+{
+  "source": "Existing Unity TerritoryPreview character models, reused without redesign",
+  "optimization": "@gltf-transform/cli@4.5.1 optimize --compress draco --texture-compress webp --texture-size 512",
+  "files": [
+    {
+      "file": "gahyeon.glb",
+      "source": "/Users/ze/work/rehate/unity/territory-preview/Assets/Resources/Characters/gahyeon.glb",
+      "sourceSha256": "0ec731c810ba9b94f384be6e8b8456dde48da497ba2f92a48dd03a1b849358a3",
+      "sha256": "aab9af68ef4dfc1154f03c038ac5e6838faa14edc09c2208f6f1a6ca9178b6de"
+    },
+    {
+      "file": "jaejae.glb",
+      "source": "/Users/ze/work/rehate/unity/territory-preview/Assets/Resources/Characters/jaejae.glb",
+      "sourceSha256": "cfa77d07146aade375919fafc253c6962956f8f5466fbe55a6cd86ac49c0304c",
+      "sha256": "93eb9a26940b3653c13142f8a48642faf674b8ccd7e20778a0534f5ef26ceb2b"
+    },
+    {
+      "file": "pirate.glb",
+      "source": "/Users/ze/work/rehate/unity/territory-preview/Assets/Resources/Characters/pirate.glb",
+      "sourceSha256": "20b8ac485b62307300f83e6a45c389a324813ba815e258ef61449875cc06caf5",
+      "sha256": "a24c40d8db849611f88fc21d45a763dcd1c7cdc1f24600b2aa879c1fa9e2b72c"
+    },
+    {
+      "file": "rogue.glb",
+      "source": "/Users/ze/work/rehate/unity/territory-preview/Assets/Resources/Characters/rogue.glb",
+      "sourceSha256": "0f87988543a86631f9bd942a384280b996efaa74e4d4914dcab0df4fc385a494",
+      "sha256": "e9fd28190ebfacde1ac5f9075baa436cbf83e2a7245989a344f2324557a56dda"
+    }
+  ]
+}

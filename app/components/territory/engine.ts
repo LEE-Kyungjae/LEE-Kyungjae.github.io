@@ -9,19 +9,27 @@ export type Point = { x: number; y: number };
 export type Player = Point & { id: number; team: number; angle: number; trail: number[]; trace: Point[]; cooldown: number; cuts: number; captures: number; gauge: number; effects: Record<'loop' | 'speed' | 'catch', number>; botPath: Point[]; botRound: number };
 export type Item = Point & { id: number; type: ItemType };
 export type Trap = Point & { team: number; radius: number; remaining: number; caught: number[] };
-export type Game = { cells: number[]; revision: number; players: Player[]; remaining: number; mode: 'ready' | 'playing' | 'paused' | 'ended'; bot: boolean; itemsEnabled: boolean; items: Item[]; traps: Trap[]; spawnIn: number; nextItemId: number; randomSeed: number; event: { kind: 'capture' | 'cut' | 'item'; player: number; amount: number; ttl: number; item?: ItemType } | null };
+export type Game = { cells: number[]; playableCells:number; rectangular:boolean; revision: number; players: Player[]; remaining: number; mode: 'ready' | 'playing' | 'paused' | 'ended'; bot: boolean; itemsEnabled: boolean; items: Item[]; traps: Trap[]; spawnIn: number; nextItemId: number; randomSeed: number; event: { kind: 'capture' | 'cut' | 'item'; player: number; amount: number; ttl: number; item?: ItemType } | null };
 export const cellAt = (x: number, y: number) => Math.floor(y) * WIDTH + Math.floor(x);
-export function createGame(bot = true, itemsEnabled = true, seed = 14287): Game {
+// Ported from Unity TerritoryMatch.Contains, Shore, CrossedCells and UseSkill.
+export function contains(x:number,y:number,rectangular=false){
+ if(x<.1||x>=95.9||y<.1||y>=63.9)return false;if(rectangular)return true;
+ const u=(x-48.5)/46.5;if(Math.abs(u)>=1)return false;
+ const center=32.5+2*Math.cos(u*Math.PI),half=Math.sqrt(1-u*u)*(24-7*Math.cos(u*Math.PI*2));
+ return Math.abs(y-center)<half;
+}
+const playable=(g:Game,x:number,y:number)=>contains(x,y,g.rectangular)&&g.cells[cellAt(x,y)]>=0;
+export function createGame(bot = true, itemsEnabled = true, seed = 14287, rectangular=false): Game {
   const cells = Array<number>(WIDTH * HEIGHT).fill(0);
   const players: Player[] = [[17,27,1],[79,27,2],[17,37,1],[79,37,2]].map(([x,y,team],i)=>({id:i+1,team,x:x+.5,y:y+.5,angle:team===1?0:Math.PI,trail:[],trace:[],cooldown:0,cuts:0,captures:0,gauge:0,effects:{loop:0,speed:0,catch:0},botPath:[],botRound:0}));
-  for(let y=0;y<HEIGHT;y++)for(let x=0;x<WIDTH;x++)for(const [cx,team] of [[17.5,1],[79.5,2]]) if(Math.hypot(x+.5-cx,y+.5-32.5)<10)cells[y*WIDTH+x]=team;
-  const g: Game={cells,revision:0,players,remaining:DURATION,mode:'ready',bot,itemsEnabled,items:[],traps:[],spawnIn:8,nextItemId:1,randomSeed:seed>>>0,event:null};
+  for(let y=0;y<HEIGHT;y++)for(let x=0;x<WIDTH;x++){if(!contains(x+.5,y+.5,rectangular)){cells[y*WIDTH+x]=-1;continue;}for(const [cx,team] of [[17.5,1],[79.5,2]])if(Math.hypot(x+.5-cx,y+.5-32.5)<10)cells[y*WIDTH+x]=team;}
+  const g: Game={cells,playableCells:cells.filter(v=>v>=0).length,rectangular,revision:0,players,remaining:DURATION,mode:'ready',bot,itemsEnabled,items:[],traps:[],spawnIn:8,nextItemId:1,randomSeed:seed>>>0,event:null};
   if(itemsEnabled){spawnItem(g);spawnItem(g);spawnItem(g);}return g;
 }
 export function areas(g: Game) { return [1,2].map(team=>g.cells.reduce((n,v)=>n+Number(v===team),0)); }
 export function claim(g: Game,p: Player,indices: Iterable<number>) {
   let neutral=0,enemy=0;
-  for(const i of indices){if(i<0||i>=g.cells.length||g.cells[i]===p.team)continue;if(g.cells[i]===0)neutral++;else enemy++;g.cells[i]=p.team;}
+  for(const i of indices){if(i<0||i>=g.cells.length||g.cells[i]<0||g.cells[i]===p.team)continue;if(g.cells[i]===0)neutral++;else enemy++;g.cells[i]=p.team;}
   if(neutral+enemy){p.gauge=Math.min(100,p.gauge+(neutral+enemy*2)*.08);g.revision++;}
   return neutral+enemy;
 }
@@ -48,7 +56,7 @@ export function spawnItem(g:Game){
   if(g.items.length>=4)return;
   for(let attempt=0;attempt<50;attempt++){
     const x=8+random(g)*(WIDTH-16),y=8+random(g)*(HEIGHT-16);
-    if(g.cells[cellAt(x,y)]!==0||g.players.some(p=>Math.hypot(p.x-x,p.y-y)<7)||g.items.some(i=>Math.hypot(i.x-x,i.y-y)<8))continue;
+    if(!playable(g,x,y)||g.cells[cellAt(x,y)]!==0||g.players.some(p=>Math.hypot(p.x-x,p.y-y)<7)||g.items.some(i=>Math.hypot(i.x-x,i.y-y)<8))continue;
     g.items.push({id:g.nextItemId++,x,y,type:ITEM_TYPES[Math.floor(random(g)*ITEM_TYPES.length)]});return;
   }
 }
@@ -66,7 +74,7 @@ function steerBot(g:Game,p:Player){
   if(!p.botPath.length){
     const cx=p.team===1?17.5:79.5,cy=p.id<=2?26.5:38.5,dir=p.team===1?1:-1,side=p.id<=2?-1:1;
     const depth=Math.min(49,14+(p.botRound++%7)*5);
-    p.botPath=[{x:cx,y:cy},...Array.from({length:24},(_,i)=>{const angle=(i+1)/24*Math.PI*2;return{x:cx+dir*depth*(1-Math.cos(angle))/2,y:cy+side*9*Math.sin(angle)};})];
+    p.botPath=[{x:cx,y:cy},...Array.from({length:24},(_,i)=>{const angle=(i+1)/24*Math.PI*2;return{x:cx+dir*depth*(1-Math.cos(angle))/2,y:cy+side*7*Math.sin(angle)};})];
   }
   while(p.botPath.length&&Math.hypot(p.botPath[0].x-p.x,p.botPath[0].y-p.y)<.5)p.botPath.shift();
   if(p.botPath.length)p.angle=Math.atan2(p.botPath[0].y-p.y,p.botPath[0].x-p.x);
@@ -78,7 +86,7 @@ function constrainTraps(g:Game,p:Player,next:Point):Point{
   return{x:p.x+(next.x-p.x)*lo,y:p.y+(next.y-p.y)*lo};
 }
 export function step(g:Game,seconds:number){
-  if(g.mode!=='playing'||seconds<=0)return;
+  if(g.mode!=='playing'||seconds<=0||!Number.isFinite(seconds))return;
   const dt=Math.min(seconds,g.remaining),count=Math.max(1,Math.ceil(dt*60));
   for(let s=0;s<count&&g.mode==='playing';s++){
     const d=dt/count;
@@ -87,16 +95,15 @@ export function step(g:Game,seconds:number){
     g.traps=g.traps.filter(t=>t.remaining>0);
     const destinations=g.players.map(p=>{
       if(p.cooldown>0){p.cooldown=Math.max(0,p.cooldown-d);return{x:p.x,y:p.y};}
-      const speed=p.effects.speed>0?16:10;
+      const speed=p.effects.speed>0?24:16;
       const x=p.x+Math.cos(p.angle)*speed*d,y=p.y+Math.sin(p.angle)*speed*d;
-      if(x<.1||x>WIDTH-.1)p.angle=Math.PI-p.angle;if(y<.1||y>HEIGHT-.1)p.angle=-p.angle;
-      return constrainTraps(g,p,{x:Math.max(.1,Math.min(WIDTH-.1,x)),y:Math.max(.1,Math.min(HEIGHT-.1,y))});
+      return constrainTraps(g,p,shore(g,p,{x,y}));
     });
     const cut=new Set<number>();
     g.players.forEach((attacker,i)=>{
-      if(attacker.cooldown>0)return;const c=cellAt(destinations[i].x,destinations[i].y);
+      if(attacker.cooldown>0)return;const crossed=crossedCells(attacker.x,attacker.y,destinations[i].x,destinations[i].y);
       g.players.forEach((victim,j)=>{if(victim.team===attacker.team||victim.cooldown>0)return;
-        if(victim.trail.includes(c)||(attacker.effects.catch>0&&Math.hypot(destinations[i].x-destinations[j].x,destinations[i].y-destinations[j].y)<3.2)){
+        if(victim.trail.some(c=>crossed.has(c))||(attacker.effects.catch>0&&Math.hypot(destinations[i].x-destinations[j].x,destinations[i].y-destinations[j].y)<3.2)){
           if(!cut.has(victim.id))attacker.cuts++;cut.add(victim.id);
         }
       });
@@ -107,7 +114,7 @@ export function step(g:Game,seconds:number){
       const old=cellAt(p.x,p.y),prior={x:p.x,y:p.y};[p.x,p.y]=[destinations[i].x,destinations[i].y];const c=cellAt(p.x,p.y);
       const loop=p.effects.loop>0&&old!==c&&p.trail.indexOf(c)>=0&&p.trail.indexOf(c)<p.trail.length-3;
       if(old!==c&&old%WIDTH!==c%WIDTH&&Math.floor(old/WIDTH)!==Math.floor(c/WIDTH)){
-        const bridge=Math.floor(p.y)*WIDTH+old%WIDTH;if(g.cells[bridge]!==p.team&&!p.trail.includes(bridge))p.trail.push(bridge);
+        const bridge=Math.floor(p.y)*WIDTH+old%WIDTH;if(g.cells[bridge]>=0&&g.cells[bridge]!==p.team&&!p.trail.includes(bridge))p.trail.push(bridge);
       }
       if(g.cells[c]===p.team||loop)capture(g,p,loop);
       else{if(!p.trace.length)p.trace.push(prior);const last=p.trace[p.trace.length-1];if(Math.hypot(last.x-p.x,last.y-p.y)>.3)p.trace.push({x:p.x,y:p.y});if(!p.trail.includes(c))p.trail.push(c);}
@@ -118,4 +125,17 @@ export function step(g:Game,seconds:number){
     if(g.itemsEnabled){g.spawnIn-=d;if(g.spawnIn<=0){spawnItem(g);g.spawnIn=8;}}
   }
   g.remaining=Math.max(0,g.remaining-dt);if(g.remaining===0)g.mode='ended';
+}
+
+export function useSkill(g:Game){const p=g.players[0];if(g.mode!=='playing'||p.cooldown>0||p.gauge<100)return false;collectItem(g,p,{id:-1,type:'burst',x:p.x,y:p.y});p.gauge=0;return true;}
+function shore(g:Game,p:Player,next:Point):Point{
+ if(playable(g,next.x,next.y))return next;let lo=0,hi=1;
+ for(let n=0;n<16;n++){const t=(lo+hi)/2;if(playable(g,p.x+(next.x-p.x)*t,p.y+(next.y-p.y)*t))lo=t;else hi=t;}
+ const px=playable(g,next.x,p.y),py=playable(g,p.x,next.y);if(!px)p.angle=Math.PI-p.angle;if(!py)p.angle=-p.angle;if(px&&py)p.angle+=Math.PI;
+ return{x:p.x+(next.x-p.x)*lo*.98,y:p.y+(next.y-p.y)*lo*.98};
+}
+export function crossedCells(x:number,y:number,tx:number,ty:number){
+ let cx=Math.floor(x),cy=Math.floor(y);const ex=Math.floor(tx),ey=Math.floor(ty),dx=tx-x,dy=ty-y,sx=Math.sign(dx),sy=Math.sign(dy),stepX=dx===0?Infinity:1/Math.abs(dx),stepY=dy===0?Infinity:1/Math.abs(dy);
+ let nx=dx===0?Infinity:((sx>0?cx+1:cx)-x)/dx,ny=dy===0?Infinity:((sy>0?cy+1:cy)-y)/dy;const result=new Set([cy*WIDTH+cx]);
+ while(cx!==ex||cy!==ey){if(cx===ex)nx=Infinity;if(cy===ey)ny=Infinity;if(Math.abs(nx-ny)<1e-9){result.add(cy*WIDTH+cx+sx);result.add((cy+sy)*WIDTH+cx);cx+=sx;cy+=sy;nx+=stepX;ny+=stepY;}else if(nx<ny){cx+=sx;nx+=stepX;}else{cy+=sy;ny+=stepY;}result.add(cy*WIDTH+cx);}return result;
 }

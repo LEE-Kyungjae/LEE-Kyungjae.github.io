@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-10-27",
+  "generator": "image_gen",
+  "transparentBackground": true,
+  "frames": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "selectedBy": "agent",
+  "selectionReason": "Same hand holds and waves the handkerchief in all four frames. Transparent alpha verified. Fixed bear silhouette and matching reference face.",
+  "reference": "https://nagano-market.jp/products/4582662958401",
+  "source": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-4f03b9ae-34bf-4965-bb16-f97cc9d208e5.png",
+  "file": "wave.png",
+  "prompt": "Generate an animation sheet of NAGANO BEAR (농담곰), matching this reference head-to-body ratio and face precisely, flat clean Nagano manga line art with opaque white fill and near-black outlines. TRUE alpha-transparent background. EXACTLY FOUR frames in a 2-column by 2-row grid. Fixed identical registration of head and feet. Head huge wide rounded square, tiny ears, widely spaced black circular eyes, triangle nose joined to W mouth, short body and stubby feet. Same LEFT HAND on VIEWER RIGHT holds a white handkerchief in all frames. Frame1 cloth up-right, frame2 billows right, frame3 curls inward, frame4 trailing right. No eyebrows, blush, clothes, neck, generic teddy snout, background, checkerboard, stars, text or shadows. Seamless four-frame farewell wave cycle.",
+  "rejectedCandidate": "exec-00d7da4b-b65f-4149-9092-6514a77f9cef.png: eight-frame candidate swaps hands, unsuitable as animation."
+}

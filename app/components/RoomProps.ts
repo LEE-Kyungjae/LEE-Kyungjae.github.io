@@ -11,7 +11,7 @@ export function createRoomProps(){
  const black=new T.MeshStandardMaterial({color:'#171b1c',roughness:.94});
  const add=(parent:T.Group,geometry:T.BufferGeometry,material:T.MeshStandardMaterial,p:number[],scale?:number[])=>{const mesh=new T.Mesh(geometry,material);mesh.position.set(...p as [number,number,number]);if(scale)mesh.scale.set(...scale as [number,number,number]);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;};
  const box=(parent:T.Group,w:number,h:number,d:number,mat:T.MeshStandardMaterial,p:number[],r=.035)=>add(parent,new RoundedBoxGeometry(w,h,d,3,r),mat,p);
- const desk=new T.Group();desk.name='computer-desk';desk.position.set(2.45,0,-2.32);desk.rotation.y=.18;group.add(desk);
+ const desk=new T.Group();desk.name='computer-desk';desk.position.set(3.1,0,-4.75);desk.rotation.y=.18;group.add(desk);
  box(desk,2.85,.14,1.12,wood,[0,1.12,0],.06);
  for(const x of [-1.22,1.22])for(const z of [-.41,.41])box(desk,.095,1.05,.095,wood,[x,.53,z],.02);
  // Monitor on a weighted stand, keyboard, mouse and a separate small tower.
