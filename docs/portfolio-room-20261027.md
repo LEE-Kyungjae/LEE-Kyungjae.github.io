@@ -96,3 +96,16 @@ User explicitly requested deployment of these changes and preceding room refinem
 Final integration verification: 10 more desktop/mobile checks passed for player-created closed-loop capture, joystick steering/visibility, Escape cleanup and subsequent brain drag/zoom. Foreground avatar fading during monitor approach is included. Mobile farewell star shifted away from the fixed motion button; chair action receives explicit high-contrast text color. No errors in the final gameplay/navigation run.
 
 User explicitly requested new intro copy conveying planning, design, implementation and operation. Replaced the intro card's Java/Spring-only description with `서비스를 기획하고 설계하며, 직접 만들고 운영합니다.` Mobile grid constrains the description so the handwritten name keeps its width. This copy change is within the user's explicit writing request; no metrics or results invented.
+
+## Latest navigation decision — 2026-10-27 (supersedes earlier card-scroll flow)
+- Brain project selection now pushes the camera toward the selected brain anchor, fades out, and opens `/projects/{id}/` directly. Existing artwork remains on each project page.
+- Remove the intermediate selected card, TOP and the brain's workroom button. A click outside the brain returns to the room; orbit drags must not trigger exit. Escape remains available.
+- Show W above A/S/D in a raised keyboard arrangement; touch-hold and physical keys use the same movement state.
+- Project pages benchmark zaeze.com's `/services/gahyeon/`: a scroll-pinned visual opening followed by specific feature explanations. Existing illustration layers and floating island assets are retained.
+- Read-only repository analysis: Palamedes 9c1e292f7c3f1a04bd63c697342b00fa92a4ff9b; Gahyeon 0edd9c93d13f654b3b80f347ed6bdfae287c677c. Uncommitted research work in both repositories was not edited or promoted as shipped functionality.
+- Case-study stages distinguish inputs, decisions and outputs. The selectable exception examples are presentation simulations, not live agent/server runs. Product scope and unverified areas are stated in each overview.
+- Archify source HTML and its provenance receipts remain intact. The same-origin embed receives a presentation-only dashed-flow stylesheet on load, honoring reduced-motion and the diagram's pause state.
+- First correction release 730dc182f3a54ec83a272a69c9e0183c57e88a66 deployed successfully in Actions run 40496048672. Navigation/case-study follow-up is a separate change.
+- Re-ran Gahyeon `verify_core_platform_boundaries.py`: two existing violations remain (SttLearningConversation → AssistantProperties, PersonalizedNewsCollector → BotInitializerRunner). The case study explicitly retains this limitation; no code in Gahyeon was changed.
+- User correction: project entry must target the brain's exact center, not a project connector anchor. All project selections now share `brain.getWorldPosition()` as the look/dolly target; the first part of the transition centers the view before the forward push.
+- Follow-up local verification: production build passed; 35 browser assertions passed at 1440×960 and 390×844. Brain-center targeting is checked from actual transition-frame samples for both Palamedes and Gahyeon. Case-study and diagram screenshots visually inspected. No browser errors.
