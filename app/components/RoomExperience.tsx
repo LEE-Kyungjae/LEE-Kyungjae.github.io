@@ -7,11 +7,11 @@ import SkyFarewell from './SkyFarewell';
 import {createRoomProps} from './RoomProps';
 import {TerritoryPrototype} from './territory/TerritoryPrototype';
 
-type Mode='room'|'entering'|'brain'|'leaving'|'sitting'|'computer'|'standing';
+type Mode='room'|'entering'|'brain'|'leaving'|'sitting'|'computer'|'standing'|'diving';
 export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(index:number)=>void}){
  const host=useRef<HTMLDivElement>(null),hint=useRef<HTMLButtonElement>(null),chairHint=useRef<HTMLButtonElement>(null);
  const labels=useRef<(HTMLButtonElement|null)[]>([]),paths=useRef<(SVGPathElement|null)[]>([]);
- const control=useRef<{enter:()=>void;leave:()=>void;sit:()=>void;stand:()=>void;move:(x:number,z:number)=>void}>({enter:()=>{},leave:()=>{},sit:()=>{},stand:()=>{},move:()=>{}});
+ const control=useRef<{enter:()=>void;leave:()=>void;sit:()=>void;stand:()=>void;move:(x:number,z:number)=>void;select:(i:number)=>void;press:(key:string,down:boolean)=>void}>({enter:()=>{},leave:()=>{},sit:()=>{},stand:()=>{},move:()=>{},select:()=>{},press:()=>{}});
  const calmRef=useRef(calm);calmRef.current=calm;
  const exitComputer=useCallback(()=>control.current.stand(),[]);
  const [mode,setMode]=useState<Mode>('room'),[status,setStatus]=useState('loading');
@@ -55,20 +55,21 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
   const setModeNow=(next:Mode)=>{modeNow=next;setMode(next);el.dataset.mode=next;};
   const syncHash=()=>{if(['palamedes','gahyeon','backend','systems','experience','brain'].includes(location.hash.slice(1)))setModeNow('brain');};syncHash();window.addEventListener('hashchange',syncHash);
   const wrapAngle=(angle:number)=>Math.atan2(Math.sin(angle),Math.cos(angle));
-  let orbitYaw=0,orbitPitch=0,leaveYaw=0,leavePitch=0;
+  let orbitYaw=0,orbitPitch=0,leaveYaw=0,leavePitch=0,diveIndex=0,navigated=false;const diveCamera=new T.Vector3(),diveLook=new T.Vector3(),diveTarget=new T.Vector3();
   let entryRotation=.24,brainZoom=1,zoomTarget=1,leaveZoom=1,dragPointer:number|null=null,dragX=0,dragY=0;
   const stopDrag=()=>{if(dragPointer!==null&&renderer.domElement.hasPointerCapture(dragPointer))renderer.domElement.releasePointerCapture(dragPointer);dragPointer=null;delete el.dataset.dragging;};
   const sittingStart=new T.Vector3(),standingEnd=new T.Vector3();let sittingYaw=0;
   const sit=()=>{if(modeNow!=='room'||!avatarReady)return;keys.clear();sittingStart.copy(avatar.root.position);standingEnd.copy(furniture.approach);sittingYaw=wrapAngle(avatar.root.rotation.y);transitionStart=performance.now();setModeNow('sitting');};
   const stand=()=>{if(modeNow!=='computer')return;transitionStart=performance.now();setModeNow('standing');if(!frame)frame=requestAnimationFrame(draw);};
   const enter=()=>{if(modeNow!=='room'||!avatarReady||!brainReady)return;keys.clear();destination.copy(avatar.root.position);entryRotation=wrapAngle(avatar.root.rotation.y);avatar.root.rotation.y=entryRotation;orbitYaw=orbitPitch=0;brainZoom=zoomTarget=1;transitionStart=performance.now();setModeNow('entering');};
-  const leave=()=>{if(modeNow!=='brain')return;stopDrag();leaveYaw=wrapAngle(orbitYaw);leavePitch=orbitPitch;leaveZoom=brainZoom;transitionStart=performance.now();setModeNow('leaving');};
-  control.current={enter,leave,sit,stand,move:(x,z)=>{if(modeNow==='room')destination.set(T.MathUtils.clamp(destination.x+x,-4.7,4.7),0,T.MathUtils.clamp(destination.z+z,-4.7,4.7));}};
+  const leave=()=>{if(modeNow!=='brain')return;history.replaceState(null,'',location.pathname);stopDrag();leaveYaw=wrapAngle(orbitYaw);leavePitch=orbitPitch;leaveZoom=brainZoom;transitionStart=performance.now();setModeNow('leaving');};
+  const select=(index:number)=>{if(modeNow!=='brain')return;stopDrag();diveIndex=index;diveCamera.copy(camera.position);diveLook.copy(look);brain.getWorldPosition(diveTarget);transitionStart=performance.now();setModeNow('diving');};
+  control.current={enter,leave,sit,stand,select,press:(key,down)=>{if(modeNow!=='room')return;if(down)keys.add(key);else keys.delete(key);},move:(x,z)=>{if(modeNow==='room')destination.set(T.MathUtils.clamp(destination.x+x,-4.7,4.7),0,T.MathUtils.clamp(destination.z+z,-4.7,4.7));}};
   let downX=0,downY=0;
   const down=(e:PointerEvent)=>{if(e.button!==0)return;downX=e.clientX;downY=e.clientY;if(modeNow!=='brain'||dragPointer!==null)return;dragPointer=e.pointerId;dragX=e.clientX;dragY=e.clientY;renderer.domElement.setPointerCapture(e.pointerId);el.dataset.dragging='true';};
   const drag=(e:PointerEvent)=>{if(modeNow!=='brain'||e.pointerId!==dragPointer)return;const sensitivity=Math.PI*2/Math.max(el.clientWidth,320);orbitYaw=wrapAngle(orbitYaw-(e.clientX-dragX)*sensitivity);orbitPitch=T.MathUtils.clamp(orbitPitch+(e.clientY-dragY)*sensitivity,-.85,.85);dragX=e.clientX;dragY=e.clientY;};
   const wheel=(e:WheelEvent)=>{if(modeNow!=='brain')return;e.preventDefault();const pixels=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?el.clientHeight:1);zoomTarget=T.MathUtils.clamp(zoomTarget*Math.exp(-T.MathUtils.clamp(pixels,-200,200)*.0015),.75,1.6);};
-  const up=(e:PointerEvent)=>{if(e.pointerId===dragPointer){stopDrag();return;}if(e.button!==0)return;if(modeNow!=='room'||Math.hypot(e.clientX-downX,e.clientY-downY)>8)return;const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(pointer,camera);if(ray.intersectObject(furniture.chair,true).length){sit();return;}if(ray.intersectObject(avatar.root,true).length){enter();return;}const hit=ray.intersectObject(floor)[0];if(hit)destination.set(T.MathUtils.clamp(hit.point.x,-4.7,4.7),0,T.MathUtils.clamp(hit.point.z,-4.7,4.7));};
+  const up=(e:PointerEvent)=>{if(e.pointerId===dragPointer){const clicked=Math.hypot(e.clientX-downX,e.clientY-downY)<8;stopDrag();if(clicked&&modeNow==='brain'){const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(pointer,camera);if(!ray.intersectObject(brain,true).some(hit=>hit.object.visible))leave();}return;}if(e.button!==0)return;if(modeNow!=='room'||Math.hypot(e.clientX-downX,e.clientY-downY)>8)return;const r=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(pointer,camera);if(ray.intersectObject(furniture.chair,true).length){sit();return;}if(ray.intersectObject(avatar.root,true).length){enter();return;}const hit=ray.intersectObject(floor)[0];if(hit)destination.set(T.MathUtils.clamp(hit.point.x,-4.7,4.7),0,T.MathUtils.clamp(hit.point.z,-4.7,4.7));};
   const moveKey=(e:KeyboardEvent)=>({KeyW:'w',KeyA:'a',KeyS:'s',KeyD:'d'} as Record<string,string>)[e.code]??e.key;
   const keydown=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(modeNow==='computer')stand();else leave();return;}const target=document.activeElement as HTMLElement|null;if(modeNow!=='room'||!visible||target?.matches('input,textarea,select,[contenteditable=true]'))return;const key=moveKey(e);if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d'].includes(key)){e.preventDefault();keys.add(key);}};
   const keyup=(e:KeyboardEvent)=>keys.delete(moveKey(e)),blur=()=>{keys.clear();stopDrag();};
@@ -91,11 +92,11 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    }
    const head=new T.Vector3(avatar.root.position.x,3.38,avatar.root.position.z);
    // Approach the forehead first; reveal the brain only after the close approach.
-   let morph=modeNow==='brain'?1:0;
+   let morph=modeNow==='brain'||modeNow==='diving'?1:0;
    if(modeNow==='entering'||modeNow==='leaving'){
     const p=calmRef.current?1:Math.min(1,(now-transitionStart)/2200);
     morph=modeNow==='entering'?p:1-p;
-    if(p===1)setModeNow(modeNow==='entering'?'brain':'room');
+    if(p===1){if(modeNow==='entering')history.replaceState(null,'',`${location.pathname}#brain`);setModeNow(modeNow==='entering'?'brain':'room');}
    }
    const smooth=(v:number)=>{const t=T.MathUtils.clamp(v,0,1);return t*t*(3-2*t);};
    const align=smooth(morph/.48),push=smooth((morph-.3)/.7),reveal=smooth((morph-.52)/.40);
@@ -105,6 +106,7 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    if(modeNow==='room'){orbitYaw=orbitPitch=0;brainZoom=zoomTarget=1;}
    const close=new T.Vector3(0,.04,(mobile?3.65:3.05)/brainZoom).applyEuler(new T.Euler(-orbitPitch,orbitYaw,0,'YXZ')).add(head);
    if(morph>0){camera.position.lerp(aligned,align).lerp(close,push);look.lerp(head,align);avatar.root.rotation.y=entryRotation*(1-align);}
+   if(modeNow==='diving'){const t=Math.min(1,(now-transitionStart)/(calmRef.current?180:1450));camera.position.lerpVectors(diveCamera,diveTarget,smooth((t-.25)/.75)*.97);look.lerpVectors(diveLook,diveTarget,smooth(t/.25));el.dataset.diveTarget=diveTarget.toArray().join(',');el.dataset.diveAim=look.toArray().join(',');el.dataset.brainCenter=brain.getWorldPosition(new T.Vector3()).toArray().join(',');el.parentElement?.style.setProperty('--project-fade',String(smooth((t-.32)/.58)));el.dataset.dive=t.toFixed(3);if(t===1&&!navigated){navigated=true;onSelect(diveIndex);}}
    brain.position.set(avatar.root.position.x,3.3,avatar.root.position.z);brain.visible=reveal>0;
    brainMaterial.transparent=reveal<1;brainMaterial.opacity=reveal;avatar.setGhost(reveal);avatar.root.visible=true;
    let seated=0;
@@ -133,27 +135,28 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    camera.lookAt(look);camera.updateMatrixWorld();scene.updateMatrixWorld(true);
    const cp=projection(furniture.seat.clone().add(new T.Vector3(0,2.5,0)));if(chairHint.current){chairHint.current.style.left=`${cp.x}px`;chairHint.current.style.top=`${cp.y}px`;}
    const hp=projection(new T.Vector3(avatar.root.position.x,4.18,avatar.root.position.z));if(hint.current){hint.current.style.left=`${hp.x}px`;hint.current.style.top=`${hp.y}px`;}
-   el.dataset.position=`${avatar.root.position.x.toFixed(3)},${avatar.root.position.z.toFixed(3)}`;
+   el.dataset.position=`${avatar.root.position.x.toFixed(3)},${avatar.root.position.z.toFixed(3)}`;el.parentElement?.querySelectorAll<HTMLButtonElement>('[data-move-key]').forEach(button=>button.dataset.pressed=String(keys.has(button.dataset.moveKey!)));
    if(modeNow==='brain')for(let i=0;i<3;i++){
     const pt=projection(brain.localToWorld(new T.Vector3([-.38,.4,-.2][i],[.25,-.03,-.35][i],.3)));const x=el.clientWidth*[.16,.84,.20][i],y=el.clientHeight*(mobile?[.20,.22,.82]:[.20,.50,.80])[i];const b=labels.current[i];if(b){b.style.left=`${x}px`;b.style.top=`${y}px`;}paths.current[i]?.setAttribute('d',`M${pt.x} ${pt.y} L${x} ${y} H${x+(i===1?-35:35)}`);
    }
    renderer.render(scene,camera);if(modeNow!=='computer')frame=requestAnimationFrame(draw);
   };
+  const restore=(e:PageTransitionEvent)=>{if(!e.persisted)return;navigated=false;el.parentElement?.style.setProperty('--project-fade','0');setModeNow('brain');};window.addEventListener('pageshow',restore);
   const resume=()=>{if(!frame&&visible&&!document.hidden)frame=requestAnimationFrame(draw);};
   const visibility=new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(!visible){keys.clear();cancelAnimationFrame(frame);frame=0;}else resume();});visibility.observe(el);document.addEventListener('visibilitychange',resume);resize();resume();
-  return()=>{stopDrag();el.removeEventListener('wheel',wheel);renderer.domElement.removeEventListener('pointerdown',down);renderer.domElement.removeEventListener('pointerup',up);renderer.domElement.removeEventListener('pointermove',drag);renderer.domElement.removeEventListener('pointercancel',stopDrag);renderer.domElement.removeEventListener('lostpointercapture',stopDrag);disposed=true;window.removeEventListener('hashchange',syncHash);cancelAnimationFrame(frame);observer.disconnect();visibility.disconnect();document.removeEventListener('visibilitychange',resume);window.removeEventListener('keydown',keydown);window.removeEventListener('keyup',keyup);window.removeEventListener('blur',blur);avatar.dispose();scene.traverse(o=>{const m=o as T.Mesh;if(m.isMesh){m.geometry.dispose();(Array.isArray(m.material)?m.material:[m.material]).forEach(x=>x.dispose());}});draco?.dispose();renderer.dispose();renderer.domElement.remove();};
+  return()=>{window.removeEventListener('pageshow',restore);stopDrag();el.removeEventListener('wheel',wheel);renderer.domElement.removeEventListener('pointerdown',down);renderer.domElement.removeEventListener('pointerup',up);renderer.domElement.removeEventListener('pointermove',drag);renderer.domElement.removeEventListener('pointercancel',stopDrag);renderer.domElement.removeEventListener('lostpointercapture',stopDrag);disposed=true;window.removeEventListener('hashchange',syncHash);cancelAnimationFrame(frame);observer.disconnect();visibility.disconnect();document.removeEventListener('visibilitychange',resume);window.removeEventListener('keydown',keydown);window.removeEventListener('keyup',keyup);window.removeEventListener('blur',blur);avatar.dispose();scene.traverse(o=>{const m=o as T.Mesh;if(m.isMesh){m.geometry.dispose();(Array.isArray(m.material)?m.material:[m.material]).forEach(x=>x.dispose());}});draco?.dispose();renderer.dispose();renderer.domElement.remove();};
  },[]);
  return <section className={`room-experience mode-${mode}`} aria-label="이경재의 작업실">
-  <SpaceParticles brain={['entering','brain','leaving'].includes(mode)} calm={calm}/>
+  <SpaceParticles brain={['entering','brain','leaving','diving'].includes(mode)} calm={calm}/>
   {mode==='room'&&<SkyFarewell enabled calm={calm}/>}
   <div className="room-canvas" ref={host} data-mode={mode} data-status={status}>
    {mode==='room'&&status==='ready'&&<button className="room-clickme" ref={hint} onClick={()=>control.current.enter()} aria-label="캐릭터의 뇌 살펴보기"><img src="/assets/projects/room-20261027/clickme.webp" alt="Clickme" draggable={false}/></button>}
    {mode==='room'&&status==='ready'&&<button className="room-chair-action" ref={chairHint} onClick={()=>control.current.sit()}>앉기</button>}
-   {mode==='brain'&&<div className="room-brain-nodes"><svg aria-hidden="true">{[0,1,2].map(i=><path key={i} ref={e=>{paths.current[i]=e;}}/>)}</svg>{['Palamedes','Gahyeon','Backend'].map((name,i)=><button key={name} ref={e=>{labels.current[i]=e;}} onClick={()=>onSelect(i)}>{name}<span>↘</span></button>)}</div>}
+   {mode==='brain'&&<div className="room-brain-nodes"><svg aria-hidden="true">{[0,1,2].map(i=><path key={i} ref={e=>{paths.current[i]=e;}}/>)}</svg>{['Palamedes','Gahyeon','Backend'].map((name,i)=><button key={name} ref={e=>{labels.current[i]=e;}} onClick={()=>control.current.select(i)}>{name}<span>↘</span></button>)}</div>}
 
   </div>
-  <div className="room-ui" inert={mode!=='room'} aria-hidden={mode!=='room'}><aside className="room-intro-card"><img src="/assets/projects/room-20261027/intro-card.webp" alt="" draggable={false}/><div><p>소프트웨어 개발자</p><h1>이경재</h1><p>서비스를 기획하고 설계하며, 직접 만들고 운영합니다.</p><button onClick={()=>control.current.enter()}>프로젝트 보기 ↘</button><a href="https://github.com/LEE-Kyungjae">GitHub ↗</a></div></aside><div className="room-movement" aria-label="캐릭터 이동">{[[-1,0,'←'],[0,-1,'↑'],[0,1,'↓'],[1,0,'→']].map(([x,z,label])=><button key={label} aria-label={`캐릭터 ${label} 이동`} onClick={()=>control.current.move(Number(x)*.8,Number(z)*.8)}>{label}</button>)}</div></div>
-  {mode==='brain'&&<button className="room-back" onClick={()=>control.current.leave()}>← 작업실</button>}
+  <div className="room-ui" inert={mode!=='room'} aria-hidden={mode!=='room'}><aside className="room-intro-card"><img src="/assets/projects/room-20261027/intro-card.webp" alt="" draggable={false}/><div><p>소프트웨어 개발자</p><h1>이경재</h1><p>서비스를 기획하고 설계하며, 직접 만들고 운영합니다.</p><button onClick={()=>control.current.enter()}>프로젝트 보기 ↘</button><a href="https://github.com/LEE-Kyungjae">GitHub ↗</a></div></aside><div className="room-movement" aria-label="캐릭터 이동">{[['w','W','앞'],['a','A','왼쪽'],['s','S','뒤'],['d','D','오른쪽']].map(([key,label,direction])=><button key={key} data-move-key={key} aria-label={`캐릭터 ${direction} 이동`} onPointerDown={e=>{e.currentTarget.setPointerCapture(e.pointerId);control.current.press(key,true);}} onPointerUp={()=>control.current.press(key,false)} onPointerCancel={()=>control.current.press(key,false)} onLostPointerCapture={()=>control.current.press(key,false)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();control.current.press(key,true);}}} onKeyUp={()=>control.current.press(key,false)}>{label}</button>)}</div></div>
+  <div className="room-project-fade" aria-hidden="true"/>
   {mode==='computer'&&<div className="room-computer"><TerritoryPrototype onExit={exitComputer}/></div>}
   {status==='error'&&<button className="room-fallback" onClick={()=>onSelect(0)}>3D 로딩 실패: 프로젝트 보기 ↘</button>}
  </section>;
