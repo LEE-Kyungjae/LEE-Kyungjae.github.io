@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "d095105e-716e-45e1-96c1-bd499e8cdbc7",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.json",
+  "output": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.html",
+  "specification": {
+    "sha256": "9ea941411d3208f5816efb64c3a282ab5872a277efa0ebc1fa31ed1fa82125cd",
+    "bytes": 3412
+  },
+  "artifact": {
+    "sha256": "702e1157b016bb74e49bb616e8249b2490f0cfd1d4f5cd972c4fd4e097ed859c",
+    "bytes": 841285
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-10-27",
+  "status": "integrated-local",
+  "selectedBy": "agent",
+  "userDirection": "Preserve current compact body proportions, but make an original character rather than a Fall Guys-like face. User explicitly rejected the derivative identity of revision 2.",
+  "concept": "../avatar-concepts-20261027/bean-v1.png (historical body/garment reference only; face superseded)",
+  "source": "../../../scripts/avatar/build_avatar.py",
+  "method": "Original Blender-authored weighted model; replaced full pale faceplate and vertical pill eyes with separate sclera/pupils, upper lids, small sculpted nose, raised brow and asymmetric smile. Existing body and jacket preserved.",
+  "referenceUrls": [
+    "https://www.fallguys.com/",
+    "https://nobrakesgames.itch.io/human"
+  ],
+  "runtime": "GLB loaded with GLTFLoader; delta-time walking with damped start/stop and lagging arms. The motion is authored, not a ragdoll physics simulation.",
+  "retained": "Fullscreen room; same mesh becomes transparent around the existing brain; only project selection fades into existing cards and floating islands.",
+  "modelSha256": "1cda57e917fd916b0a098f6617a7eff7506aeeccf02fadaf15e7469dc612a5ad",
+  "revision": 3,
+  "selectionReason": "Agent-selected face construction changes the dominant recognition mechanism while retaining the existing body, palette and clothing. Not recorded as user approval.",
+  "validation": "26 interaction checks passed at 1440x960 and 390x844 in output/avatar-20261027/qa-v3.json. Actual room and brain renders visually inspected. Initial fixed-delay morph check failed; live state reached 1.000 and rerun waiting for completion passed. Model-only revision; no runtime source changes. Not deployed.",
+  "previousRevision": "output/avatar-20261027/v2-archive; superseded following user correction"
+}

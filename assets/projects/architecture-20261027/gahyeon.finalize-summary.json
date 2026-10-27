@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.json",
+    "sha256": "9ea941411d3208f5816efb64c3a282ab5872a277efa0ebc1fa31ed1fa82125cd",
+    "bytes": 3412
+  },
+  "artifact": {
+    "path": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.html",
+    "sha256": "702e1157b016bb74e49bb616e8249b2490f0cfd1d4f5cd972c4fd4e097ed859c",
+    "bytes": 841285
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.finalize.json",
+    "summaryReceipt": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.finalize-summary.json",
+    "browserCheckReceipt": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/gahyeon.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-27T05:02:27.478Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 97362,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "createdAt": "2026-10-27",
+  "status": "concept",
+  "selectedBy": null,
+  "referenceDirection": "User requested Fall Guys-like bean character; human primitive prototype rejected",
+  "sourceReference": "https://www.fallguys.com/",
+  "tool": "built-in imagegen",
+  "source": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-81eb49b9-f5e3-474a-99ea-9f27bbee58b6.png",
+  "file": "bean-v1.png",
+  "prompt": "목적: 이경재의 인터랙티브 3D 포트폴리오에서 작은 방 안을 걸어다닐 오리지널 커스텀 캐릭터의 첫 디자인 시안. 한 캐릭터만 전신 3/4 시점으로 크게. 디자인 참고 원리: Fall Guys의 머리와 몸이 이어지는 통통한 콩/젤리 비례, 짧은 팔다리, 읽기 쉬운 단순한 얼굴과 말랑한 존재감. 기존 게임 캐릭터의 복제나 로고는 사용하지 않음. 이 캐릭터만의 형태: 윗부분이 부드럽게 좁고 아래쪽이 통통한 비대칭 조약돌 몸통, 목이나 분리된 인간 머리 없음, 짧고 유연한 미튼 손, 큰 둥근 두 발. 딥 페트롤 청록색 몸체, 따뜻한 아이보리색의 살짝 비대칭 둥근 얼굴 영역, 작고 세로로 길쭉한 짙은 먹색 두 눈, 입 코 귀 머리카락 안경 없음. 의상: 몸통 아래 절반에 걸친 짧고 박시한 아이보리 워크 재킷, 넓고 부드러운 접힌 옷깃, 작은 청록 사선 포켓 하나, 작은 황동 지퍼고리 하나. 손과 발은 몸체와 같은 청록. 옷은 실제로 몸체를 감싸고 겹치는 설계, 얇은 봉제선과 둥근 헴, 소매와 몸통의 연결이 자연스러움. 과한 장신구, 개발자 기호, 글자, 배지, 모니터, 네온은 제외. 실루엣과 비례로 디자인된 고급 게임 캐릭터, 기본 구체 원통을 조립한 모습 절대 금지. 재질: 말랑한 무광 실리콘 몸체와 촘촘한 캔버스 원단 재킷, 과한 플라스틱 광택 없음. 자연스러운 자신감 있고 호기심 있는 자세, 한쪽 손을 살짝 벌리고 서있음, 깔끔한 크림색 스튜디오 배경과 부드러운 접지 그림자, 따뜻한 햇빛, 아름다운 고품질 3D 게임 키아트 렌더. 실제 3D 모델이 아니라 디자인 시안이며 단 한 명의 전신만 보여주고 프레임 밖 잘림 없이 여백 10%. 글자나 워터마크 없음.",
+  "inspection": "Full body visible, neckless silhouette, two eyes, short limbs, ivory jacket and teal body. Design image only; not a rigged model and not integrated.",
+  "remaining": "Build a production mesh and rig preserving the concept; replace prototype without losing room interaction and continuous transparency reveal."
+}

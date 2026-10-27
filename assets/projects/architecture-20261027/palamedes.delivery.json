@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "8b21e432-4b49-40da-a5d1-45263a25c6e8",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/palamedes.json",
+  "output": "/Users/ze/work/LEE-Kyungjae.github.io/assets/projects/architecture-20261027/palamedes.html",
+  "specification": {
+    "sha256": "0b3e3f8b774764121c644aebde3c8df14674bda7ef5eb2bc6577615de53f3faf",
+    "bytes": 3264
+  },
+  "artifact": {
+    "sha256": "1757bc3b0eb895ce7532287afac00e1f672262555149290b4b0839ae112aae2b",
+    "bytes": 841220
+  }
+}

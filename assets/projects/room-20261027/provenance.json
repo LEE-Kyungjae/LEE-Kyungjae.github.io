@@ -1,0 +1,12 @@
+{
+  "createdAt": "2026-10-27",
+  "selectedBy": "agent",
+  "purpose": "Portfolio fullscreen custom character room, introduction card and crayon click target",
+  "character": {"source": "app/components/RoomAvatar.ts", "method": "original procedural articulated Three.js geometry", "identity": "custom portfolio avatar; not Jaejae, not a likeness assertion", "sharedBetweenScenes": true},
+  "assets": [
+    {"file":"intro-card.webp","original":"intro-card.png","tool":"built-in imagegen","prompt":"Premium handmade editorial identity card background. Warm ivory cotton paper, graphite border, teal tape, mustard orbital star, cobalt pencil squiggle. Central 75% empty for live text. Front-on, no words or logo.","source":"exec-06767b31-29d1-4fad-9a0b-1d7c7fb42450.png"},
+    {"file":"clickme.webp","original":"clickme.png","tool":"built-in imagegen","prompt":"Transparent PNG, exact text Clickme, dark petrol teal wax crayon handwriting with broken grain and uneven pressure, curled pigtail spiral arrow pointing downward, no background or other words.","source":"exec-e9256430-58e9-4c5c-8d96-a7ad225e5247.png"}
+  ],
+  "retainedAssets": ["assets/brain/brain.glb","assets/projects/keyart-20261027","assets/projects/engineering-20261027"],
+  "selectionReason":"Handmade card and crayon target fit the miniature room while keeping all profile copy accessible as live text. The same articulated avatar becomes transparent around the existing brain model."
+}
