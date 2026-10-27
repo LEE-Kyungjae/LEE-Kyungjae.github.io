@@ -1,0 +1,41 @@
+{
+  "selectedBy": "agent",
+  "entries": [
+    {
+      "project": "palamedes",
+      "layer": "background",
+      "prompt": "Edit this exact image into its background-only plate. Remove the main foreground person completely including all hair, clothing, hands and handheld object (or hovering star). Reconstruct the environment hidden behind the person convincingly, preserving every existing architectural shape, sky, lighting and palette. Keep the exact panoramic 2:1 framing and composition, no zoom or crop. The entire scene must be empty of people, but retain the astronomical machinery and floating background shards for Palamedes or the city and railing for Gahyeon. This is a parallax background layer, not a redesign. No text.",
+      "file": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-116e38d1-00b7-4bc3-85f9-d8041f4e0d21.png",
+      "status": "selected"
+    },
+    {
+      "project": "palamedes",
+      "layer": "subject",
+      "prompt": "Extract ONLY the existing main foreground person from this exact image as a transparent PNG. Preserve the same face, hair strands, costume, pose, silhouette and handheld compass or hovering cyan star exactly. Keep ALL visible character pixels including trailing coat/hair. Keep exact 2:1 canvas and person's exact original pixel position and scale, with transparent empty space on the left. Remove all sky, buildings, railings and giant background machinery. Do not recenter, reframe, invent a new pose or redraw the identity. This is a registered foreground cutout for parallax compositing with its matching background. True RGBA transparency.",
+      "file": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-add9c462-909a-4bc9-b67b-e2688ade537c.png",
+      "status": "selected"
+    },
+    {
+      "project": "gahyeon",
+      "layer": "background",
+      "prompt": "Edit this exact image into its background-only plate. Remove the main foreground person completely including all hair, clothing, hands and handheld object (or hovering star). Reconstruct the environment hidden behind the person convincingly, preserving every existing architectural shape, sky, lighting and palette. Keep the exact panoramic 2:1 framing and composition, no zoom or crop. The entire scene must be empty of people, but retain the astronomical machinery and floating background shards for Palamedes or the city and railing for Gahyeon. This is a parallax background layer, not a redesign. No text.",
+      "file": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-f2f45d7e-3441-48d8-ab5a-d4c38c58f0c1.png",
+      "status": "selected"
+    },
+    {
+      "project": "gahyeon",
+      "layer": "subject",
+      "prompt": "Extract ONLY the existing main foreground person from this exact image as a transparent PNG. Preserve the same face, hair strands, costume, pose, silhouette and handheld compass or hovering cyan star exactly. Keep ALL visible character pixels including trailing coat/hair. Keep exact 2:1 canvas and person's exact original pixel position and scale, with transparent empty space on the left. Remove all sky, buildings, railings and giant background machinery. Do not recenter, reframe, invent a new pose or redraw the identity. This is a registered foreground cutout for parallax compositing with its matching background. True RGBA transparency.",
+      "file": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-512ec41d-6269-4538-9a1e-ec18ba4221db.png",
+      "status": "superseded"
+    },
+    {
+      "project": "gahyeon",
+      "layer": "subject",
+      "prompt": "Edit and extract the exact foreground Gahyeon character from this reference into a true transparent RGBA 2:1 panoramic canvas. CRITICAL ANATOMY FIX: the raised hand on the right currently has duplicated fingers. Replace that hand with ONE anatomically correct graceful human hand with EXACTLY FIVE DIGITS TOTAL: ONE THUMB plus FOUR FINGERS. Clearly separated natural thumb, index, middle, ring, little finger; correct knuckle proportions and wrist attachment. Natural relaxed gently cupped gesture holding the hovering cyan star, fingers softly curled, no extra fingertip silhouettes or duplicate ghost fingers. Keep the rest of her approved face, hair, jacket, body pose and star identity unchanged. Preserve exact original position and scale on the wide canvas with transparent empty left space, do not recenter. Remove all city, sky, railing and scene background. Preserve trailing hair and coat. Match original beautiful painterly game keyart; no text. Prioritize visibly correct five-digit hand anatomy.",
+      "file": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-9325a68a-9497-470f-b983-524a2bcc3d88.png",
+      "status": "selected",
+      "correction": "five-digit raised hand"
+    }
+  ]
+}

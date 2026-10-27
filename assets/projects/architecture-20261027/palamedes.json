@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Palamedes 게이트 처리",
+    "locale": "ko",
+    "output": "assets/projects/architecture-20261027/palamedes.html",
+    "quality_profile": "showcase",
+    "visual_preset": "editorial",
+    "repository": {
+      "url": "https://github.com/LEE-Kyungjae/Palamedes.git",
+      "revision": "0d0737dc73664488b1294aac9169b1b5c86b2ea7"
+    }
+  },
+  "components": [
+    {
+      "id": "proposal",
+      "label": "제안 생성",
+      "type": "backend",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "propose",
+      "sources": [
+        {
+          "path": "palamedes_gate_resolution.py",
+          "line": 74,
+          "end_line": 101
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "증거 검증",
+      "type": "security",
+      "pos": [
+        340,
+        40
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "SHA-256",
+      "sources": [
+        {
+          "path": "palamedes_gate_resolution.py",
+          "line": 37,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "id": "apply",
+      "label": "적용 요청",
+      "type": "backend",
+      "pos": [
+        40,
+        240
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "apply",
+      "sources": [
+        {
+          "path": "palamedes_gate_resolution.py",
+          "line": 125,
+          "end_line": 144
+        }
+      ]
+    },
+    {
+      "id": "fresh",
+      "label": "최신 제안 확인",
+      "type": "security",
+      "pos": [
+        340,
+        240
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "fingerprint",
+      "sources": [
+        {
+          "path": "palamedes_gate_resolution.py",
+          "line": 134,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "label": "결과 기록",
+      "type": "database",
+      "pos": [
+        640,
+        240
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "JSONL",
+      "sources": [
+        {
+          "path": "palamedes_gate_resolution.py",
+          "line": 145,
+          "end_line": 167
+        }
+      ]
+    },
+    {
+      "id": "append",
+      "label": "중복 쓰기 방지",
+      "type": "backend",
+      "pos": [
+        640,
+        40
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "lock / fsync",
+      "sources": [
+        {
+          "path": "palamedes_gate_resolution.py",
+          "line": 104,
+          "end_line": 122
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "proposal-verify",
+      "from": "proposal",
+      "to": "verify",
+      "label": "검증"
+    },
+    {
+      "id": "apply-proposal",
+      "from": "apply",
+      "to": "proposal",
+      "label": "제안 재생성"
+    },
+    {
+      "id": "apply-fresh",
+      "from": "apply",
+      "to": "fresh",
+      "label": "비교"
+    },
+    {
+      "id": "fresh-record",
+      "from": "fresh",
+      "to": "record",
+      "label": "일치 시 기록"
+    },
+    {
+      "id": "record-append",
+      "from": "record",
+      "to": "append",
+      "label": "중복 검사"
+    }
+  ]
+}

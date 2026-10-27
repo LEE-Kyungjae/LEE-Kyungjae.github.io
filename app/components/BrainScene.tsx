@@ -5,6 +5,8 @@ import type { MutableRefObject } from 'react';
 export default function BrainScene({ progress, selected, onSelect }: { progress: MutableRefObject<number>; selected: number; onSelect: (index: number) => void }) {
   const mount = useRef<HTMLDivElement>(null);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
+  const leaders = useRef<(SVGPathElement|null)[]>([]);
+  const sockets = useRef<(SVGCircleElement|null)[]>([]);
   const selectedRef = useRef(selected);
   selectedRef.current = selected;
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
@@ -53,16 +55,21 @@ export default function BrainScene({ progress, selected, onSelect }: { progress:
         camera.lookAt(0, 0, 0); camera.updateMatrixWorld();
         group.rotation.z = reduced.matches ? 0 : -.09 + p * .14;
         group.updateMatrixWorld(true);
-        const placed: {x: number; y: number; width: number; height: number}[] = [];
-        dots.forEach((dot, index) => {
-          const position = dot.getWorldPosition(new THREE.Vector3()).project(camera);
-          const button = buttons.current[index];
-          if (button) {
-            const box = host.getBoundingClientRect(), width = button.offsetWidth, height = button.offsetHeight;
-            const x = Math.max(width / 2 + 8, Math.min(Math.min(box.width, innerWidth - box.left) - width / 2 - 10, (position.x + 1) * box.width / 2));
-            let y = Math.max(height / 2 + 8, Math.min(box.height - height / 2 - 8, (-position.y + 1) * box.height / 2));
-            for (const other of placed) if (Math.abs(x - other.x) < (width + other.width) / 2 + 8 && Math.abs(y - other.y) < (height + other.height) / 2 + 8) y = other.y + (height + other.height) / 2 + 10;
-            placed.push({x, y, width, height}); button.style.left = `${x}px`; button.style.top = `${y}px`;
+        const box=host.getBoundingClientRect(),mobile=innerWidth<=760;
+        const labelPositions=mobile?[[.17,.16],[.80,.38],[.22,.86]]:[[.13,.27],[.86,.43],[.20,.83]];
+        dots.forEach((dot,index)=>{
+          const position=dot.getWorldPosition(new THREE.Vector3()).project(camera);
+          const anchorX=(position.x+1)*box.width/2,anchorY=(-position.y+1)*box.height/2;
+          const button=buttons.current[index];
+          if(button){
+            const width=button.offsetWidth,height=button.offsetHeight;
+            const screenRight=Math.min(box.width,innerWidth-box.left-12);
+            const x=Math.max(width/2+10,Math.min(screenRight-width/2-10,labelPositions[index][0]*box.width));
+            const y=Math.max(height/2+8,Math.min(box.height-height/2-8,labelPositions[index][1]*box.height));
+            button.style.left=`${x}px`;button.style.top=`${y}px`;
+            const endX=x+(index===1?-width/2:width/2),elbowX=endX+(index===1?-18:18);
+            leaders.current[index]?.setAttribute('d',`M${anchorX} ${anchorY} L${elbowX} ${y} H${endX}`);
+            sockets.current[index]?.setAttribute('cx',String(anchorX));sockets.current[index]?.setAttribute('cy',String(anchorY));
           }
         });
         renderer.render(scene, camera);
@@ -94,7 +101,8 @@ export default function BrainScene({ progress, selected, onSelect }: { progress:
   return <div className="brain-scene" ref={mount} data-status={status}>
     {status !== 'ready' && <div className="brain-status" role="status">{status === 'loading' ? '3D 로딩 중' : '3D를 표시할 수 없습니다.'}</div>}
     <div className="brain-node-layer" style={{ visibility: status === 'ready' ? 'visible' : 'hidden' }}>
-      {['Palamedes', 'Gahyeon', 'Backend'].map((name, index) => <button ref={el => { buttons.current[index] = el; }} type="button" className="brain-node" aria-pressed={selected === index} onClick={() => onSelect(index)} key={name}><i/>{name}<span>↗</span></button>)}
+      <svg className="brain-leaders" aria-hidden="true">{[0,1,2].map(index=><g key={index} data-selected={selected===index}><path ref={el=>{leaders.current[index]=el;}}/><circle ref={el=>{sockets.current[index]=el;}} r="3"/></g>)}</svg>
+      {['Palamedes', 'Gahyeon', 'Backend'].map((name, index) => <button ref={el => { buttons.current[index] = el; }} type="button" className="brain-node" aria-pressed={selected === index} onClick={() => onSelect(index)} key={name}>{name}<span>↗</span></button>)}
     </div>
   </div>;
 }

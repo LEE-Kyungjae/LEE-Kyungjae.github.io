@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Gahyeon 플랫폼 경계",
+    "locale": "ko",
+    "output": "assets/projects/architecture-20261027/gahyeon.html",
+    "quality_profile": "showcase",
+    "visual_preset": "editorial",
+    "repository": {
+      "url": "https://github.com/LEE-Kyungjae/Gahyeon.git",
+      "revision": "0edd9c93d13f654b3b80f347ed6bdfae287c677c"
+    }
+  },
+  "components": [
+    {
+      "id": "clients",
+      "label": "클라이언트",
+      "type": "frontend",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "Discord / Desktop",
+      "sources": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "line": 5,
+          "end_line": 7
+        }
+      ]
+    },
+    {
+      "id": "adapters",
+      "label": "Adapters",
+      "type": "backend",
+      "pos": [
+        340,
+        40
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "플랫폼 연결",
+      "sources": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "line": 15,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "label": "Application",
+      "type": "backend",
+      "pos": [
+        640,
+        40
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "유스케이스",
+      "sources": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "line": 38,
+          "end_line": 46
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "label": "Core",
+      "type": "backend",
+      "pos": [
+        640,
+        240
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "도메인 / 정책 / 포트",
+      "sources": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "line": 38,
+          "end_line": 46
+        }
+      ]
+    },
+    {
+      "id": "unreal",
+      "label": "Unreal Stage",
+      "type": "frontend",
+      "pos": [
+        40,
+        240
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "실시간 표현",
+      "sources": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "line": 25,
+          "end_line": 29
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "label": "RuntimeCore",
+      "type": "backend",
+      "pos": [
+        40,
+        440
+      ],
+      "size": [
+        160,
+        76
+      ],
+      "sublabel": "C++20 상태기",
+      "sources": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "line": 44,
+          "end_line": 47
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-adapter",
+      "from": "clients",
+      "to": "adapters",
+      "label": "입출력"
+    },
+    {
+      "id": "adapter-app",
+      "from": "adapters",
+      "to": "application",
+      "label": "호출"
+    },
+    {
+      "id": "app-core",
+      "from": "application",
+      "to": "core",
+      "label": "도메인 사용"
+    },
+    {
+      "id": "unreal-adapter",
+      "from": "unreal",
+      "to": "adapters",
+      "label": "WS / HTTP"
+    },
+    {
+      "id": "unreal-runtime",
+      "from": "unreal",
+      "to": "runtime",
+      "label": "상태 처리"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "검증 기록",
+      "items": [
+        "2026-10-27 의존성 검사 위반 2건 보완 필요"
+      ]
+    }
+  ]
+}

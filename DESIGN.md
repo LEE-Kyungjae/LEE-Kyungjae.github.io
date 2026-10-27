@@ -113,3 +113,17 @@ Buildings now use 58% of the island frame width (previously 70%), with footprint
 
 ### Island focus and circuit spacing
 Clicking an island focuses the scene at 1.1 scale around that island. Clicking empty sky or Escape returns to the wide composition; clicking the same active island can focus again without restarting activation. Mobile uses its own two-row focus origins. Empty control layout boxes do not intercept sky clicks. Circuits reduced to 12 separate routes with spaced starts/bends, retaining local ground projection and spread/gather directions.
+
+### Project card paper-depth and pointer interaction
+- Preserve the project names and existing copy. Separate the original background from its registered character cutout; background, subject and two particle depths respond to scroll from the first visible pixel (IntersectionObserver threshold 0). No mouse-driven card tilting.
+- Gahyeon hand correction: the selected foreground has one thumb plus four fingers, visually inspected at enlarged size. Earlier extraction is superseded and retained with provenance.
+- Pointer: small amber native SVG cursor on fine pointers, cyan/gold click shards and a 700 ms pressed-drag ribbon. Overlays never intercept events or disable touch scrolling; dragging a card does not navigate, normal click and keyboard activation still do. Reduced motion disables camera/particles/trails; offscreen card particles pause.
+
+### Codename reveal and brain callouts
+Project card titles scramble for 800 ms once on first visibility, resolving left-to-right into the approved project name. Fixed-width title layout and stable accessible heading name; reduced-motion skips scrambling. Brain project buttons are offset labels connected to projected 3D points by elbow leader lines. Points themselves are decorative; selecting the label retains the existing project-selection behavior. Leaders update with camera rotation and responsive resize.
+
+### Internal project introductions
+Home project artwork opens `/projects/palamedes/` or `/projects/gahyeon/`, not GitHub. Each static introduction reuses layered scroll artwork, codename reveal, pointer effects and approved project/status copy. Three selectable implementation topics show artwork, concise evidence-backed explanation and a pinned source link. GitHub remains an explicit secondary link. Keep the homepage and brain behavior otherwise unchanged. New copy is within the user's explicit request for project introductions; preserve research/development limits and Gahyeon's two known dependency violations.
+
+### QA correction — reduced motion on project introductions
+The manual motion-reduction toggle must also stop pseudo-element animations. The dotted orbit remained active because its pseudo-element selector was inside `:is()`. Use an explicit `.is-calm .project-orbit:after` rule and verify computed animation state on both introduction pages. Native touch scrolling must not trigger project navigation; a deliberate tap still opens the internal introduction.
