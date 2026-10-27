@@ -14,12 +14,14 @@
     "marked": "^16.1.1",
     "next": "^16.3.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@types/node": "^24.2.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "@types/three": "^0.180.0",
     "typescript": "^5.9.2"
   }
 }

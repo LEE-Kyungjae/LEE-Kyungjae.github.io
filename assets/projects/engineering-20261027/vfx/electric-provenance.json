@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen",
+  "selectedBy": "agent",
+  "prompts": [
+    [
+      "electric-travel",
+      "Create a production animation sprite atlas: EXACTLY 4 columns x 4 rows, sixteen equal square cells, true TRANSPARENT RGBA background, no labels, no grid. Each frame is a consecutive shape of a compact electrical discharge traveling through air: crisp branching BLUE-WHITE lightning filaments, a few tiny amber sparks, sharply kinked forked bolts. Center every frame precisely at its cell center. Keep every filament within the central 70% of its cell. No comet, no fireball, no sphere, no smoke, no cloud, no soft fog, no circular magic seal. Tiny near-white central contact point and thin cyan branches on all sides, overall wide irregular silhouette, realistic high voltage arcing. Across sixteen frames the forks change organically, maintaining location and size, loopable. Premium game electric VFX on genuine transparency, square atlas."
+    ],
+    [
+      "electric-impact",
+      "Create a production impact animation atlas: EXACT 4 columns x 4 rows of sixteen equal square cells, TRUE TRANSPARENT RGBA background, no labels or grid. A short blue-white ELECTRICAL IMPACT / SURGE on a machine core. Center identical across all cells, all effects stay in central 75% of each cell. Frames1-3 tiny sharp contact flash, frames4-7 fine jagged branching lightning grows outward, frames8-10 longest thin branches and a spray of tiny amber hot sparks, frames11-13 branches fragment into tiny sparks, frames14-16 fade to near empty. Crisp restrained glow, high contrast thin lightning, NOT a spherical explosion, NOT smoke, NOT cloud, NOT fire, NOT a circular magic rune. Fine electric arcs, premium game VFX, genuine alpha transparency. Square atlas."
+    ]
+  ],
+  "usage": "Small animated electrical contact and impact only. Main moving zigzag trail is live outlined SVG geometry, based on actual motion history and the existing Rehate touch trail duration of 0.64 seconds.",
+  "reference": "/Users/ze/work/rehate/frontend/public/site/effects/rehate-touch/public-touch.mjs"
+}

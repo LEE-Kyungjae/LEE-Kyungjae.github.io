@@ -1,0 +1,6 @@
+{
+  "tool": "image_gen",
+  "prompt": "One isolated precision bronze orbital attachment for a game machine. TRUE TRANSPARENT RGBA background. STRICT ORTHOGRAPHIC TOP DOWN view: perfectly circular delicate thin brass ring, three small polished brass satellites attached at 0 degrees, 120 degrees and 240 degrees. One satellite twice the size of the other two. Fine tiny amber light traces on the ring. The interior is entirely empty transparent space, no center, no base, no device, no scenery. Ring diameter 80% of square canvas, centered exactly, generous transparent margins. Premium realistic metal, restrained light. This will be rotated clockwise in CSS and tilted into perspective by the browser, so DO NOT draw an ellipse or apply perspective yourself.",
+  "selectedBy": "agent",
+  "animation": "Independent top-down ring rotates clockwise in a fixed tilted plane; rigid geometry does not morph between frames."
+}

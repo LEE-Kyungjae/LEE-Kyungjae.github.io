@@ -1,0 +1,32 @@
+{
+  "prompts": [
+    [
+      "sky",
+      "A beautiful optimistic sky background plate for an interactive floating-island machinery scene. Wide 2:1 landscape composition. Deep clear azure blue above, huge sculptural fluffy white cumulus clouds low on the horizon, warm late morning sunshine streaming diagonally from upper left, delicate atmospheric depth. A few extremely distant tiny moss-covered floating rocks below the horizon only. Central foreground fully EMPTY sky to place four independent floating island devices. No continuous ground, no platform, no buildings, no machines, no characters, no text. Painterly premium adventure game environment with physically believable light, sophisticated soft cloud brushwork, luminous tranquil atmosphere, romantic sky adventure feeling. Original environment, not a depiction of any existing movie location."
+    ],
+    [
+      "lens-island",
+      "An isolated small FLOATING ISLAND base for a precision machine, true transparent RGBA background. Landscape 3:2 composition, entire object contained with 8% margins. Camera elevated 25 degrees looking down at the TOP and front face, orthographic-ish game illustration. Rounded rocky islet, short grass at outer edge, tiny white flowers and one trailing leafy vine. Top third has a broad FLAT CLEAR empty graphite-gray stone mounting pad occupying most of the top, to place a machine on later. Front underside narrows to hanging rugged rock, thin roots and a few trailing vines. Sunlit from upper left with warm golden rim light and cool sky fill. Refined painterly-realistic premium adventure game art, beautiful floating garden fragment, soft natural surfaces, not cute cartoon. No machine, no architecture, no sky, no clouds, no surrounding scenery, no ground or cast shadow beyond silhouette, no text. Match the rendering/material finesse of the supplied mechanical artwork while adding lush warm daylight. Do not draw any recognizable franchise icon."
+    ],
+    [
+      "gate-island",
+      "An isolated small FLOATING ISLAND base for a precision machine, true transparent RGBA background. Landscape 3:2 composition, entire object contained with 8% margins. Camera elevated 25 degrees looking down at the TOP and front face, orthographic-ish game illustration. Angular ancient stone islet, weathered warm limestone terrace, moss growing in the cracks, two small shrubs on outer edges. Top third has a broad FLAT CLEAR empty graphite-gray stone mounting pad occupying most of the top, to place a machine on later. Front underside narrows to hanging rugged rock, thin roots and a few trailing vines. Sunlit from upper left with warm golden rim light and cool sky fill. Refined painterly-realistic premium adventure game art, beautiful floating garden fragment, soft natural surfaces, not cute cartoon. No machine, no architecture, no sky, no clouds, no surrounding scenery, no ground or cast shadow beyond silhouette, no text. Match the rendering/material finesse of the supplied mechanical artwork while adding lush warm daylight. Do not draw any recognizable franchise icon."
+    ],
+    [
+      "runtime-island",
+      "An isolated small FLOATING ISLAND base for a precision machine, true transparent RGBA background. Landscape 3:2 composition, entire object contained with 8% margins. Camera elevated 25 degrees looking down at the TOP and front face, orthographic-ish game illustration. Tall tapered crag island, bluish slate with gold mineral veins, soft grass edge, hanging fern roots. Top third has a broad FLAT CLEAR empty graphite-gray stone mounting pad occupying most of the top, to place a machine on later. Front underside narrows to hanging rugged rock, thin roots and a few trailing vines. Sunlit from upper left with warm golden rim light and cool sky fill. Refined painterly-realistic premium adventure game art, beautiful floating garden fragment, soft natural surfaces, not cute cartoon. No machine, no architecture, no sky, no clouds, no surrounding scenery, no ground or cast shadow beyond silhouette, no text. Match the rendering/material finesse of the supplied mechanical artwork while adding lush warm daylight. Do not draw any recognizable franchise icon."
+    ],
+    [
+      "recovery-island",
+      "An isolated small FLOATING ISLAND base for a precision machine, true transparent RGBA background. Landscape 3:2 composition, entire object contained with 8% margins. Camera elevated 25 degrees looking down at the TOP and front face, orthographic-ish game illustration. Wide gently oval island, layered sandstone, lush grass fringe, delicate white flowers, a small tuft of tall grass. Top third has a broad FLAT CLEAR empty graphite-gray stone mounting pad occupying most of the top, to place a machine on later. Front underside narrows to hanging rugged rock, thin roots and a few trailing vines. Sunlit from upper left with warm golden rim light and cool sky fill. Refined painterly-realistic premium adventure game art, beautiful floating garden fragment, soft natural surfaces, not cute cartoon. No machine, no architecture, no sky, no clouds, no surrounding scenery, no ground or cast shadow beyond silhouette, no text. Match the rendering/material finesse of the supplied mechanical artwork while adding lush warm daylight. Do not draw any recognizable franchise icon."
+    ]
+  ],
+  "files": {
+    "sky": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-61f4018f-c49b-4557-a7ce-95fb4df426ac.png",
+    "lens-island": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-e9df01d8-4f12-4d4d-be27-3f7f134faf50.png",
+    "gate-island": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-f15f0729-2f4f-4fc8-8f54-73a57faeb9d9.png",
+    "runtime-island": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-ac8e7d09-7ef5-42f8-8529-b02e157c7ef2.png",
+    "recovery-island": "/Users/ze/.codex/generated_images/01a16750-e6d0-7b90-af86-f38b1afa0b43/exec-f4d1206d-f7a8-40c3-a4ab-f06989aedcd1.png"
+  },
+  "selectedBy": "agent"
+}
