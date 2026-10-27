@@ -1,0 +1,27 @@
+{
+  "source": "Rehate territory prototype 2026-10-22",
+  "usage": "Unmodified existing character icons in local portfolio game demo",
+  "selectedBy": "agent",
+  "assets": [
+    {
+      "file": "hero.webp",
+      "source": "/Users/ze/work/rehate/frontend/public/player-icons/v1/hero.webp",
+      "sha256": "b660ebf9737be3a94a7a1bbcd6a486333afb2d5ff770a75bf11c774054199ee8"
+    },
+    {
+      "file": "mage.webp",
+      "source": "/Users/ze/work/rehate/frontend/public/player-icons/v1/mage.webp",
+      "sha256": "1355ffb3e3f6ae954790fabf8c475eaf0eb1c6b80c2e5c84e4cb1c6e1de4de99"
+    },
+    {
+      "file": "rogue.webp",
+      "source": "/Users/ze/work/rehate/frontend/public/player-icons/v1/rogue.webp",
+      "sha256": "fad01e3f0cf9cb8e068d77b2c551d2847aa2c88457f68d40b352a3c32318fd7b"
+    },
+    {
+      "file": "pirate.webp",
+      "source": "/Users/ze/work/rehate/frontend/public/player-icons/v1/pirate.webp",
+      "sha256": "11c7c98e3d7d7f4ce3d4cc45370773f50b1536f74be7a44cc5b8297cc3a19ad2"
+    }
+  ]
+}

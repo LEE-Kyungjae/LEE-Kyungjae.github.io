@@ -31,7 +31,7 @@ export function createRoomAvatar() {
  });
  const q=new T.Quaternion(),e=new T.Euler();
  const pose=(name:string,x:number,y:number,z:number)=>{const bone=bones.get(name),base=rest.get(name);if(!bone||!base)return;q.setFromEuler(e.set(x,y,z));bone.quaternion.copy(base).multiply(q);};
- const update=(time:number,dt:number,moving:boolean,calm:boolean)=>{
+ const update=(time:number,dt:number,moving:boolean,calm:boolean,seated=0)=>{
   const target=moving&&!calm?1:0;
   gait=T.MathUtils.damp(gait,target,moving?9:5,dt);
   phase+=dt*(moving?9:5);
@@ -40,12 +40,12 @@ export function createRoomAvatar() {
   leanVelocity+=(desired-lean)*75*dt-leanVelocity*11*dt;lean+=leanVelocity*dt;
   const visibility=1-ghost,amount=gait*visibility;
   const sway=Math.sin(phase)*.075*amount,breath=calm?0:Math.sin(time*.0017)*.009*visibility;
-  pose('body',lean*visibility,Math.sin(phase*.5)*.025*amount,sway+breath);
+  pose('body',lean*visibility+seated*.08,Math.sin(phase*.5)*.025*amount,sway+breath);
   pose('head',-lean*.5*visibility,0,-sway*.55);
   for(const [name,offset] of [['L',0],['R',Math.PI]] as const){
    const cycle=phase+offset;
-   pose('leg_'+name,Math.sin(cycle)*.27*amount,0,Math.cos(cycle)*.025*amount);
-   pose('arm_'+name,Math.sin(cycle-.65)*-.24*amount,Math.sin(cycle-.3)*.035*amount,(name==='L'?1:-1)*(.025+breath)*visibility);
+   pose('leg_'+name,Math.sin(cycle)*.27*amount-seated*1.3,0,Math.cos(cycle)*.025*amount);
+   pose('arm_'+name,Math.sin(cycle-.65)*-.24*amount-seated*.65,Math.sin(cycle-.3)*.035*amount,(name==='L'?1:-1)*(.025+breath)*visibility);
   }
   root.userData.gait=gait;
  };
