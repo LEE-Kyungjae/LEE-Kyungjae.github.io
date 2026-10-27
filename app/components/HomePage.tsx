@@ -24,7 +24,7 @@ export default function HomePage({language}:{language:'ko'|'en'}){
   <PointerEffects calm={calm}/>
   <RoomExperience calm={calm} onSelect={choose}/>
   <button className="world-motion" aria-label="모션 줄이기" aria-pressed={calm} onClick={()=>setCalm(v=>!v)}>{calm?'Ⅱ':'◌'}</button>
-  {selected!==null&&<button className="selected-back" onClick={back} disabled={travelling} aria-label="뇌로 돌아가기">↑ 뇌로 돌아가기</button>}
+  {selected!==null&&<button className="selected-back" onClick={back} disabled={travelling} aria-label="TOP"><span aria-hidden="true">↑</span>TOP</button>}
   <div ref={selection} className="world-projects selected-project" hidden={selected===null} data-selected={selected===null?'none':ids[selected]}>
    {selected!==null&&<article className="work-card" id={ids[selected]} key={selected}>
     {selected===2?<a className="splash-card backend-card" href="/projects/backend/" aria-label="Backend 소개"><span className="backend-card-art" aria-hidden="true"><img src="/assets/projects/engineering-20261027/sky/runtime-island.webp" alt="" draggable={false}/><img src="/assets/projects/engineering-20261027/layers/runtime.webp" alt="" draggable={false}/></span><span className="splash-index">03</span><span className="splash-title"><h2>Backend</h2><span className="splash-title-rule"/></span><span className="splash-corner">↗</span></a>:<ProjectArtwork project={project} number={projectDetails[project].number} status={projectDetails[project].status} calm={calm}/>}

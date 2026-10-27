@@ -447,3 +447,51 @@ body:has(.portfolio){background:#f4f6f2}
 .is-calm .backend-card-art img{animation:none}
 @media(max-width:760px){.selected-project{padding:86px 20px 45px}.selected-project .work-card-info p{font-size:13px}.selected-back{top:20px;left:20px;font-size:12px}.room-brain-nodes button{padding:10px 9px}.backend-card-art img{width:110%;height:100%;right:-15%;top:-14%}.backend-card-art img+img{width:57%;height:65%;right:12%;top:-14%}}
 @media(prefers-reduced-motion:reduce){.backend-card-art img{animation:none}}
+
+/* TOP returns to the brain scene, retaining the selected-project navigation. */
+.selected-back{top:auto;left:auto;right:28px;bottom:max(28px,env(safe-area-inset-bottom));width:60px;height:66px;padding:9px 0;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;letter-spacing:.08em}
+.selected-back>span{font-size:21px;line-height:1}
+@media(max-width:760px){.selected-back{top:auto;left:auto;right:18px;bottom:max(18px,env(safe-area-inset-bottom));width:52px;height:58px;font-size:10px}}
+
+/* Handwritten name remains selectable Korean text. */
+@font-face{font-family:PortfolioHand;src:url('/assets/projects/fonts/NanumPenScript-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+.room-intro-card h1{font-family:PortfolioHand,cursive;font-weight:400;letter-spacing:-.035em;font-size:clamp(52px,5.5vw,78px);line-height:1.05}
+.mode-brain .room-canvas canvas{touch-action:none;cursor:grab}
+.mode-brain .room-canvas[data-dragging=true] canvas{cursor:grabbing}
+@media(max-width:760px){.room-intro-card h1{font-size:46px}}
+@media(max-height:500px) and (max-width:760px) and (orientation:landscape){.room-intro-card h1{font-size:42px}}
+.room-chair-action{position:absolute;transform:translate(-50%,-50%);padding:9px 17px;border-radius:20px;border:1px solid #a4c5b7;background:#f8f2deee;color:#244e48;font-size:13px;box-shadow:0 5px 18px #102d3026;min-height:44px}
+.mode-sitting .room-canvas,.mode-computer .room-canvas,.mode-standing .room-canvas{right:0;bottom:0}
+.mode-sitting .room-ui,.mode-computer .room-ui,.mode-standing .room-ui{opacity:0;pointer-events:none}
+.room-computer{position:absolute;inset:0;z-index:30;display:grid;place-items:center;background:#071719bb;animation:computer-on .35s ease-out;backdrop-filter:blur(5px)}
+.room-computer .territory-prototype{position:relative;inset:auto;width:min(1100px,94vw);height:min(850px,94svh);border:12px solid #233f42;border-bottom-width:22px;border-radius:24px;box-shadow:0 35px 100px #0008,inset 0 0 0 1px #fff3;padding:14px 20px}
+.room-computer .territory-heading strong{font-size:16px}.room-computer .territory-heading span{font-size:11px}
+.room-computer .territory-board,.room-computer .territory-score,.room-computer .territory-controls{width:min(100%,calc((94svh - 330px)*1.5),780px)}
+.room-computer .territory-heading>div{flex-wrap:wrap}.room-computer .territory-actions{justify-content:flex-end}
+@keyframes computer-on{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@media(max-width:760px){.room-computer .territory-prototype{width:96vw;height:94svh;border-width:7px;border-bottom-width:14px;padding:12px}.room-computer .territory-board,.room-computer .territory-score,.room-computer .territory-controls{width:100%}.room-computer .territory-heading{gap:8px}.room-computer .territory-heading strong{font-size:14px}.room-computer .territory-joystick{width:100px;height:100px}.room-computer .territory-player-status{width:145px;min-width:0}}
+@media(prefers-reduced-motion:reduce){.room-computer{animation:none}}
+.is-calm .room-computer{animation:none}
+.portfolio:has(.mode-computer)>.world-motion{display:none}
+.room-computer .territory-controls{color:#274a40;font-family:inherit;border:0;padding:0;margin-top:0;opacity:1}
+.room-computer .territory-player-status{color:#274a40}
+.room-computer .territory-prototype:fullscreen{width:100vw;height:100dvh;border-radius:0}
+/* The comet and farewell stay in the sky, outside the room's interaction layer. */
+.sky-farewell{position:absolute;inset:0;overflow:hidden;z-index:4;pointer-events:none;user-select:none}
+.sky-comet{position:absolute;left:-15%;top:-6%;width:14px;height:14px;opacity:0;animation:sky-comet-flight 3s 1.9s cubic-bezier(.35,0,.85,1) both;transform:rotate(15deg)}
+.sky-comet span{position:absolute;right:5px;top:5px;width:clamp(110px,20vw,280px);height:4px;background:linear-gradient(90deg,transparent,#7ac8e355,#d4f6ff);border-radius:100%;box-shadow:0 0 12px #89d8f850;transform-origin:right;transform:rotate(15deg)}
+.sky-comet i{position:absolute;inset:3px;border-radius:50%;background:#fffcdf;box-shadow:0 0 8px 3px #e5faff99,0 0 23px 8px #a7e4ff44}
+.sky-bear-flight{position:absolute;right:5%;top:7%;width:clamp(110px,12vw,170px);animation:sky-bear-depart 7.4s both;transform-origin:75% 20%;filter:drop-shadow(0 0 12px #c6e8ff30)}
+.sky-bear{display:block;width:100%;height:auto}.sky-bear-wave{transform-box:view-box;transform-origin:119px 117px;animation:sky-hankie .5s ease-in-out infinite alternate}
+.sky-farewell-star{position:absolute;right:7.5%;top:6%;width:18px;height:18px;opacity:0;filter:drop-shadow(0 0 8px #fff0ac);animation:sky-star-remains 7.4s both}
+@keyframes sky-comet-flight{0%{left:-15%;top:-6%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:112%;top:27%;opacity:0}}
+@keyframes sky-hankie{from{transform:rotate(-12deg)}to{transform:rotate(22deg)}}
+@keyframes sky-bear-depart{0%,7%{opacity:0;transform:translate(25px,25px) scale(.92)}18%,47%{opacity:1;transform:translate(0,0) scale(1) rotate(-4deg)}72%{opacity:.85;transform:translate(7%,-16%) scale(.35) rotate(8deg)}85%,100%{opacity:0;transform:translate(7%,-16%) scale(.04) rotate(12deg)}}
+@keyframes sky-star-remains{0%,68%{opacity:0;transform:scale(.2)}78%{opacity:1;transform:scale(1)}86%{opacity:.65;transform:scale(.65)}92%{opacity:1;transform:scale(.8)}100%{opacity:0;transform:scale(.2)}}
+@media(max-width:760px){.sky-bear-flight{right:5%;top:5%;width:105px}.sky-farewell-star{right:9%;top:5%}.sky-comet span{width:140px}}
+@media(prefers-reduced-motion:reduce){.sky-farewell{display:none}}
+.sky-comet{transform:none}.sky-comet span{transform:rotate(13deg)}
+@media(max-width:760px){.sky-comet span{transform:rotate(29deg)}}
+.room-canvas .room-chair-action{color:#244e48;font-size:13px}
+@media(max-width:760px){.sky-bear-flight{right:17%}.sky-farewell-star{right:20%}}
+@media(max-width:760px){.room-intro-card>div{grid-template-columns:minmax(90px,.8fr) minmax(0,1.2fr)}.room-intro-card p:nth-of-type(2){line-height:1.55;word-break:keep-all}}
