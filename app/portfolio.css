@@ -524,3 +524,44 @@ body:has(.project-case-study){background:#07121e}.project-case-study{animation:p
 
 .architecture-heading button{font:inherit;font-size:12px;color:#355348;background:transparent;border:1px solid #a8bcb0;border-radius:5px;padding:10px 12px;white-space:nowrap;cursor:pointer}.architecture-frame:fullscreen{background:#0f1c21;border-radius:0}.architecture-frame:fullscreen iframe{height:100vh;width:100vw}
 .project-chapter-copy h2{word-break:keep-all}
+
+/* Each destination opens as a world, with one consistent return control. */
+.scene-back{position:fixed;top:max(20px,env(safe-area-inset-top));right:max(20px,env(safe-area-inset-right));z-index:150;display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid #ffffff50;border-radius:50%;background:#102b32c9;color:#fff;font:26px/1 system-ui;text-decoration:none;backdrop-filter:blur(12px);box-shadow:0 4px 20px #0002}
+.scene-back:focus-visible,.project-motion:focus-visible{outline:3px solid #e8b967;outline-offset:4px}.scene-back:hover{background:#285553}
+.project-motion{position:fixed;bottom:20px;right:20px;z-index:100;width:42px;height:42px;border:1px solid #ffffff50;border-radius:50%;background:#102b32c9;color:#fff;font-size:18px;backdrop-filter:blur(12px)}
+.project-case-study .project-intro-hero{height:170svh;min-height:0;padding:0}
+.project-case-study .project-hero-pin{top:0;height:100dvh;transform:none;filter:none;overflow:hidden}
+.project-case-study .project-hero-pin .splash-card{height:100%;border:0;border-radius:0;transform:none;box-shadow:none}
+.project-case-study .project-hero-pin .splash-background{transform:scale(calc(1.08 + var(--reveal,0)*.12));filter:brightness(calc(1 - var(--reveal,0)*.35))}
+.project-case-study .project-hero-pin .splash-subject{transform:translate3d(calc(var(--reveal,0)*8vw),calc(var(--reveal,0)*-9vh),45px) scale(calc(.91 + var(--reveal,0)*.24))}
+.project-case-study .project-hero-pin .splash-title{transform:translateY(calc(var(--reveal,0)*-25vh));opacity:calc(1 - var(--reveal,0)*.85)}
+.project-case-study .project-hero-pin .splash-index{top:28px;left:var(--pad)}
+.project-case-study .project-content{position:relative;background:#f1f1e7;padding-top:80px}
+.project-journey{height:340svh;position:relative;margin-bottom:80px}
+.project-journey .project-explorer{position:sticky;top:0;height:100dvh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.project-journey-progress{position:absolute;left:0;right:0;top:0;height:3px;background:#c8d8cb;transform-origin:left;scale:var(--flow-progress,0) 1}
+.project-journey .project-chapter-content{min-height:0;flex:0 1 auto;padding:24px 5%;grid-template-columns:1fr 1fr}
+.project-journey .project-chapter-art{height:clamp(150px,28vh,300px)}
+.project-journey .project-chapter-copy{animation:chapter-copy-in .5s ease both}
+.project-journey .project-chapter-art{animation:chapter-art-in .7s cubic-bezier(.2,.7,.25,1) both}
+@keyframes chapter-copy-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes chapter-art-in{from{opacity:0;transform:translateY(30px) scale(.86)}to{opacity:1;transform:none}}
+.project-journey .project-orbit{transform:rotate(calc(var(--flow-progress,0)*120deg))}
+.backend-introduction .engineering{padding:0}.backend-introduction .engineering-intro{position:absolute;top:24px;left:var(--pad);z-index:10}.backend-introduction .engineering-map{border:0;border-radius:0}.backend-introduction .engineering-stage{width:100%;height:100dvh;min-height:100dvh;aspect-ratio:auto;border-radius:0}
+.room-computer{position:fixed;inset:0;backdrop-filter:none}
+.room-computer .territory-prototype{position:absolute;inset:0;width:100%;height:100dvh;padding:0;border:0;border-radius:0;box-shadow:none;overflow:hidden}
+.room-computer .territory-main{position:absolute;inset:0;width:100%;height:100%;margin:0;display:block}
+.room-computer .territory-board{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;box-shadow:none}
+.room-computer .territory-board canvas{width:100%;height:100%;outline-offset:-4px}
+.room-computer .territory-heading{position:absolute;top:max(20px,env(safe-area-inset-top));left:20px;right:80px;z-index:3;pointer-events:none;align-items:center}
+.room-computer .territory-heading button{pointer-events:auto}.room-computer .territory-heading>div:first-child{background:#f7f6e8dc;padding:10px 14px;border-radius:14px;backdrop-filter:blur(8px)}
+.room-computer .territory-score{position:absolute;top:max(92px,calc(env(safe-area-inset-top) + 70px));left:50%;transform:translateX(-50%);width:min(620px,calc(100% - 32px));z-index:2;padding:10px 14px;box-sizing:border-box;border-radius:18px;background:#f7f6e8df;backdrop-filter:blur(8px)}
+.room-computer .territory-controls{position:absolute;bottom:max(24px,env(safe-area-inset-bottom));left:24px;right:24px;width:auto;height:auto;min-height:0;z-index:2;pointer-events:none;align-items:flex-end}
+.room-computer .territory-controls>*{pointer-events:auto}.room-computer .territory-player-status{background:#f7f6e8df;padding:12px;border-radius:18px;backdrop-filter:blur(8px)}
+.room-computer .territory-joystick,.room-computer .territory-player-status{position:relative;inset:auto}.room-computer .territory-event{top:165px}
+.room-computer .territory-prototype .scene-back{width:48px;height:48px;padding:0;background:#102b32c9;color:#fff;font-size:26px;border-radius:50%}
+@media(max-width:760px){.scene-back{top:max(14px,env(safe-area-inset-top));right:14px}.project-case-study .project-intro-hero{height:150svh}.project-journey{height:360svh}.project-journey .project-flow-toolbar{padding:12px 0;gap:8px}.project-journey .project-flow-toolbar h2{font-size:16px}.project-journey .project-chapters button{padding:10px 6px}.project-journey .project-chapter-content{grid-template-columns:1fr;gap:16px;padding:14px 0}.project-journey .project-chapter-visual{display:grid;grid-template-columns:38% 1fr;gap:10px;align-items:center}.project-journey .project-chapter-art{height:160px;width:100%}.project-journey .project-io>div{padding:8px 10px}.project-journey .project-io p{font-size:11px}.project-journey .project-chapter-copy h2{font-size:22px;margin:0 0 12px}.project-journey .project-chapter-copy>p,.project-journey .project-chapter-copy li{font-size:12px;line-height:1.65}.project-journey .project-chapter-copy ul{margin:12px 0}.project-journey .project-source{font-size:11px}.project-motion{bottom:14px;right:14px}.room-computer .territory-heading{top:14px;left:14px;right:72px}.room-computer .territory-heading>div:first-child{padding:7px 10px}.room-computer .territory-controls{left:16px;right:16px;bottom:20px}.room-computer .territory-player-status{width:130px}.room-computer .territory-score{top:82px}.room-computer .territory-event{top:155px}}
+@media(max-height:650px){.project-journey{height:auto}.project-journey .project-explorer{position:relative;height:auto;overflow:visible;min-height:100dvh}.room-computer .territory-score{top:74px;width:min(450px,70%)}.room-computer .territory-score strong{font-size:18px}}
+.is-calm .project-journey{height:auto}.is-calm .project-journey .project-explorer{position:relative;height:auto;min-height:100dvh;overflow:visible}.is-calm .project-hero-pin .splash-title{transform:none;opacity:1}.is-calm .project-hero-pin .splash-background{transform:none;filter:none}.is-calm .project-hero-pin .splash-subject{transform:scale(.91)}.is-calm .project-journey .project-chapter-art,.is-calm .project-journey .project-chapter-copy{animation:none}
+
+@keyframes computer-on{from{opacity:0}to{opacity:1}}

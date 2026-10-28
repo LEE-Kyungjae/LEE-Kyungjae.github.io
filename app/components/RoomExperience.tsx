@@ -82,7 +82,12 @@ export default function RoomExperience({calm,onSelect}:{calm:boolean;onSelect:(i
    homeCamera.set(mobile?20:17,mobile?14.5:12.5,mobile?34:25.5);homeTarget.set(mobile?.7:0,2.1,0);camera.position.copy(homeCamera);look.copy(homeTarget);
    if(modeNow==='room'){
     const dx=Number(keys.has('d')||keys.has('ArrowRight'))-Number(keys.has('a')||keys.has('ArrowLeft')),dz=Number(keys.has('s')||keys.has('ArrowDown'))-Number(keys.has('w')||keys.has('ArrowUp'));
-    if(dx||dz)destination.copy(avatar.root.position).add(new T.Vector3(dx,0,dz).normalize().multiplyScalar(dt*3));
+    if(dx||dz){
+     // Project camera right onto the floor; W follows the screen's upward ground axis.
+     const backward=homeCamera.clone().sub(homeTarget).setY(0).normalize();
+     const right=new T.Vector3(backward.z,0,-backward.x);
+     destination.copy(avatar.root.position).add(right.multiplyScalar(dx).add(backward.multiplyScalar(dz)).normalize().multiplyScalar(dt*3));
+    }
     destination.x=T.MathUtils.clamp(destination.x,-4.7,4.7);destination.z=T.MathUtils.clamp(destination.z,-4.7,4.7);
     const delta=destination.clone().sub(avatar.root.position),distance=delta.length();
     if(distance>.015){avatar.root.position.add(delta.normalize().multiplyScalar(Math.min(distance,dt*2.5)));const target=Math.atan2(delta.x,delta.z);avatar.root.rotation.y+=Math.atan2(Math.sin(target-avatar.root.rotation.y),Math.cos(target-avatar.root.rotation.y))*Math.min(1,dt*12);}
