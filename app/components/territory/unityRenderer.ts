@@ -9,6 +9,8 @@ export function createUnityRenderer(canvas:HTMLCanvasElement){
  const scene=new T.Scene();scene.background=new T.Color('#b5dbd6');
  // Reflect Unity's left-handed Z axis for Three's right-handed view.
  const camera=new T.OrthographicCamera(-48,48,32,-32,.1,200);
+ const resize=()=>{const {width,height}=canvas.getBoundingClientRect();if(!width||!height)return;renderer.setSize(width,height,false);const halfHeight=32;camera.left=-halfHeight*width/height;camera.right=-camera.left;camera.top=halfHeight;camera.bottom=-halfHeight;camera.updateProjectionMatrix();canvas.dataset.viewport=`${width},${height}`;};
+ const observer=new ResizeObserver(resize);observer.observe(canvas);resize();
  scene.add(new T.HemisphereLight('#fff4df','#a4bbc2',2.1));const sun=new T.DirectionalLight('#fff3df',2);sun.position.set(-20,60,40);scene.add(sun);
  const pixels=new Uint8Array(WIDTH*HEIGHT*4),texture=new T.DataTexture(pixels,WIDTH,HEIGHT,T.RGBAFormat);texture.colorSpace=T.SRGBColorSpace;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearFilter;
  const verts:number[]=[],uv:number[]=[],indices:number[]=[],outline:T.Vector3[]=[];const segments=192;
@@ -41,5 +43,5 @@ export function createUnityRenderer(canvas:HTMLCanvasElement){
   while(traps.length<g.traps.length){const l=line([],'#7363a6',true);scene.add(l);traps.push(l);}traps.forEach((l,i)=>{l.visible=i<g.traps.length;if(!l.visible)return;const t=g.traps[i];l.geometry.dispose();l.geometry=new T.BufferGeometry().setFromPoints(Array.from({length:64},(_,k)=>new T.Vector3(t.x+Math.cos(k*Math.PI/32)*9,.12,t.y+Math.sin(k*Math.PI/32)*9)));});
   renderer.render(scene,camera);canvas.dataset.renderer='unity-reference';
  };
- return {render,ready,dispose:()=>{disposed=true;mixers.forEach(m=>m.stopAllAction());disposeTree(scene);decoder.dispose();renderer.dispose();}};
+ return {render,ready,dispose:()=>{disposed=true;observer.disconnect();mixers.forEach(m=>m.stopAllAction());disposeTree(scene);decoder.dispose();renderer.dispose();}};
 }
