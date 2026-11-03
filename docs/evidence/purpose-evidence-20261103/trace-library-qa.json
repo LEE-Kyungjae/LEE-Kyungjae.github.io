@@ -1,0 +1,194 @@
+{
+  "runs": [
+    {
+      "id": "lusion",
+      "before": {
+        "mode": "lusion",
+        "scroll": 0,
+        "camera": [
+          0,
+          3.5,
+          11
+        ],
+        "orbit": 0,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 4
+      },
+      "after": {
+        "mode": "lusion",
+        "scroll": 0.12299867254932137,
+        "camera": [
+          0.7213584193405134,
+          3.5,
+          10.631003982352036
+        ],
+        "orbit": 0,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 9
+      },
+      "tuner": {
+        "old": "5.5",
+        "changed": "6"
+      }
+    },
+    {
+      "id": "igloo",
+      "before": {
+        "mode": "igloo",
+        "scroll": 0,
+        "camera": [
+          0,
+          2.5,
+          10
+        ],
+        "orbit": 0,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 4
+      },
+      "after": {
+        "mode": "igloo",
+        "scroll": 0.1207945367366895,
+        "camera": [
+          0.8946310535311018,
+          2.9445330742807716,
+          4.081067699902214
+        ],
+        "orbit": 0,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 9
+      },
+      "tuner": {
+        "old": "5.5",
+        "changed": "6"
+      }
+    },
+    {
+      "id": "unseen",
+      "before": {
+        "mode": "unseen",
+        "scroll": 0,
+        "camera": [
+          0,
+          4.2,
+          12
+        ],
+        "orbit": 0,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 2
+      },
+      "after": {
+        "mode": "unseen",
+        "scroll": 0,
+        "camera": [
+          -8.153835895731227,
+          4.2176470588235295,
+          8.804258071267842
+        ],
+        "orbit": -0.7470622798499744,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 19
+      },
+      "tuner": {
+        "old": "0.006",
+        "changed": "0.007"
+      }
+    },
+    {
+      "id": "bruno",
+      "before": {
+        "mode": "bruno",
+        "scroll": 0,
+        "camera": [
+          8.116266736501085,
+          10,
+          12
+        ],
+        "orbit": 0,
+        "car": [
+          0,
+          0,
+          0
+        ],
+        "speed": 0,
+        "frames": 3
+      },
+      "after": {
+        "mode": "bruno",
+        "scroll": 0,
+        "camera": [
+          8.483561981227563,
+          10,
+          11.984539374779601
+        ],
+        "orbit": 0,
+        "car": [
+          9.996161586467947e-18,
+          0,
+          -0.0816248537409126
+        ],
+        "speed": 1.0683404579822076,
+        "frames": 13
+      },
+      "tuner": {
+        "old": "9",
+        "changed": "9.5"
+      }
+    },
+    {
+      "id": "dennis",
+      "before": {
+        "mode": "dennis",
+        "menu": false,
+        "hover": false,
+        "cursor": {
+          "x": 600,
+          "y": 425
+        }
+      },
+      "after": {
+        "mode": "dennis",
+        "menu": false,
+        "hover": false,
+        "cursor": {
+          "x": 741.3674788090285,
+          "y": 322.0217077060099
+        }
+      },
+      "tuner": {
+        "old": "12",
+        "changed": "13"
+      }
+    }
+  ],
+  "errors": []
+}

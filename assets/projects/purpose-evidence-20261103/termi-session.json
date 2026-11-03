@@ -1,0 +1,17 @@
+{
+  "capturedAt": "2026-11-03",
+  "sourceCommit": "78dd684c11616b0a9dcac63a4afd3dbd7019f340",
+  "scope": "Original web UI -> original local relay -> outbound connector -> isolated tmux. Browser viewport 390x844, not physical phone. Account authentication disabled on loopback-only isolated test services. No external network or AI model execution claimed.",
+  "sequence": [
+    "Pair connector through original UI",
+    "Open portfolio-proof tmux session",
+    "Send shell command and Enter from web composer",
+    "Observe step 1/5",
+    "Navigate browser to about:blank while task continues",
+    "Wait 11 seconds; reopen application",
+    "Use original resume-last-session button",
+    "Observe step 5/5 and TASK-COMPLETE"
+  ],
+  "output": " \nze@MacBook-Air /tmp % printf 'SESSION-PROOF-20261103\\n'; for i in 1 2 3 4 5; do\nprintf 'step %s/5\\n' $i; sleep 2; done; printf 'TASK-COMPLETE\\n'\nSESSION-PROOF-20261103\nstep 1/5\nstep 2/5\nstep 3/5\nstep 4/5\nstep 5/5\nTASK-COMPLETE\nze@MacBook-Air /tmp %\n                       \n \n \n \n \n \n \n \n \n \n \n \n \n \n ",
+  "complete": true
+}

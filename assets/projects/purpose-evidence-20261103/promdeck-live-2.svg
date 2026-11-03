@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+  <rect width="144" height="144" rx="14" fill="#12261a"/>
+  <rect x="0" y="0" width="144" height="5" rx="2.5" fill="#3ddc84"/>
+  <text x="72" y="34" text-anchor="middle" font-family="sans-serif"
+        font-size="17" font-weight="600" fill="#7fa98d"
+        letter-spacing="1">SERIES</text>
+  <text x="72" y="86" text-anchor="middle" font-family="sans-serif"
+        font-size="46" font-weight="700" fill="#e8f5ec">8k</text>
+  <polyline points="10.0,118.0 13.8,118.0 17.5,118.0 21.3,118.0 25.0,118.0 28.8,118.0 32.5,118.0 36.3,118.0 40.1,118.0 43.8,118.0 47.6,118.0 51.3,118.0 55.1,118.0 58.8,118.0 62.6,118.0 66.4,118.0 70.1,118.0 73.9,118.0 77.6,118.0 81.4,118.0 85.2,118.0 88.9,118.0 92.7,118.0 96.4,118.0 100.2,118.0 103.9,118.0 107.7,118.0 111.5,118.0 115.2,118.0 119.0,118.0 122.7,118.0 126.5,118.0 130.2,118.0 134.0,118.0" fill="none" stroke="#3ddc84" stroke-width="3"
+         stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

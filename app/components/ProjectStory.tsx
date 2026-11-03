@@ -1,5 +1,6 @@
 'use client';
 import CoreFeatureEvidence from './CoreFeatureEvidence';
+import JudgmentComparison from './JudgmentComparison';
 import GitHubLink from './GitHubLink';
 import {useEffect,useRef,useState,type CSSProperties} from 'react';
 import ProjectOutcome from './ProjectOutcome';
@@ -67,7 +68,7 @@ function GahyeonScene({calm}:{calm:boolean}){
 export default function ProjectStory({project,calm}:{project:ProjectId;calm:boolean}){
  const data=projectDetails[project];
  return <div className={`focused-story story-${project} ${calm?'is-calm':''}`}>
-  {project==='palamedes'&&<PalamedesLayers/>}
+  {project==='palamedes'&&<><JudgmentComparison/><PalamedesLayers/></>}
   <ProjectResult project={project}/>
   <CoreFeatureEvidence id={project}/>
   {project==='palamedes'?<PalamedesScene/>:<GahyeonScene calm={calm}/>}

@@ -1,0 +1,15 @@
+{
+  "routes": [
+    "palamedes",
+    "ocean-atlas-scroll",
+    "promdeck",
+    "ClaudeCodeLooper",
+    "termi",
+    "insight-rag"
+  ],
+  "widths": [
+    1440,
+    390
+  ],
+  "errors": []
+}

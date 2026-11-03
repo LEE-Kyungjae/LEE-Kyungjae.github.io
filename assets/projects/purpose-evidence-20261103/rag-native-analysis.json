@@ -1,0 +1,3027 @@
+{
+  "repo": "ClaudeCodeLooper",
+  "commit_sha": null,
+  "raw_evidence_indexed": 0,
+  "components_indexed": 0,
+  "skipped_files": 6,
+  "analysis_budget": {
+    "max_files": 300,
+    "max_file_bytes": 200000,
+    "discovered_files": 119,
+    "eligible_files": 105,
+    "selected_files": 105,
+    "skipped_by_type": 14,
+    "skipped_by_size": 0,
+    "skipped_by_limit": 0,
+    "skipped_empty_or_unreadable": 6,
+    "analysis_level": "partial",
+    "degradation_reasons": [
+      "some files were empty or unreadable"
+    ],
+    "next_deep_scan_targets": [
+      ".claude/commands",
+      "src/services",
+      "tests/unit",
+      "src/cli",
+      "src/models",
+      "specs/001-5-5-5",
+      "tests/contract",
+      "tests/integration"
+    ]
+  },
+  "dry_run": true,
+  "components": [
+    {
+      "component": "Changelog",
+      "path": "CHANGELOG",
+      "domain": "realtime communication",
+      "deliverables": [
+        "stream lifecycle reference"
+      ],
+      "capabilities": [
+        "stream multiplexing"
+      ],
+      "patterns": [
+        "structured logging"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "diagnosability"
+      ],
+      "reference_score": 4.185,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "component": "Improvements",
+      "path": "IMPROVEMENTS",
+      "domain": null,
+      "deliverables": [
+        "engineering convention reference"
+      ],
+      "capabilities": [
+        "observability",
+        "engineering convention enforcement",
+        "data flow explanation"
+      ],
+      "patterns": [
+        "cache aside",
+        "structured logging",
+        "convention as code"
+      ],
+      "solves": [
+        "enforce team coding conventions"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability",
+        "performance regression prevention",
+        "team convention enforcement",
+        "readable overview"
+      ],
+      "reference_score": 5.255,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": true,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": true,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.6
+      },
+      "source_paths": [
+        "IMPROVEMENTS.md"
+      ]
+    },
+    {
+      "component": "Readme",
+      "path": "README",
+      "domain": "pipeline orchestration",
+      "deliverables": [
+        "pipeline node diagram",
+        "engineering convention reference"
+      ],
+      "capabilities": [
+        "stream multiplexing",
+        "data flow explanation"
+      ],
+      "patterns": [
+        "structured logging"
+      ],
+      "solves": [
+        "explain data pipeline",
+        "enforce team coding conventions"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "team convention enforcement",
+        "readable overview",
+        "mobile environment"
+      ],
+      "reference_score": 4.102,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "README.md"
+      ]
+    },
+    {
+      "component": "RefactoringComplete",
+      "path": "REFACTORING_COMPLETE",
+      "domain": "realtime communication",
+      "deliverables": [
+        "stream lifecycle reference",
+        "observability practice reference",
+        "engineering convention reference"
+      ],
+      "capabilities": [
+        "observability",
+        "stream multiplexing"
+      ],
+      "patterns": [
+        "structured logging"
+      ],
+      "solves": [
+        "make failures diagnosable"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability",
+        "performance regression prevention",
+        "team convention enforcement",
+        "readable overview",
+        "mobile environment"
+      ],
+      "reference_score": 5.522,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": true,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.6
+      },
+      "source_paths": [
+        "REFACTORING_COMPLETE.md"
+      ]
+    },
+    {
+      "component": "Src",
+      "path": "src",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 5.222,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/__init__.py",
+        "src/exceptions.py"
+      ]
+    },
+    {
+      "component": "SrcServicesConfigManager",
+      "path": "src/services/config_manager",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "presentation format",
+        "readable overview"
+      ],
+      "reference_score": 6.427,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.5
+      },
+      "source_paths": [
+        "src/services/config_manager.py"
+      ]
+    },
+    {
+      "component": "SrcServicesHealthChecker",
+      "path": "src/services/health_checker",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability",
+        "presentation format"
+      ],
+      "reference_score": 4.551,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/services/health_checker.py"
+      ]
+    },
+    {
+      "component": "SrcServicesOutputCapture",
+      "path": "src/services/output_capture",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "backpressure handling"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 4.768,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/services/output_capture.py"
+      ]
+    },
+    {
+      "component": "SrcServicesPatternDetector",
+      "path": "src/services/pattern_detector",
+      "domain": null,
+      "deliverables": [
+        "observability practice reference"
+      ],
+      "capabilities": [
+        "observability",
+        "backpressure handling"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [
+        "make failures diagnosable"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability"
+      ],
+      "reference_score": 5.565,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": true,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/services/pattern_detector.py"
+      ]
+    },
+    {
+      "component": "SrcServicesProcessLauncher",
+      "path": "src/services/process_launcher",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 4.551,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/services/process_launcher.py"
+      ]
+    },
+    {
+      "component": "SrcServicesProcessMonitor",
+      "path": "src/services/process_monitor",
+      "domain": "realtime communication",
+      "deliverables": [
+        "stream lifecycle reference"
+      ],
+      "capabilities": [
+        "stream multiplexing"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability",
+        "presentation format"
+      ],
+      "reference_score": 4.948,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/services/process_monitor.py"
+      ]
+    },
+    {
+      "component": "SrcServicesRestartController",
+      "path": "src/services/restart_controller",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic"
+      ],
+      "reference_score": 4.551,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/services/restart_controller.py"
+      ]
+    },
+    {
+      "component": "SrcServicesStateManager",
+      "path": "src/services/state_manager",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside",
+        "fallback cache"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 5.214,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/services/state_manager.py"
+      ]
+    },
+    {
+      "component": "SrcServicesTaskQueue",
+      "path": "src/services/task_queue",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "presentation format"
+      ],
+      "reference_score": 4.07,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/services/task_queue.py"
+      ]
+    },
+    {
+      "component": "SrcServicesTemplateManager",
+      "path": "src/services/template_manager",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "team convention enforcement"
+      ],
+      "reference_score": 4.07,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.1
+      },
+      "source_paths": [
+        "src/services/template_manager.py"
+      ]
+    },
+    {
+      "component": "SrcServicesTimingManager",
+      "path": "src/services/timing_manager",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 5.236,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/services/timing_manager.py"
+      ]
+    },
+    {
+      "component": "SrcUtilsInit",
+      "path": "src/utils/__init__",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 3.577,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": false,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": false,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.1
+      },
+      "source_paths": [
+        "src/utils/__init__.py"
+      ]
+    },
+    {
+      "component": "SrcUtilsLogging",
+      "path": "src/utils/logging",
+      "domain": "engineering convention",
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside",
+        "structured logging"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "team convention enforcement"
+      ],
+      "reference_score": 4.234,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": true,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/utils/logging.py"
+      ]
+    },
+    {
+      "component": "SrcCliMain",
+      "path": "src/cli/main",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "backpressure handling"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "diagnosability"
+      ],
+      "reference_score": 5.793,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": true,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": true,
+        "is_entrypoint_file": true,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/cli/main.py"
+      ]
+    },
+    {
+      "component": "SrcCliCommandsConfig",
+      "path": "src/cli/commands/config",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 6.122,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": true,
+        "is_entrypoint_file": true,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/cli/commands/config.py"
+      ]
+    },
+    {
+      "component": "SrcCliCommandsLogs",
+      "path": "src/cli/commands/logs",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 5.782,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/cli/commands/logs.py"
+      ]
+    },
+    {
+      "component": "SrcCliCommandsQueue",
+      "path": "src/cli/commands/queue",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "generate explanatory labels"
+      ],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "readable overview"
+      ],
+      "reference_score": 5.035,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": true,
+        "is_entrypoint_file": true,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/cli/commands/queue.py"
+      ]
+    },
+    {
+      "component": "SrcCliCommandsStart",
+      "path": "src/cli/commands/start",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic",
+        "diagnosability"
+      ],
+      "reference_score": 5.518,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": true,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/cli/commands/start.py"
+      ]
+    },
+    {
+      "component": "SrcCliCommandsStatus",
+      "path": "src/cli/commands/status",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic",
+        "readable overview"
+      ],
+      "reference_score": 6.142,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.5
+      },
+      "source_paths": [
+        "src/cli/commands/status.py"
+      ]
+    },
+    {
+      "component": "SrcCliCommandsStop",
+      "path": "src/cli/commands/stop",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [],
+      "reference_score": 5.042,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/cli/commands/stop.py"
+      ]
+    },
+    {
+      "component": "SrcLibInit",
+      "path": "src/lib/__init__",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 3.577,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": false,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": false,
+        "has_intra_file_call_graph": false,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.1
+      },
+      "source_paths": [
+        "src/lib/__init__.py"
+      ]
+    },
+    {
+      "component": "SrcLibLoggingConfig",
+      "path": "src/lib/logging_config",
+      "domain": "engineering convention",
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic",
+        "team convention enforcement"
+      ],
+      "reference_score": 5.782,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": true,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/lib/logging_config.py"
+      ]
+    },
+    {
+      "component": "SrcLibSignalHandler",
+      "path": "src/lib/signal_handler",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [],
+      "reference_score": 5.042,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/lib/signal_handler.py"
+      ]
+    },
+    {
+      "component": "SrcLibWindowsProcess",
+      "path": "src/lib/windows_process",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "high concurrency"
+      ],
+      "reference_score": 3.577,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": false,
+        "has_intra_file_call_graph": false,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.1
+      },
+      "source_paths": [
+        "src/lib/windows_process.py"
+      ]
+    },
+    {
+      "component": "SrcModelsLimitDetectionEvent",
+      "path": "src/models/limit_detection_event",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "presentation format"
+      ],
+      "reference_score": 3.785,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/models/limit_detection_event.py"
+      ]
+    },
+    {
+      "component": "SrcModelsMonitoringSession",
+      "path": "src/models/monitoring_session",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 3.785,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/models/monitoring_session.py"
+      ]
+    },
+    {
+      "component": "SrcModelsQueuedTask",
+      "path": "src/models/queued_task",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "presentation format"
+      ],
+      "reference_score": 3.785,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/models/queued_task.py"
+      ]
+    },
+    {
+      "component": "SrcModelsRestartCommandConfig",
+      "path": "src/models/restart_command_config",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "retry and fallback"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 4.768,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/models/restart_command_config.py"
+      ]
+    },
+    {
+      "component": "SrcModelsSystemConfiguration",
+      "path": "src/models/system_configuration",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 5.782,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "src/models/system_configuration.py"
+      ]
+    },
+    {
+      "component": "SrcModelsTaskCompletionMonitor",
+      "path": "src/models/task_completion_monitor",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "failure handling",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure",
+        "handle failure paths"
+      ],
+      "constraints": [
+        "production traffic",
+        "presentation format",
+        "readable overview"
+      ],
+      "reference_score": 5.742,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": true,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "src/models/task_completion_monitor.py"
+      ]
+    },
+    {
+      "component": "SrcModelsWaitingPeriod",
+      "path": "src/models/waiting_period",
+      "domain": null,
+      "deliverables": [
+        "implementation reference"
+      ],
+      "capabilities": [
+        "implementation structure",
+        "runtime path implementation"
+      ],
+      "patterns": [
+        "component boundary"
+      ],
+      "solves": [
+        "understand reusable code structure"
+      ],
+      "constraints": [
+        "production traffic",
+        "presentation format"
+      ],
+      "reference_score": 3.785,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": false,
+        "used_in_runtime_path": true,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": false,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": false,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": false,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "src/models/waiting_period.py"
+      ]
+    },
+    {
+      "component": "IntegrationConfigValidation",
+      "path": "integration/config_validation",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "backpressure handling"
+      ],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "mobile environment"
+      ],
+      "reference_score": 5.095,
+      "typed_signals": {
+        "is_test": true,
+        "is_demo_only": false,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": true,
+        "has_failure_test": true,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": true,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": true,
+        "has_concurrency_test_intent": true,
+        "has_failure_test_intent": true,
+        "has_observability_test_intent": true,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.5
+      },
+      "source_paths": [
+        "tests/integration/test_config_validation.py"
+      ]
+    },
+    {
+      "component": "IntegrationLimitDetection",
+      "path": "integration/limit_detection",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "backpressure handling"
+      ],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 3.815,
+      "typed_signals": {
+        "is_test": true,
+        "is_demo_only": false,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": true,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": true,
+        "has_try_except": false,
+        "has_context_manager": false,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": true,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": true,
+        "has_observability_test_intent": true,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "tests/integration/test_limit_detection.py"
+      ]
+    },
+    {
+      "component": "IntegrationProcessMonitoring",
+      "path": "integration/process_monitoring",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability"
+      ],
+      "reference_score": 5.256,
+      "typed_signals": {
+        "is_test": true,
+        "is_demo_only": false,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": true,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": true,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": true,
+        "has_concurrency_test_intent": true,
+        "has_failure_test_intent": true,
+        "has_observability_test_intent": true,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "tests/integration/test_process_monitoring.py"
+      ]
+    },
+    {
+      "component": "IntegrationRestartCycle",
+      "path": "integration/restart_cycle",
+      "domain": "pipeline orchestration",
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "state machine"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "mobile environment"
+      ],
+      "reference_score": 5.256,
+      "typed_signals": {
+        "is_test": true,
+        "is_demo_only": false,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": true,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": true,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": true,
+        "has_try_except": true,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": true,
+        "has_concurrency_test_intent": true,
+        "has_failure_test_intent": true,
+        "has_observability_test_intent": true,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "tests/integration/test_restart_cycle.py"
+      ]
+    },
+    {
+      "component": "UnitUtilsLogging",
+      "path": "unit/utils/logging",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [],
+      "patterns": [
+        "structured logging"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 3.916,
+      "typed_signals": {
+        "is_test": true,
+        "is_demo_only": false,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "has_ast_parse": true,
+        "has_classes": false,
+        "has_functions": true,
+        "has_async_functions": false,
+        "has_assertions": true,
+        "has_try_except": false,
+        "has_context_manager": true,
+        "has_runtime_entrypoint": false,
+        "has_external_dependency_boundary": true,
+        "has_intra_file_call_graph": true,
+        "has_test_intent": true,
+        "has_concurrency_test_intent": false,
+        "has_failure_test_intent": false,
+        "has_observability_test_intent": true,
+        "has_query_plan_test_intent": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "tests/unit/utils/test_logging.py"
+      ]
+    },
+    {
+      "component": "DocsImplementationRoadmap",
+      "path": "docs/implementation-roadmap",
+      "domain": null,
+      "deliverables": [
+        "engineering convention reference"
+      ],
+      "capabilities": [],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "performance regression prevention",
+        "team convention enforcement"
+      ],
+      "reference_score": 2.57,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": true,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        "docs/implementation-roadmap.md"
+      ]
+    },
+    {
+      "component": "DocsPromptMechanism",
+      "path": "docs/prompt-mechanism",
+      "domain": null,
+      "deliverables": [
+        "engineering convention reference"
+      ],
+      "capabilities": [
+        "data flow explanation"
+      ],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "team convention enforcement"
+      ],
+      "reference_score": 3.042,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "docs/prompt-mechanism.md"
+      ]
+    },
+    {
+      "component": ".claude",
+      "path": ".claude",
+      "domain": "agent orchestration",
+      "deliverables": [],
+      "capabilities": [
+        "stream multiplexing",
+        "data flow explanation",
+        "generate explanatory labels"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [
+        "explain data pipeline"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "diagnosability",
+        "team convention enforcement",
+        "readable overview",
+        "mobile environment"
+      ],
+      "reference_score": 4.034,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.4
+      },
+      "source_paths": [
+        ".claude/settings.local.json",
+        ".claude/commands/README.md",
+        ".claude/commands/cl-logs.md",
+        ".claude/commands/cl-off.md",
+        ".claude/commands/cl-on.md",
+        ".claude/commands/cl-queue-delete.md",
+        ".claude/commands/cl-queue-list.md",
+        ".claude/commands/cl-queue-templates.md",
+        ".claude/commands/cl-queue.md",
+        ".claude/commands/cl-status.md",
+        ".claude/commands/commands.json",
+        ".claude/commands/plan.md",
+        ".claude/commands/specify.md",
+        ".claude/commands/tasks.md"
+      ]
+    },
+    {
+      "component": ".specify",
+      "path": ".specify",
+      "domain": "pipeline orchestration",
+      "deliverables": [
+        "pipeline node diagram",
+        "engineering convention reference"
+      ],
+      "capabilities": [
+        "pipeline node diagram",
+        "data flow explanation",
+        "layout dependency nodes"
+      ],
+      "patterns": [
+        "cache aside",
+        "graph layout",
+        "structured logging"
+      ],
+      "solves": [
+        "draw pipeline nodes from data flow"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "team convention enforcement",
+        "readable overview",
+        "mobile environment"
+      ],
+      "reference_score": 5.095,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        ".specify/memory/constitution.md",
+        ".specify/memory/constitution_update_checklist.md",
+        ".specify/templates/agent-file-template.md",
+        ".specify/templates/plan-template.md",
+        ".specify/templates/spec-template.md",
+        ".specify/templates/tasks-template.md"
+      ]
+    },
+    {
+      "component": "001555Plan",
+      "path": "001-5-5-5/plan",
+      "domain": "agent orchestration",
+      "deliverables": [],
+      "capabilities": [
+        "data flow explanation"
+      ],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "readable overview",
+        "mobile environment"
+      ],
+      "reference_score": 2.767,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "specs/001-5-5-5/plan.md"
+      ]
+    },
+    {
+      "component": "001555Quickstart",
+      "path": "001-5-5-5/quickstart",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "backpressure handling"
+      ],
+      "patterns": [
+        "cache aside"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "team convention enforcement",
+        "mobile environment"
+      ],
+      "reference_score": 3.525,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "specs/001-5-5-5/quickstart.md"
+      ]
+    },
+    {
+      "component": "001555Research",
+      "path": "001-5-5-5/research",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "retry and fallback"
+      ],
+      "patterns": [
+        "structured logging"
+      ],
+      "solves": [],
+      "constraints": [
+        "production traffic"
+      ],
+      "reference_score": 4.005,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": true,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": false,
+        "has_explanatory_output": false,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.2
+      },
+      "source_paths": [
+        "specs/001-5-5-5/research.md"
+      ]
+    },
+    {
+      "component": "001555Spec",
+      "path": "001-5-5-5/spec",
+      "domain": null,
+      "deliverables": [
+        "engineering convention reference"
+      ],
+      "capabilities": [
+        "pipeline node diagram"
+      ],
+      "patterns": [],
+      "solves": [
+        "draw pipeline nodes from data flow"
+      ],
+      "constraints": [
+        "production traffic",
+        "team convention enforcement",
+        "mobile environment"
+      ],
+      "reference_score": 2.302,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "specs/001-5-5-5/spec.md"
+      ]
+    },
+    {
+      "component": "001555Tasks",
+      "path": "001-5-5-5/tasks",
+      "domain": null,
+      "deliverables": [
+        "pipeline node diagram"
+      ],
+      "capabilities": [
+        "pipeline node diagram",
+        "layout dependency nodes"
+      ],
+      "patterns": [
+        "structured logging"
+      ],
+      "solves": [
+        "draw pipeline nodes from data flow"
+      ],
+      "constraints": [
+        "high concurrency",
+        "production traffic",
+        "team convention enforcement",
+        "mobile environment"
+      ],
+      "reference_score": 3.522,
+      "typed_signals": {
+        "is_test": false,
+        "is_demo_only": true,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": false,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": false,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.3
+      },
+      "source_paths": [
+        "specs/001-5-5-5/tasks.md"
+      ]
+    },
+    {
+      "component": "001555ContractsMonitoringApi",
+      "path": "001-5-5-5/contracts/monitoring-api",
+      "domain": null,
+      "deliverables": [],
+      "capabilities": [
+        "stream multiplexing",
+        "generate explanatory labels"
+      ],
+      "patterns": [],
+      "solves": [],
+      "constraints": [
+        "production traffic",
+        "readable overview"
+      ],
+      "reference_score": 4.749,
+      "typed_signals": {
+        "is_test": true,
+        "is_demo_only": false,
+        "used_in_runtime_path": false,
+        "has_concurrency_test": false,
+        "has_failure_test": true,
+        "has_benchmark": false,
+        "has_fallback": false,
+        "has_observability": true,
+        "has_correlation_id": false,
+        "has_slo_or_runbook": false,
+        "has_query_plan_check": false,
+        "has_n_plus_one_guard": false,
+        "has_convention_enforcement": false,
+        "has_lifecycle_management": true,
+        "has_explanatory_output": true,
+        "reachable_from_entrypoint": false,
+        "is_entrypoint_file": false,
+        "analysis_budget_limited": false,
+        "analysis_partial": true,
+        "has_skipped_evidence": true,
+        "evidence_strength": 0.5
+      },
+      "source_paths": [
+        "specs/001-5-5-5/contracts/monitoring-api.json"
+      ]
+    }
+  ],
+  "llm_review": {
+    "enabled": false,
+    "reviewed": 0,
+    "dropped": 0,
+    "unavailable": 0,
+    "skipped_by_cap": 0
+  }
+}

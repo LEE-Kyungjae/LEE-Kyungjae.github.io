@@ -1,0 +1,243 @@
+{
+  "executedAt": "2026-11-03",
+  "case": "termi-agent-control",
+  "inputFrozenAt": "2026-07-25T10:36:19.818162+00:00",
+  "sameInputFingerprint": "62833d4288bf7f185225b21ba62af0bdf15d7c69d00163998098c153099bcf4e",
+  "modelSetting": "configured-default; local CLI configuration gpt-6-astra",
+  "scope": "Fresh single-case replay using historical frozen proof-002 packet. No independent review, outcome test or causal ablation. Unequal compute.",
+  "baseline": {
+    "mission": {
+      "beneficiary": "A developer who leaves a coding agent running on a Mac and needs to handle a consequential decision from an iPhone before returning to desktop work.",
+      "consequential_choice": "sequence: Prioritize a bounded controlled-agent workflow over further general terminal expansion. Preserve terminal access, but reserve agent-control promises for explicitly Termi-owned runs that pass the ownership, reconnect, approval, and return gate.",
+      "falsifiers": [
+        "Observed users need only occasional terminal inspection or keystrokes and do not reuse structured agent control.",
+        "The selected agent cannot expose stable run identity and enforceable action approval without relying on terminal-text interpretation.",
+        "A reconnect, second client, or delayed approval can execute an action twice, authorize a changed action, or misrepresent a run's outcome.",
+        "Users cannot reliably resume the same work on desktop after intervening from the phone."
+      ],
+      "interpretation": "Remote terminal transport is a foundation for agent control, not proof of it. The consequential boundary is whether Termi merely forwards keystrokes or owns a durable run whose status, pending decisions, and outcome remain trustworthy when the phone disconnects.",
+      "mission": "Prove one controlled coding-agent workflow: start an explicitly Termi-owned run on the Mac, leave it running, reconnect from an iPhone, resolve a run-bound approval, and return to a verified outcome and the same desktop session.",
+      "next_probe": "With one developer and one candidate coding agent, trace a real run from desktop launch through phone disconnection, a pending approval, reconnection, and desktop return. Establish whether the agent exposes durable identity, authoritative status, and an enforceable approval boundary. Attempt a duplicate and stale approval response. If those primitives are absent, reject that integration before building a control UI; if present, use this workflow for the pilot.",
+      "non_goals": [
+        "A general-purpose agent orchestration platform or support for multiple agent runtimes.",
+        "Claiming controlled approvals for arbitrary existing tmux sessions or unrestricted raw terminal input.",
+        "Parallel expansion of native and web feature sets before one complete workflow is proven.",
+        "Treating delivery automation, build artifacts, or policy configuration as evidence of user value or runtime enforcement."
+      ],
+      "rationale": "This tests a specific reason to use Termi beyond terminal access while concentrating work on the hardest product promises. Keep existing tmux sessions as terminal access; offer controlled behavior only for explicitly managed runs. The local connector must retain run identity and authority across client disconnects. Reconnection must retrieve state without replaying actions; approvals must bind to the exact pending action and reject stale or duplicate responses. Completion, failure, and waiting must remain distinguishable on return. The sample regex policy does not establish these guarantees.",
+      "situation": "Termi documents pairing, tmux pane discovery, streamed output, and raw input across mobile and web clients. The packet also contains command-policy examples, but no evidence of agent-run ownership, enforceable approvals, reconnect semantics, or structured return behavior.",
+      "success_signal": "Proposed pilot gate: three developers each complete two real away-from-desk runs, including a disconnect during a pending approval. Every return identifies the correct run, current state, pending action or outcome, and original desktop session; no action executes twice or without its required approval. At least two developers voluntarily use the workflow again."
+    },
+    "usage": {
+      "call_count": 1,
+      "calls": [
+        {
+          "call_index": 1,
+          "completed_at": "2026-11-03T11:30:31.789639+00:00",
+          "model": "configured-default",
+          "token_usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 12160,
+            "input_tokens": 24448,
+            "output_tokens": 732,
+            "reasoning_output_tokens": 27
+          }
+        }
+      ],
+      "token_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 12160,
+        "input_tokens": 24448,
+        "output_tokens": 732,
+        "reasoning_output_tokens": 27
+      }
+    }
+  },
+  "palamedes": {
+    "mission": {
+      "beneficiary": "Developers who operate coding agents in existing tmux sessions and need to inspect or resume that work remotely.",
+      "consequential_choice": "sequence: Defer expansion; evaluate the remote-terminal candidate first, then reconsider only the frozen candidates using the observed evidence. Stop the evaluation after the evidence review and five tasks and record a continuation, rejection, or remaining uncertainty.",
+      "falsifiers": [
+        "Users repeatedly cannot identify completion, blockers, or next actions from restored terminal context and need structured run state or approval queues.",
+        "Disconnects leave execution uncertain and the interface encourages replay or users repeat commands without recognizing that uncertainty.",
+        "Local and remote input conflict without detection or an understandable authority boundary.",
+        "The evidence review shows that the proposed reliability work already exists, invalidating any assumption that it must be rebuilt.",
+        "Observed away-and-return tasks provide too little beneficiary value to justify further investment."
+      ],
+      "interpretation": "The remote-terminal candidate has the strongest documented fit and lowest expansion cost, but its reliability and beneficiary value remain unverified. No candidate survives as an unconditional product commitment.",
+      "mission": "Defer the product-boundary commitment and evaluate the frozen candidate: Make Termi a reliable remote terminal for user-owned tmux workflows. Bound this evaluation to an implementation-evidence review and five observed away-and-return tasks before authorizing product changes.",
+      "next_probe": "Request relevant implementation and behavioral evidence for session identity, local and remote authority, input delivery, reconnect recovery, and return presentation. Then observe five existing tmux users on disposable representative tasks, interrupting connectivity during input and introducing both a second client and local intervention. Record whether restored context supports useful action and explicitly retain this population's selection bias when reconsidering the frozen alternatives.",
+      "non_goals": [
+        "Commit to adopted-session supervision, managed runs, or a read-only replacement.",
+        "Claim Termi-level approval enforcement from the example policy file.",
+        "Treat input acknowledgment as proof of command execution or task completion.",
+        "Implement reliability features before reviewing existing behavior.",
+        "Infer broad demand or rare-failure safety from five observations."
+      ],
+      "rationale": "This reversible probe tests the existing product boundary without introducing orchestration or removing remote input. It can reveal whether terminal context is sufficient, whether remote intervention matters, and whether control uncertainty defeats the workflow. Documentation, policy examples, and build metadata cannot substitute for behavioral evidence.",
+      "situation": "Termi documents remote terminal I/O for user-owned tmux sessions. The frozen evidence does not establish ownership, reconnect safety, approval enforcement, return behavior, or demand for structured agent supervision.",
+      "success_signal": "Produce an evidence-backed authority and reconnect contract, plus five task records measuring context-recovery time, required intervention, repeated commands, conflicting input, and unresolved execution uncertainty. Provisional continuation requires users to identify the correct work and resume their tasks without observed duplicate execution or unnoticed control conflicts; this small probe does not establish general safety."
+    },
+    "role_artifacts": {
+      "adversary": {
+        "candidate_critiques": [
+          {
+            "disconfirming_evidence": "Away-and-return observations show repeated commands, conflicting local and remote input, or persistent inability to identify completion and blockers despite restored terminal context. No such observations are supplied.",
+            "failure_mode": "Restoring pane context may preserve access without restoring task understanding. Input acknowledgments cannot by themselves establish whether a command executed, and client control rules may not cover local tmux input.",
+            "hidden_harm": "Users may manually repeat uncertain commands or interrupt the wrong work. Testing only existing tmux users could validate familiarity while excluding developers whose needs motivated structured supervision.",
+            "mission": "Make Termi a reliable remote terminal for user-owned tmux workflows."
+          },
+          {
+            "disconfirming_evidence": "Local intervention changes a pending action without invalidating its approval, a supported agent executes outside the approval hook, or reconnect leaves executed and pending actions indistinguishable. The packet establishes none of the required hooks.",
+            "failure_mode": "User-owned execution and Termi-owned supervision can disagree about authority. A revocable lease cannot guarantee exclusive control if local input bypasses it, and adapter events may not provide enough information to reconcile intervention or bind approvals to unchanged actions.",
+            "hidden_harm": "A structured approval interface could imply control that Termi cannot enforce. Adapter maintenance and reconciliation exceptions could grow into orchestration complexity while retaining ambiguous ownership.",
+            "mission": "Provide structured supervision for coding agents running in explicitly adopted terminal sessions."
+          },
+          {
+            "disconfirming_evidence": "A restart between an external action and its durable acknowledgment produces duplicate execution or an unverifiable outcome; representative tasks repeatedly require unrestricted intervention; or users prefer accessing existing sessions over creating managed runs. These remain untested in the supplied evidence.",
+            "failure_mode": "Persisted run records and deduplicated control requests do not guarantee authoritative knowledge of external side effects after a crash. A runner may resume from stale state, repeat work, or require terminal intervention that breaks the managed contract.",
+            "hidden_harm": "This candidate would waste the most effort if wrong: it requires durable orchestration, execution-boundary approvals, recovery semantics, runner integration, and a new review workflow before demand or technical feasibility is established. Incorrect recovery could also repeat consequential actions.",
+            "mission": "Make Termi the owner of explicitly managed, long-running coding-agent runs."
+          },
+          {
+            "disconfirming_evidence": "Real return episodes frequently require immediate input or approval, handoffs cannot reach an actionable session, or fresh telemetry reports completion when the user's task remains unfinished. Ten episodes alone may miss uncommon but consequential failures.",
+            "failure_mode": "Status visibility may have little value when the reason for checking remotely is to unblock work. Event collection and snapshots can still misclassify task completion or omit failures, and a handoff may be unusable away from the workstation.",
+            "hidden_harm": "Removing remote input abandons a documented capability while retaining integration and freshness costs. Users could trust an apparently complete result or receive blocker notifications they cannot act on.",
+            "mission": "Make Termi a read-only return and handoff interface for independently operated coding agents."
+          }
+        ],
+        "shared_assumptions": [
+          "All candidates assume away-and-return workflows are a sufficiently important product need; the packet contains no user observations, frequency estimates, or demand evidence.",
+          "All assume the available connector, clients, and network paths provide a usable foundation. Documentation and generated build metadata establish neither implementation quality nor operational reliability.",
+          "All require a reliable mapping between the user's intended work and a pane, adopted session, managed run, or status record. No identity or ownership contract is supplied.",
+          "All assume reconnect can restore useful context. Process continuity, transport connectivity, output recovery, action certainty, and task understanding are separate properties.",
+          "All assume authority can be explained and respected across local terminals, multiple clients, agents, and Termi. Neither the policy example nor the documented raw-input interface establishes enforceable boundaries.",
+          "All assume observable activity can support meaningful return behavior. Terminal output or lifecycle completion does not necessarily establish task success, result quality, or absence of pending side effects.",
+          "The proposed probes use different populations and success criteria, so their results would not directly compare product boundaries. They need representative tasks and explicit measures of recovery, intervention, and uncertainty.",
+          "Missing implementation evidence is not evidence of missing implementation. Both expanding the product and rebuilding supposedly absent reliability features could waste effort if the frozen excerpts omit existing capabilities."
+        ]
+      },
+      "interpreter": {
+        "interpretations": [
+          "The documented raw-input and pane-streaming scope supports interpreting Termi as a remote terminal interface whose users manage coding agents through their shells.",
+          "The policy example could indicate an intended controlled-agent interface, or it could be an unused example. It does not establish implemented approval controls.",
+          "tmux could provide process continuity across client disconnects, but continuity alone would not establish exclusive ownership, safe input replay, or recoverable agent state.",
+          "The relay could improve browser connectivity while leaving product semantics unchanged; it does not by itself imply agent orchestration.",
+          "A controlled interface could wrap existing terminal sessions or introduce explicitly managed agent runs. These alternatives require different ownership, approval, reconnect, and return contracts.",
+          "References to QA and deployment may reflect broader maturity than the excerpts show, while generated artifacts and generic documentation may be stale. Neither reading is confirmed."
+        ],
+        "missing_evidence": [
+          "Session ownership rules: who creates, adopts, controls, shares, and terminates sessions or agent runs, including concurrent clients and local terminal access.",
+          "Reconnect behavior: output replay or snapshots, input acknowledgments, duplicate prevention, and handling of disconnects during commands, connector restarts, or relay failures.",
+          "Approval implementation: what actions are intercepted, where enforcement occurs, whether raw terminal input can bypass it, and how approvals bind to exact actions and survive reconnects.",
+          "Return behavior: what users see after leaving and returning, how completion or blocked work is communicated, and how results, pending approvals, failures, and ongoing runs are distinguished.",
+          "Agent integration contracts: supported agents, structured lifecycle events, cancellation and resume behavior, and responsibility for persistent run state.",
+          "Relevant implementation, behavioral tests, and observed failures covering ownership, reconnects, approvals, and return journeys.",
+          "User evidence showing whether remote terminal access meets actual needs or whether users need delegated long-running work with structured supervision.",
+          "Implementation and maintenance costs, compatibility constraints, and explicit success criteria for comparing the two product boundaries."
+        ],
+        "observations": [
+          "The root README describes a macOS tmux connector and Flutter client for pairing, session listing, and terminal I/O; it also documents a Next.js web draft and relay.",
+          "The documented web scope is pairing, listing panes, subscribing to pane output, and sending raw input. Existing shell workflows are expected to run inside tmux.",
+          "The README says startup can create a default detached tmux session, but does not define session ownership or coding-agent lifecycle management.",
+          "An example policy file lists denied commands and commands requiring confirmation. The supplied packet contains no implementation or evidence that these rules govern terminal input.",
+          "Direct browser access requires trusted HTTPS/WSS; the documented relay provides an alternative network path. Neither establishes reconnect semantics.",
+          "The mobile README is generic scaffolding under the name Adelie Terminal. Most supplied frontend artifacts are generated build metadata rather than behavioral source.",
+          "The README references integration smoke tests and deployment workflows, but the packet supplies no test results or operational evidence."
+        ]
+      },
+      "inventor": {
+        "candidate_missions": [
+          {
+            "beneficiary": "Developers who already operate coding agents through tmux and need mobile access to those same sessions.",
+            "falsifier": "In a pilot, users repeatedly cannot resume useful work from restored terminal context and require structured run status or approval queues to complete their away-and-return tasks.",
+            "mechanism": "Keep process creation and agent lifecycle with the user. Define explicit input control across clients, acknowledge input without automatically replaying uncertain keystrokes, and restore pane context on return. Leave agent approvals to the underlying tools and make no Termi-level enforcement claim.",
+            "mission": "Make Termi a reliable remote terminal for user-owned tmux workflows.",
+            "next_probe": "Observe five existing tmux users performing an away-and-return task. Interrupt connectivity during input, introduce a second client, and record ambiguous execution, conflicting input, and time to recover context."
+          },
+          {
+            "beneficiary": "Developers who want to retain their desktop workflows while checking progress and resolving agent blockers from a phone.",
+            "falsifier": "A supported agent cannot expose enforceable approval hooks or sufficient state to reconcile local intervention, leaving Termi unable to distinguish pending, executed, and superseded actions.",
+            "mechanism": "Keep session and process ownership with the user while Termi owns an adoption record and a revocable control lease. Use supported agent adapters for lifecycle events and action-bound approvals; reconcile state after reconnect and show progress, blockers, and results on return. Treat local terminal intervention as an external change that requires reconciliation.",
+            "mission": "Provide structured supervision for coding agents running in explicitly adopted terminal sessions.",
+            "next_probe": "Prototype adoption for one agent with documented lifecycle and approval hooks. Exercise local intervention, concurrent clients, and disconnects before and after approval; verify that stale approvals cannot execute and return status matches the agent."
+          },
+          {
+            "beneficiary": "Developers who want to delegate a bounded coding task and return later to review its outcome without reconstructing terminal history.",
+            "falsifier": "The runner cannot recover authoritative run and action state after a connector restart, or users consistently need unrestricted terminal intervention to finish representative delegated tasks.",
+            "mechanism": "Have Termi create identified runs, persist lifecycle state, and control cancellation and resume through a supported runner. Enforce approvals at the action execution boundary, bind them to exact actions, and deduplicate control requests after reconnect. Present durable results, failures, pending approvals, and active work when users return.",
+            "mission": "Make Termi the owner of explicitly managed, long-running coding-agent runs.",
+            "next_probe": "Build one disposable managed-run prototype with a single supported agent. Restart the connector during execution and approval, resend control requests, and check that the run neither repeats actions nor reports an unsupported outcome."
+          },
+          {
+            "beneficiary": "Developers who mainly need to know whether work finished, failed, or needs attention while away from their workstation.",
+            "falsifier": "Most observed away-from-desk checks require immediate intervention, and a read-only handoff leaves users unable to resolve the problem within their available workflow.",
+            "mechanism": "Leave session ownership, execution, and approvals with existing desktop tools. Collect supported lifecycle events and terminal snapshots, reconcile them after reconnect, and present fresh or explicitly stale status with a handoff to the authoritative session. Provide no remote mutation or approval path.",
+            "mission": "Make Termi a read-only return and handoff interface for independently operated coding agents.",
+            "next_probe": "Run a read-only prototype through ten real departure-and-return episodes. Record whether status alone answers the user's question, whether freshness is understood, and how often remote action is necessary."
+          }
+        ]
+      }
+    },
+    "usage": {
+      "call_count": 4,
+      "calls": [
+        {
+          "call_index": 1,
+          "completed_at": "2026-11-03T11:31:04.915957+00:00",
+          "model": "configured-default",
+          "token_usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 12160,
+            "input_tokens": 24347,
+            "output_tokens": 583,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "call_index": 2,
+          "completed_at": "2026-11-03T11:31:44.186513+00:00",
+          "model": "configured-default",
+          "token_usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 18176,
+            "input_tokens": 24960,
+            "output_tokens": 784,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "call_index": 3,
+          "completed_at": "2026-11-03T11:32:28.343506+00:00",
+          "model": "configured-default",
+          "token_usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 12160,
+            "input_tokens": 25728,
+            "output_tokens": 944,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "call_index": 4,
+          "completed_at": "2026-11-03T11:32:59.794134+00:00",
+          "model": "configured-default",
+          "token_usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 12160,
+            "input_tokens": 26708,
+            "output_tokens": 623,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "token_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 54656,
+        "input_tokens": 101743,
+        "output_tokens": 2934,
+        "reasoning_output_tokens": 0
+      }
+    }
+  }
+}
