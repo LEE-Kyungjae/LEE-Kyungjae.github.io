@@ -1,0 +1,17 @@
+{
+  "scope": "Original PatternDetector and LimitDetectionEvent; synthetic stdout input; no Claude process or restart",
+  "results": [
+    {
+      "input": "Build completed successfully.",
+      "detected": false
+    },
+    {
+      "input": "Usage limit exceeded. Please try again later.",
+      "detected": true,
+      "matched_text": "Usage limit exceeded. Please try again later.",
+      "pattern": "usage limit exceeded",
+      "cooldown_hours": 5.0,
+      "cooldown_active": true
+    }
+  ]
+}

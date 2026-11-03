@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-16",
+  "source": "conversation-review-20261016/pinned-dots-replay.jsonl",
+  "history": [
+    {
+      "role": "user",
+      "content": "임베드에 답변을 넣는 게 좋을 것 같아."
+    },
+    {
+      "role": "assistant",
+      "content": "임베드는 정보를 카드로 표시하는 기능이야."
+    },
+    {
+      "role": "user",
+      "content": "설명을 해달라는 게 아니라 그 방식으로 하면 좋겠다는 말이야."
+    }
+  ],
+  "response": {
+    "case": "feedback_not_tutorial",
+    "model": "dots-studio/dots-3-note-preview:free",
+    "finishReason": "stop",
+    "seconds": 14.66,
+    "content": "\n\n네, 알겠습니다. 다음부터는 임베드 형식으로 답변하겠습니다. 정보를 더 구조화하고 시각적으로 잘 보여줄 수 있을 거야.",
+    "toolCalls": 0
+  },
+  "scope": "Hardcoded replay scenario and actual provider response; historical candidate not selected; not live Discord or Unreal recording"
+}

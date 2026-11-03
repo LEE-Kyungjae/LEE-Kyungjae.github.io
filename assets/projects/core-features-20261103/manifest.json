@@ -1,0 +1,88 @@
+{
+  "createdAt": "2026-11-03",
+  "sources": {
+    "termi": {
+      "source": "termi/docs/evidence/qa-simulator-20261016",
+      "captureDate": "2026-10-16",
+      "scope": "Original iPhone 16e iOS 26.2 CoreSimulator QA, isolated real tmux output and reconnect; not new Android capture; UI recreation not OS process restart"
+    },
+    "brain": {
+      "repository": "brain-workspace-demo",
+      "revision": "6e545e0c4cbdef136d5bd18fc90b69b2996030a6",
+      "scope": "Original browser application, development filter and selected task, repository sample data; Brain Project CC BY-SA 4.0 attribution on page"
+    },
+    "laplace": {
+      "repository": "laplaces-demon",
+      "revision": "c3ab6fe18992c597a65bef3f64f8a2ba6884f7a3",
+      "scope": "Original application with isolated copper-full-demo ledger, 37 events; screenshots desktop and native mobile, no real trade or return evidence"
+    },
+    "looper": {
+      "repository": "ClaudeCodeLooper",
+      "revision": "3111da6c6c7246ba89ef3e6ca49b5845c2352201",
+      "scope": "Original PatternDetector.detect_limit_message and LimitDetectionEvent.start_cooldown executed with synthetic stdout. No live Claude process, elapsed cooldown or restart."
+    },
+    "gahyeon": {
+      "source": "gahyeonbot/artifacts/conversation-review-20261016/pinned-dots-replay.jsonl and replay_candidate.py",
+      "scope": "Hardcoded QA scenario and verbatim provider response; candidate not selected; no private user conversation copied; no live Discord/Unreal/audio claim"
+    },
+    "palamedes": {
+      "source": "Palamedes/assets/demo/yut-gameplay-demo.jpg and docs/evidence-and-demos.md",
+      "scope": "Original app screenshot of local Yut implementation. Retained failure: online-multiplayer intent diverged. Not Palamedes UI or independent creativity evidence."
+    }
+  },
+  "privacyReview": "Only app captures, fixed QA messages and whitelisted synthetic detector returns. No credentials, session IDs, original user messages or operational env copied. Termi screenshot has generic MacBook-Air.local hostname.",
+  "files": [
+    {
+      "file": "brain-filter.png",
+      "sha256": "6f2af8b9480d6295bf28eb105c3ee57b534322266fd692e73fe010386e8cfefc"
+    },
+    {
+      "file": "brain-selected.png",
+      "sha256": "cb6d4fe266336a6e361000407ab4bcd1031a0025187573d7cc08a8cce73da884"
+    },
+    {
+      "file": "gahyeon-response.json",
+      "sha256": "c22fdb401faf2b4fdb116e94b4ec5614bef1eda54edabf863d72e342581582b4"
+    },
+    {
+      "file": "laplace-governance-mobile.png",
+      "sha256": "568ca3c024c3247c6cd59180ab097d78f8a534980988ec07eb9e6b815c27587e"
+    },
+    {
+      "file": "laplace-governance.png",
+      "sha256": "a2c41800f1bf3284166a4e41f7f89e8a9f970ceed6fc2cd51a25bf2b0df21056"
+    },
+    {
+      "file": "laplace-prediction-mobile.png",
+      "sha256": "e72148cffa3c8446f5e0e6bf38fc58bcff434f25aad3c9f7c080513a005f3e01"
+    },
+    {
+      "file": "laplace-prediction.png",
+      "sha256": "bb5ca4d2e65ec0db479b6c9d052eafb294ae4abf3a3f71c7fb57acc1c14337ae"
+    },
+    {
+      "file": "laplace-research-mobile.png",
+      "sha256": "93ddd58f102bc7d138cfd79fda81dd14a85a4b2e57837df20277b800d756aae5"
+    },
+    {
+      "file": "laplace-research.png",
+      "sha256": "2484d3fc58b133a56be1eb4c5d9f45893a22731da1bd655cd1a7c544f92d0637"
+    },
+    {
+      "file": "looper-detection.json",
+      "sha256": "0a6d27dc6598fc91f16432dbed4a279e3a8ef196ede30d0c1066f4f73bda9a0a"
+    },
+    {
+      "file": "palamedes-yut.jpg",
+      "sha256": "21aa8f8e5ac5df3fa4f0179064f2050a6b9dc2941fefe350942f9514d53d9c01"
+    },
+    {
+      "file": "termi-reconnected.png",
+      "sha256": "05f981d1108c173def0255637961f12e966cf4d6e5f3b46392cf2deaf2d06055"
+    },
+    {
+      "file": "termi-sessions.png",
+      "sha256": "020d81a0c0aa642145177e68990b588436cd962fe604aafa8aab0c7ab0c61994"
+    }
+  ]
+}
