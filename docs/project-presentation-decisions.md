@@ -180,3 +180,9 @@ No deployment in this change. No representative artwork deleted or regenerated.
 - PocketTerm hardware photo/video remains unavailable; SSH timed out. Actual source excerpt is explicitly source, not a device capture. This part is not marked fulfilled as real-device proof.
 - Actual captures are placed before visual-story components on all eight pages, image originals can be opened, original ocean recording has native controls. Preserve personal/sample data boundaries: do not publish the CLI's discovered live session status; only --help output is included.
 - Original capture vs recorded fixture vs simulation provenance: assets/projects/actual-products-20261102/manifest.json. Desktop/mobile integration evidence: output/playwright/actual-products-20261102/.
+
+## 2026-11-03 — core-feature coverage cycle
+- Audit all eleven destinations by input/action/result, not screenshot count. Add actual session/reconnect, brain filter/selection, and Laplace debate/approval/evaluation screens. Capture original responsive mobile UI where desktop scaling makes it unreadable.
+- Show Gahyeon's historical hardcoded QA model response verbatim and retain non-selected candidate status. Run Looper's original detector/event code with synthetic stdout; do not claim process monitoring or automatic restart. Present its executed result ahead of --help.
+- Preserve Palamedes' documented Yut scope divergence beside its original app screenshot. A mostly static source recording is not presented as a gameplay demonstration. Move insight-rag's existing actual scoring output before explanatory diagrams.
+- Keep outstanding Qdrant/model, physical Stream Deck, PocketTerm device, voice/Unreal and process restart evidence explicit. Do not fill missing proof with generated screens. Claims/provenance and remaining gaps: docs/evidence/core-features-20261103/audit.md and assets/projects/core-features-20261103/manifest.json.

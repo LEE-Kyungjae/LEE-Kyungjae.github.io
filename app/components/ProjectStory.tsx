@@ -1,4 +1,5 @@
 'use client';
+import CoreFeatureEvidence from './CoreFeatureEvidence';
 import GitHubLink from './GitHubLink';
 import {useEffect,useRef,useState,type CSSProperties} from 'react';
 import ProjectOutcome from './ProjectOutcome';
@@ -68,6 +69,7 @@ export default function ProjectStory({project,calm}:{project:ProjectId;calm:bool
  return <div className={`focused-story story-${project} ${calm?'is-calm':''}`}>
   {project==='palamedes'&&<PalamedesLayers/>}
   <ProjectResult project={project}/>
+  <CoreFeatureEvidence id={project}/>
   {project==='palamedes'?<PalamedesScene/>:<GahyeonScene calm={calm}/>}
   <ProjectOutcome project={project}/>
   <div className="project-boundary"><p>{data.scope}</p><GitHubLink href={data.repository} label={`${data.name} GitHub 저장소`}/></div>
