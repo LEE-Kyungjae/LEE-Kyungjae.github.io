@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+  <rect width="144" height="144" rx="14" fill="#12261a"/>
+  <rect x="0" y="0" width="144" height="5" rx="2.5" fill="#3ddc84"/>
+  <text x="72" y="34" text-anchor="middle" font-family="sans-serif"
+        font-size="17" font-weight="600" fill="#7fa98d"
+        letter-spacing="1">LATENCY</text>
+  <text x="72" y="86" text-anchor="middle" font-family="sans-serif"
+        font-size="41.2" font-weight="700" fill="#e8f5ec">120ms</text>
+  <polyline points="10.0,132.0 51.3,113.3 92.7,119.2 134.0,104.0" fill="none" stroke="#3ddc84" stroke-width="3"
+         stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

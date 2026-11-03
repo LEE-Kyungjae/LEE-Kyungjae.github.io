@@ -1,0 +1,108 @@
+{
+  "kind": "recorded-local-cli-run",
+  "modelCalled": false,
+  "sourceHead": "9c1e292f7c3f1a04bd63c697342b00fa92a4ff9b",
+  "sourceHasUncommittedChanges": true,
+  "purpose": "Operator-entered example stored by the actual plan-state CLI. Not AI-generated mission evidence.",
+  "records": [
+    {
+      "args": [
+        "init"
+      ],
+      "stdout": "Initialized state in <workspace>/.palamedes\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "plan",
+        "--goal",
+        "참고 자료가 코딩 에이전트의 구현 선택을 개선하는지 검증",
+        "--success-metric",
+        "동일한 예산에서 참고 자료 사용 여부에 따른 구현 선택 비교",
+        "--constraints",
+        "자동 배포 제외; 사람 검토 후 실행",
+        "--selected-option",
+        "분석기 확장 전에 비교 실험 수행"
+      ],
+      "stdout": "QA score: 23/143\n- PASS goal_clarity [CRITICAL]: Goal is present and outcome-oriented.\n- FAIL measurability [CRITICAL]: Success metric and deadline are both defined.\n- PASS constraints: Constraints are explicitly listed.\n- FAIL assumptions: Core assumptions are extracted.\n- FAIL options_comparison: At least two options and one selected option exist.\n- FAIL references_coverage: Plan includes at least three references (docs, cases, benchmarks).\n- PASS reference_discovery_loop: External references are paired with at least one logged discovery/selection pass.\n- FAIL insight_axes_coverage: Eight long-horizon insight axes are all covered.\n- FAIL insight_quality_weighted [CRITICAL]: Weighted insight quality (insight depth + axis-linked evidence) is at least 0.6.\n- FAIL evidence_quality: Evidence includes minimum quantity, confidence, and source diversity.\n- FAIL planning_horizon [CRITICAL]: Planning horizon and review cadence are explicitly defined.\n- FAIL phase_plan: Plan includes milestone phases for long-horizon co-work.\n- FAIL verification_loop: Validation experiments exist for key assumptions.\n- FAIL hypothesis_loop: Hypothesis log exists with testable hypotheses.\n- FAIL risk_coverage: Top risks include early signals and mitigations.\n- FAIL dependencies: External dependencies/blockers are documented.\n- FAIL definition_of_done [CRITICAL]: Definition of done exists.\nResult: CRITICAL_FAILURE\nAuto replan triggered.\nAuto replan blocked by manual fields: measurability\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "evidence",
+        "--claim",
+        "검색 순위 개선만으로 구현 선택의 개선을 입증할 수 없음",
+        "--source",
+        "experiments/case-001-insight-rag/signal-to-mission-input.json",
+        "--confidence",
+        "60"
+      ],
+      "stdout": "Evidence recorded.\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "show"
+      ],
+      "stdout": "Goal: 참고 자료가 코딩 에이전트의 구현 선택을 개선하는지 검증\nSuccess Metric: 동일한 예산에서 참고 자료 사용 여부에 따른 구현 선택 비교\nDeadline: \nPlanning Horizon: \nReview Cadence: \nUpdated: 2026-10-29T14:07:21+00:00\nPhases: 0\nPlan Tasks: 0\nExecution Tasks: 0\nPlan Ratio: n/a\nReferences: 0\nReference Discoveries: 0\nInsights: 0\nInsight Axes Covered: 0/8\nInsight Quality (weighted): 0.00\nEvidence Items: 1\nHypotheses: 0\nView Transitions: 0\nInquiry Items: 0\nReference Encounters: 0\nDevelopment Probes: 0\nOpen Questions: 0\nRisks: 0\nStorage Health: ok\nRevision Count: 2\nLatest Revision: 2026-10-29T14:07:21+00:00_f4dc751fea75 (cmd_evidence)\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "history"
+      ],
+      "stdout": "2026-10-29T14:07:21+00:00_f4dc751fea75 | 2026-10-29T14:07:21+00:00 | cmd_evidence | 검색 순위 개선만으로 구현 선택의 개선을 입증할 수 없음 | qa=CRITICAL_FAILURE:23 | goal=참고 자료가 코딩 에이전트의 구현 선택을 개선하는지 검증\n2026-10-29T14:07:19+00:00_de7d97ba49cd | 2026-10-29T14:07:19+00:00 | cmd_plan | 참고 자료가 코딩 에이전트의 구현 선택을 개선하는지 검증 | qa=CRITICAL_FAILURE:23 | goal=참고 자료가 코딩 에이전트의 구현 선택을 개선하는지 검증\n",
+      "stderr": ""
+    }
+  ],
+  "plan": {
+    "schema_version": "0.5.0",
+    "version": "0.5.0",
+    "updated_at": "2026-10-29T14:07:21+00:00",
+    "goal": "참고 자료가 코딩 에이전트의 구현 선택을 개선하는지 검증",
+    "success_metric": "동일한 예산에서 참고 자료 사용 여부에 따른 구현 선택 비교",
+    "deadline": "",
+    "planning_horizon": "",
+    "review_cadence": "",
+    "phase_plan": [],
+    "constraints": [
+      "자동 배포 제외; 사람 검토 후 실행"
+    ],
+    "assumptions": [],
+    "options": [],
+    "selected_option": "분석기 확장 전에 비교 실험 수행",
+    "plan_tasks": [],
+    "execution_tasks": [],
+    "dependencies": [],
+    "experiments": [],
+    "risks": [],
+    "references": [],
+    "insights": [],
+    "direction_insights": [],
+    "market_insights": [],
+    "timing_insights": [],
+    "differentiation_insights": [],
+    "monetization_insights": [],
+    "constraint_insights": [],
+    "risk_signal_insights": [],
+    "evolution_insights": [],
+    "definition_of_done": [],
+    "evidence": [
+      {
+        "claim": "검색 순위 개선만으로 구현 선택의 개선을 입증할 수 없음",
+        "source": "experiments/case-001-insight-rag/signal-to-mission-input.json",
+        "confidence": 60,
+        "axis": "",
+        "date": "2026-10-29"
+      }
+    ],
+    "hypothesis_log": [],
+    "reference_discoveries": [],
+    "view_transitions": [],
+    "inquiry_items": [],
+    "reference_encounters": [],
+    "development_probes": [],
+    "open_questions": []
+  },
+  "normalization": "Only the temporary workspace path is replaced with <workspace>."
+}

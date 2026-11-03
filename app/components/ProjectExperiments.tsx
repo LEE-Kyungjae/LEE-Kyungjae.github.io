@@ -1,0 +1,10 @@
+'use client';
+import {useState} from 'react';
+import ranking from '../../assets/projects/ranking-20261102/results.json';
+export function RankingExperiment(){
+ const [selected,setSelected]=useState(0),[semantic,setSemantic]=useState(false);
+ const example=ranking.cases[selected];
+ const values=example.ranked.map(r=>({...r,...example.candidates.find(c=>c.id===r.id)!})).sort((a,b)=>semantic?b.semantic-a.semantic:b.final_score-a.final_score);
+ return <section className="ranking-experiment"><div className="sample-heading"><b>요구 조건에 따른 추천 순위</b><span>실제 함수 실행 기록 · 테스트용 데이터</span></div><label>평가 사례<select value={selected} onChange={e=>setSelected(Number(e.target.value))}>{ranking.cases.map((c,i)=><option key={c.id} value={i}>{c.problem}</option>)}</select></label><div className="sample-options"><button aria-pressed={!semantic} onClick={()=>setSemantic(false)}>참조 적합도 반영</button><button aria-pressed={semantic} onClick={()=>setSemantic(true)}>의미 유사도만 비교</button></div><ol className="ranking-results" aria-live="polite">{values.map((v,i)=><li key={v.id}><span className="rank-number">0{i+1}</span><div><h3>{v.component}</h3><span>{v.id}</span><div className="score-track"><i style={{width:`${100*(semantic?v.semantic:v.final_score)}%`}}/></div></div><strong>{(semantic?v.semantic:v.final_score).toFixed(4)}</strong></li>)}</ol><p>첫 캐싱 사례에서는 단순 래퍼의 의미 유사도가 더 높습니다. 요구 기능·제약·검증 신호를 반영하면 RedisCacheManager가 먼저 추천됩니다.</p><a href="/assets/projects/ranking-20261102/results.json" target="_blank" rel="noreferrer">7개 사례 실행 기록 ↗</a></section>;
+}
+export function PromdeckExperiment(){const [value,setValue]=useState(38);const status=value>=85?'crit':value>=65?'warn':'ok';return <div className="deck-experiment"><div className="deck-key" data-status={status}><small>CPU</small><strong>{value}<span>%</span></strong><svg viewBox="0 0 200 50" aria-hidden="true"><path d={`M0 45L20 37L40 40L60 27L80 32L100 22L120 29L140 20L160 26L180 18L200 ${50-value/2}`}/></svg><span>{status.toUpperCase()}</span></div><label>예시 CPU 값 <input type="range" min="0" max="100" value={value} onChange={e=>setValue(Number(e.target.value))}/></label><p>경고 65% · 위험 85% · 브라우저 표시 예시</p></div>}

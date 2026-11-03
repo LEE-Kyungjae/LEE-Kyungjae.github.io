@@ -2,7 +2,7 @@ import * as T from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 
 /** Room furniture and a small Nagano bear plush, all in the room fade hierarchy. */
-export function createRoomProps(){
+export function createRoomProps(scale=1){
  const group=new T.Group();group.name='computer-and-bear';
  const wood=new T.MeshStandardMaterial({color:'#b58a62',roughness:.8});
  const dark=new T.MeshStandardMaterial({color:'#263d42',roughness:.55});
@@ -11,7 +11,7 @@ export function createRoomProps(){
  const black=new T.MeshStandardMaterial({color:'#171b1c',roughness:.94});
  const add=(parent:T.Group,geometry:T.BufferGeometry,material:T.MeshStandardMaterial,p:number[],scale?:number[])=>{const mesh=new T.Mesh(geometry,material);mesh.position.set(...p as [number,number,number]);if(scale)mesh.scale.set(...scale as [number,number,number]);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;};
  const box=(parent:T.Group,w:number,h:number,d:number,mat:T.MeshStandardMaterial,p:number[],r=.035)=>add(parent,new RoundedBoxGeometry(w,h,d,3,r),mat,p);
- const desk=new T.Group();desk.name='computer-desk';desk.position.set(3.1,0,-4.75);desk.rotation.y=.18;group.add(desk);
+ const desk=new T.Group();desk.name='computer-desk';desk.position.set(3.1,0,-4.75);desk.rotation.y=.18;desk.scale.setScalar(scale);group.add(desk);
  box(desk,2.85,.14,1.12,wood,[0,1.12,0],.06);
  for(const x of [-1.22,1.22])for(const z of [-.41,.41])box(desk,.095,1.05,.095,wood,[x,.53,z],.02);
  // Monitor on a weighted stand, keyboard, mouse and a separate small tower.
@@ -48,8 +48,9 @@ export function createRoomProps(){
  for(let i=0;i<5;i++){const a=i*Math.PI*2/5;const leg=box(chair,.10,.09,.75,dark,[Math.sin(a)*.31,.10,Math.cos(a)*.31]);leg.rotation.y=a;add(chair,new T.SphereGeometry(.10,12,8),dark,[Math.sin(a)*.65,.08,Math.cos(a)*.65]);}
  group.updateMatrixWorld(true);
  const seat=chair.localToWorld(new T.Vector3(0,-.10,-.05));
+ const hint=chair.localToWorld(new T.Vector3(.45,1.7,.94));
  const approach=chair.localToWorld(new T.Vector3(-1.15,0,.45));
  const monitor=desk.localToWorld(new T.Vector3(-.46,1.91,-.13));
  const normal=new T.Vector3(Math.sin(desk.rotation.y),0,Math.cos(desk.rotation.y));
- return {root:group,chair,seat,approach,monitor,normal,facing:Math.PI+desk.rotation.y};
+ return {root:group,chair,seat,hint,approach,monitor,normal,facing:Math.PI+desk.rotation.y};
 }

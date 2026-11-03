@@ -1,0 +1,5 @@
+{
+  "path": "trackpad/touchpad_bridge.py",
+  "startLine": 170,
+  "code": "    # 포인터 누적기(서브픽셀 손실 방지)\n    ptr_acc = [0.0, 0.0]\n\n    def emit_move(dx: float, dy: float) -> None:\n        ptr_acc[0] += dx\n        ptr_acc[1] += dy\n        ix = int(ptr_acc[0])\n        iy = int(ptr_acc[1])\n        if ix:\n            ui.write(ecodes.EV_REL, ecodes.REL_X, ix)\n            ptr_acc[0] -= ix\n        if iy:\n            ui.write(ecodes.EV_REL, ecodes.REL_Y, iy)\n            ptr_acc[1] -= iy\n        if ix or iy:"
+}

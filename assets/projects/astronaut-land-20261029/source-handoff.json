@@ -1,0 +1,77 @@
+{
+  "character": "purple-astronaut",
+  "stages": {
+    "inspection": {
+      "outcome": "verified",
+      "note": "Rejected basic rig GLB missing bind transforms; used valid Tripo Idle export.",
+      "evidence": [
+        "blender/idle-source-inspection.json"
+      ]
+    },
+    "body_controls": {
+      "outcome": "verified",
+      "note": "Created IK feet, knee poles, COG, master and individual/fist finger controls. Neutral, intermediate values, source-motion switching and master transform tested.",
+      "evidence": [
+        "blender/validation.json",
+        "blender/blend-reload-validation.json"
+      ]
+    },
+    "facial": {
+      "outcome": "limited",
+      "note": "Opaque helmet has no face/eye/jaw geometry: jaw and blink not applicable. Head turns and rigid helmet tested.",
+      "evidence": [
+        "blender/skin-validation.json"
+      ]
+    },
+    "skin_review": {
+      "outcome": "verified",
+      "note": "Reweighted helmet/backpack/chest only; tested 61 crouch and 369 Idle frames for left/right lower-leg collisions. Finger remote motion and rigid components tested; sampled rendered views reviewed. Not a universal all-surface collision certification.",
+      "evidence": [
+        "blender/skin-validation.json",
+        "blender/final-tests/idle-185-front.png",
+        "blender/final-tests/crouch-15-side.png"
+      ]
+    },
+    "animations": {
+      "outcome": "verified",
+      "note": "Idle, Crouch, GloveCurl exported and played/paused in visible Windows browser. Original Idle retained in blend; final Idle widened 0.02 per leg to remove boot overlap.",
+      "evidence": [
+        "blender/clip-timing.json",
+        "web/web-functional-tests.json"
+      ]
+    },
+    "export": {
+      "outcome": "verified",
+      "note": "Final GLB reimported; 65 bones, 3 clips, packed 4K texture. UV triangle correspondence retained; final blend reload and UI registration passed.",
+      "evidence": [
+        "web/astronaut.glb",
+        "blender/purple-astronaut-final.blend",
+        "blender/export-validation.json",
+        "blender/final-glb-audit.json",
+        "blender/blend-reload-validation.json"
+      ]
+    },
+    "app_review": {
+      "outcome": "limited",
+      "note": "Standalone Three.js preview verified in visible Windows Chrome: playback/pause, model switch, transparent canvas, reset, saved motion/speed restored after reload. Actual portfolio repository path not supplied; integration there remains unperformed.",
+      "evidence": [
+        "web/final-review.png",
+        "web/web-functional-tests.json",
+        "web/reload-validation.json"
+      ]
+    }
+  },
+  "new_paid_generations": 0,
+  "execution": "Windows Blender Python and Windows Chrome CDP; Astra not used",
+  "limitations": [
+    "No facial geometry: jaw/blink unsupported",
+    "Glove curl is conservative, not a tightly closed fist",
+    "Original Tripo basecolor only; no normal/roughness texture maps",
+    "Actual portfolio integration pending target project path"
+  ],
+  "deliverables": {
+    "model": "web/astronaut.glb",
+    "editable": "blender/purple-astronaut-final.blend",
+    "preview": "http://localhost:8767/"
+  }
+}

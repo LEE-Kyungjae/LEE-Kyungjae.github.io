@@ -46,7 +46,7 @@ export default async function LegacyPage({ params }: { params: Promise<{ slug: s
   const lang = entry.lang;
   const prefix = lang === 'en' ? '/en' : '';
 
-  if (permalink === '/services/' || permalink === '/en/services/') return <><Header lang={lang}/><main className={`sub-page lang-${lang}`}><p className="sub-kicker">LIVE PRODUCTS</p><h1>{lang === 'ko' ? '서비스' : 'Services'}</h1><div className="service-cards">{serviceData.map(item => <a href={item[3]} key={item[1]}><i>{item[0]}</i><div><h2>{item[1]}</h2><p>{item[2]}</p></div><b>↗</b></a>)}</div></main></>;
+  if (permalink === '/services/' || permalink === '/en/services/') return <><Header lang={lang}/><main className={`sub-page lang-${lang}`}><p className="sub-kicker">LIVE PRODUCTS</p><h1>{lang === 'ko' ? '서비스' : 'Services'}</h1><div className="service-cards">{serviceData.map(item => <a href={item[3]} key={item[1]} target={item[3].startsWith('https://github.com/')?'_blank':undefined} rel={item[3].startsWith('https://github.com/')?'noopener noreferrer':undefined} aria-label={item[3].startsWith('https://github.com/')?`${item[1]} GitHub`:undefined}><i>{item[0]}</i><div><h2>{item[1]}</h2><p>{item[2]}</p></div><b aria-hidden="true">{item[3].startsWith('https://github.com/')?<span className="github-mark"/>:'→'}</b></a>)}</div></main></>;
 
   if (permalink === '/legal/' || permalink === '/en/legal/') {
     const docs = entries.filter(item => item.lang === lang && item.permalink.includes('/legal/') && item.permalink !== permalink);

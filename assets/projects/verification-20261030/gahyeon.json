@@ -1,0 +1,14 @@
+{
+  "project": "gahyeon",
+  "recordedAt": "2026-10-30T02:13:42.152348+00:00",
+  "sourceHead": "0edd9c93d13f654b3b80f347ed6bdfae287c677c",
+  "sourceHasUncommittedChanges": true,
+  "command": [
+    "python3",
+    "scripts/verify_core_platform_boundaries.py"
+  ],
+  "exitCode": 2,
+  "stdout": "{\"ready\": false, \"violations\": [{\"file\": \"com/gahyeonbot/application/speech/SttLearningConversation.java\", \"import\": \"com.gahyeonbot.services.assistant.AssistantProperties\", \"reason\": \"application_infrastructure_dependency\"}, {\"file\": \"com/gahyeonbot/services/news/PersonalizedNewsCollector.java\", \"import\": \"com.gahyeonbot.adapters.discord.bootstrap.BotInitializerRunner\", \"reason\": \"neutral_infrastructure_discord_adapter_dependency\"}]}\n",
+  "stderr": "",
+  "scope": "Local source verification only. Not live service, full application or performance validation."
+}

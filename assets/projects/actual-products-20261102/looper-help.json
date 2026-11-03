@@ -1,0 +1,5 @@
+{
+  "command": "claude-looper --help",
+  "stdout": "Usage: claude-looper [OPTIONS] COMMAND [ARGS]...\n\n  Claude Code Automated Restart Monitor.\n\n  Automatically detects Claude Code usage limits and restarts after cooldown\n  periods. Designed for continuous development work that exceeds 5-hour usage\n  limits.\n\nOptions:\n  -c, --config PATH  Path to configuration file\n  -v, --verbose      Enable verbose output\n  -q, --quiet        Suppress non-essential output\n  --version          Show version information\n  --help             Show this message and exit.\n\nCommands:\n  config  Manage system configuration.\n  info    Show system information and diagnostics.\n  logs    Access and manage system logs.\n  queue   Manage tasks that run automatically after a restart.\n  start   Start monitoring Claude Code process with automatic restart...\n  status  Display current monitoring status and statistics.\n  stop    Stop monitoring and optionally terminate Claude Code.\n  test    Run system self-tests.\n",
+  "exitCode": 0
+}

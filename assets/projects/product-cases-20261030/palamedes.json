@@ -1,0 +1,18 @@
+{
+  "kind": "actual-function-reproduction",
+  "recordedAt": "2026-10-30",
+  "sourceHead": "9c1e292f7c3f1a04bd63c697342b00fa92a4ff9b",
+  "fixture": "PalamedesGateResolutionTests.fixture; temporary local files, no model calls",
+  "sourceHasUncommittedChanges": true,
+  "changedEvidenceRejected": true,
+  "error": "stale or mismatched gate evidence: <workspace>/runtime.json",
+  "recordsAfterRejection": 1,
+  "validEvidenceApplied": true,
+  "recordsAfterApply": 2,
+  "originalStatus": "open",
+  "latestStatus": "responded",
+  "sourceHashes": {
+    "palamedes_gate_resolution.py": "3c52dde937b32c505c5b74cf8267c1a4a2faa8cfbc7198f7504df440e3b8d69a",
+    "tests/test_palamedes_gate_resolution.py": "e102d6497aee9835becb7f5f00f781b3af3073eda609814ea8ee0fc928747dfa"
+  }
+}

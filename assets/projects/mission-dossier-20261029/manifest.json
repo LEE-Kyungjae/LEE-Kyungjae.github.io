@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-10-29",
+  "purpose": "Transparent physical mission output surface; dynamic HTML text, evidence changes and review state are rendered above the paper.",
+  "prompt": "Create one premium editorial interactive website asset: an open archival mission dossier seen straight from above, isolated on true transparent background. Landscape 3:2 composition. Warm ivory textured paper folio open with two broad perfectly blank facing pages, thin dark ochre leather spine down the center, subtle small brass paperclip in upper outer corner and small amber tab on outer right edge. Flat top-down camera, no perspective tilt, both pages nearly rectangular, luxurious physical paper grain and subtly worn edges, soft contact shadows underneath ONLY. Fill 90 percent of canvas with dossier. LEFT and RIGHT pages each have large clean empty light ivory interiors reserved for dynamic HTML text overlay. No text, no letters, no lines, no stamps, no symbols, no diagrams, no background surface, no other objects. Art direction: tactile forensic evidence notebook, museum archival editorial, fine detailed photorealistic rendering. This is a functional background for live changing mission results, legibility of overlaid dark text is paramount.",
+  "tool": "image_gen",
+  "selectedBy": "agent",
+  "selectionReason": "Blank facing pages permit legible HTML overlays and source-independent changing mission results; flat top-down composition aligns without perspective distortion.",
+  "files": [
+    "dossier-original.png",
+    "dossier.webp"
+  ],
+  "notProductScreenshot": true,
+  "status": "integrated-local"
+}

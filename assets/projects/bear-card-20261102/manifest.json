@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-11-02",
+  "generator": "image_gen (built-in)",
+  "selectedBy": "agent",
+  "purpose": "Personal introduction card stickers",
+  "files": [
+    "laptop.png",
+    "rest.png"
+  ],
+  "selectionReason": "Different upright working and horizontal resting silhouettes, separate transparent high-resolution files. Verified at actual card sizes.",
+  "prompts": [
+    "Create ONE transparent-background die-cut sticker of Nagano Bear (농담곰), using the supplied picture ONLY as character identity reference, NOT the pose or handkerchief. Preserve wide rounded-square huge white head, tiny ears, separated black dot eyes, triangle nose joined to small W mouth, very short stubby body. NEW POSE: sitting in three-quarter view concentrating on a tiny muted sage-green laptop, paws on keyboard, head tilted slightly forward, neutral absorbed expression. No handkerchief, waving, words, logo, sparkles, grid, multiple views or background. One full character sticker centered with generous transparent margin. Crisp smooth thick near-black manga outlines, solid opaque white bear fill, flat colors, narrow clean white sticker border, no texture, no grain, no rough/pixel edges. Designed to remain clear at 60px but render large high-resolution. Retain character identity; do not make a generic teddy.",
+    "Create ONE transparent-background die-cut sticker of Nagano Bear (농담곰), supplied picture ONLY character identity reference, not its pose. Preserve very large wide rounded-square white head, tiny ears, triangle nose and tiny W mouth, extremely short stubby body. NEW POSE AND EXPRESSION: lying comfortably on belly, chin resting on crossed little paws, short hind feet kicked up, eyes relaxed thin sleepy curved lines; side/three-quarter horizontal silhouette. No handkerchief or waving. One complete sticker centered with generous transparent margin. Crisp smooth thick near-black manga lines, solid white opaque fill, clean narrow white die-cut border, flat shapes, no texture or grain. No text, Z letters, logos, background, grids or multiple views. High resolution, legible when scaled to 65px. Must be visibly different from an upright standing bear."
+  ],
+  "restRefinement": "Preserve pose; remove exterior glow/backdrop outside narrow white border; transparent output.",
+  "rejected": [
+    {
+      "file": "rest-rejected-halo.png",
+      "reason": "Initial exterior glow; replaced by refined output."
+    }
+  ],
+  "superseded": {
+    "asset": "../bear-farewell-20261027/wave.png",
+    "scope": "card stickers only",
+    "reason": "User rejected repeated handkerchief poses and rough edges; retained exclusively for existing sky farewell."
+  },
+  "sourceFiles": [
+    "/Users/ze/.codex/generated_images/01a169a9-d5cc-70d2-8ba9-c74f11831b37/exec-16db3554-e1d9-4503-a3b4-433e872b98e8.png",
+    "/Users/ze/.codex/generated_images/01a169a9-d5cc-70d2-8ba9-c74f11831b37/exec-ef2f2e25-07ce-4114-b6c0-208b57e11a5c.png"
+  ]
+}

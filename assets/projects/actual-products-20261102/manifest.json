@@ -1,0 +1,97 @@
+{
+  "createdAt": "2026-11-02",
+  "sources": {
+    "termi": {
+      "path": "/Users/ze/work/termi/docs/evidence/android-dashboard-20261022/final-portrait-output.png",
+      "kind": "historical Android QA capture",
+      "capturedAt": "2026-10-22",
+      "limitation": "QA shell output, not a new live session"
+    },
+    "brain-workspace-demo": {
+      "path": "/Users/ze/work/brain-workspace-demo",
+      "kind": "original app browser capture",
+      "limitation": "repository sample tasks; Brain Project model CC BY-SA 4.0"
+    },
+    "ocean-atlas-scroll": {
+      "path": "/Users/ze/work/ocean-atlas-scroll",
+      "kind": "original app screenshot and browser recording",
+      "limitation": "reference learning implementation; media attribution preserved"
+    },
+    "insight-rag": {
+      "path": "/Users/ze/work/insight-rag/packages/web_ui",
+      "kind": "original app UI capture",
+      "limitation": "isolated copy without env files; LLM and RAG endpoints explicitly disconnected; no generated answer or ingestion execution"
+    },
+    "laplaces-demon": {
+      "path": "/tmp/portfolio-real-laplace",
+      "kind": "original app with original copper-full-demo command",
+      "limitation": "separate synthetic demo ledger; no live trades"
+    },
+    "promdeck": {
+      "path": "/Users/ze/work/promdeck/com.ze.promdeck.sdPlugin/ui/metric.html",
+      "kind": "original property inspector HTML capture",
+      "limitation": "SDK custom elements in browser, Stream Deck host and physical device disconnected"
+    },
+    "ClaudeCodeLooper": {
+      "path": "/tmp/portfolio-real-looper",
+      "kind": "actual CLI --help stdout",
+      "limitation": "does not demonstrate monitoring or restart"
+    },
+    "pocketterm-touch-trackpad": {
+      "path": "/Users/ze/work/pocketterm-touch-trackpad/trackpad/touchpad_bridge.py",
+      "kind": "source excerpt only",
+      "limitation": "no hardware photo/video found; SSH connection timed out; not a runtime capture"
+    }
+  },
+  "privacyReview": "Selected screenshots visually reviewed: repository sample data, QA markers, or empty isolated state. No credentials or private conversations copied. Unrelated live CLI session status was not included.",
+  "files": [
+    {
+      "file": "insight-ingest.png",
+      "sha256": "45edc45074298c2260d7681964b3106157082aa337e4c224596d9f347a38c587"
+    },
+    {
+      "file": "laplace-thesis.png",
+      "sha256": "f3a43961136d11d2c39b81994b32fe42d91746585224d8fa438b26ca1aa7fb34"
+    },
+    {
+      "file": "pocketterm-source.json",
+      "sha256": "e8f1c59341fc5993d4f0126917be575d7cb6080ff8f9fdf2c2fee321f3e84741"
+    },
+    {
+      "file": "ocean-scroll.png",
+      "sha256": "f9006807690c92fb680488fc9b3501a79d498cbaf69317a2446b4cdb066fde00"
+    },
+    {
+      "file": "promdeck-settings.png",
+      "sha256": "8a9403990a9d0a1f415e9dfab682231833cea814873097b47e84569f38886a69"
+    },
+    {
+      "file": "termi-android.png",
+      "sha256": "5c28ac4c04d94f23de273e7e29a7fe4f95895c19e83d8a895b00973dbff28c82"
+    },
+    {
+      "file": "laplace.png",
+      "sha256": "0173382f31deea6aa185c9992e4f062fb83a552c9c42d3d67936501b90ae9e2a"
+    },
+    {
+      "file": "brain-workspace.png",
+      "sha256": "d25d0bb446823ad1d9381c07913e790818d4214e83c1a4e24c6cd70ae361fca8"
+    },
+    {
+      "file": "ocean-opening.png",
+      "sha256": "4941ce3c38154962fccfaf97d434068c610c52194dd6c5024a8611f6eb9a4530"
+    },
+    {
+      "file": "insight-rag.png",
+      "sha256": "b251849e57aa646f239173ec568014ec35ed78e6685fa1e2afb8e035f74eba1c"
+    },
+    {
+      "file": "looper-help.json",
+      "sha256": "85fd204d7a464304fc7cf6b3807669127e2c74c7aee49845d15b01d1cae0978c"
+    },
+    {
+      "file": "ocean-scroll.webm",
+      "sha256": "20e0ccd5cec46d011c6702b58e6ec797b466c15dc7aa52361e6d8e6ab8c9de4f"
+    }
+  ]
+}

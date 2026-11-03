@@ -1,0 +1,17 @@
+{
+  "firstGeneration": 1,
+  "currentGeneration": 2,
+  "firstSpeechAccepted": true,
+  "lateSpeechAccepted": false,
+  "phase": "listening",
+  "speech": "",
+  "kind": "actual-runtime-reproduction",
+  "recordedAt": "2026-10-30",
+  "sourceHead": "0edd9c93d13f654b3b80f347ed6bdfae287c677c",
+  "sourceHasUncommittedChanges": true,
+  "scope": "C++ RuntimeCore; synthetic event inputs and simulated timestamps; no microphone, server, audio playback or Unreal rendering in this run",
+  "sourceHashes": {
+    "unreal/GahyeonStage/Source/GahyeonRuntimeCore/Private/RealtimeCharacterCoordinator.cpp": "e9f029a2d0ad0f8dd5500d35db42c3fbce1cf4faf3ba1925cdb3ffc2ed64cb25",
+    "unreal/GahyeonStage/Source/GahyeonRuntimeCore/Private/IntentRuntime.cpp": "56a9615e9ce9d67c133f4a31be5bb36d6bd6743086f027066fef98f1edf2c4e6"
+  }
+}

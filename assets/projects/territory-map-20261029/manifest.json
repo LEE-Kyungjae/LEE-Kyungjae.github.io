@@ -1,0 +1,13 @@
+{
+ "createdAt":"2026-10-29",
+ "generator":"image_gen",
+ "purpose":"Portfolio PC territory game ground texture",
+ "selectedBy":"agent",
+ "selectionReason":"Orthographic painted ground, open traversable center, readable paths and low vegetation. Engine preserves its irregular playable boundary and overlays team ownership without painting over the artwork completely.",
+ "source":"/Users/ze/.codex/generated_images/01a169a9-d5cc-70d2-8ba9-c74f11831b37/exec-d6a93f90-cf35-4e1b-a9de-be835d4b5187.png",
+ "original":"terrain.png",
+ "runtime":"terrain.webp",
+ "conversion":"sharp WebP quality 90; no cropping or visual edits",
+ "prompt":"Production landscape 1536x1024 game terrain, exactly overhead orthographic. Hand-painted cozy fantasy mossy lawn, broad worn sandy paths, flat ancient limestone paving fragments and floral botanical edges. Entire rectangle ground, no sea/coast/island silhouette. Open low-contrast traversable middle 75%, details near outer 10%. No tall obstacles, characters, UI, text, logos, watermark. Engine clips to existing irregular island.",
+ "collision":"Existing engine cell mask unchanged; decorative art is not a new obstacle."
+}

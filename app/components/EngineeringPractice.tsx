@@ -1,5 +1,7 @@
 'use client';
+import GitHubLink from './GitHubLink';
 import { useEffect, useRef, useState } from 'react';
+import {ProcessScene,scenarios} from './ProcessScene';
 import type { CSSProperties, KeyboardEvent } from 'react';
 
 const palamedes = 'https://github.com/LEE-Kyungjae/palamedes/blob/0d0737dc73664488b1294aac9169b1b5c86b2ea7/';
@@ -25,8 +27,8 @@ const practices = [
   },
   {
     label: '런타임 구조', title: '클라이언트 간 공통 로직',
-    example: '대화 로직과 플랫폼 연결 코드를 분리해 Discord, 데스크톱, Unreal에서 재사용합니다. 의존성 검사로 두 영역이 다시 얽히는지 확인합니다.',
-    fact: 'Gahyeon', note: '현재 의존성 검사에서 위반 2건이 남아 있습니다.', asset: 'runtime', core: [52.5,19], x: 62, y: 48,
+    example: '대화 로직과 플랫폼 연결 코드를 분리해 Discord와 Unreal에서 재사용합니다. Headless는 렌더러 없이 Core를 실행합니다. 의존성 검사로 두 영역이 다시 얽히는지 확인합니다.',
+    fact: 'Gahyeon', note: '2026-10-30 로컬 의존성 검사: 위반 2건.', asset: 'runtime', core: [52.5,19], x: 62, y: 48,
     sources: [
       {label: '공통 로직 구조', url: gahyeon + 'docs/ARCHITECTURE.md#L14'},
       {label: '경계 위반 검사 코드', url: gahyeon + 'scripts/verify_core_platform_boundaries.py#L34'},
@@ -39,7 +41,7 @@ const practices = [
     sources: [
       {label: '이벤트 재처리', url: gahyeon + 'unreal/GahyeonStage/Source/GahyeonRuntimeCore/Private/ProtocolGameThreadDispatcher.cpp#L16'},
       {label: '취소와 복구 테스트', url: gahyeon + 'unreal/RuntimeCore/tests/RuntimeCoreTests.cpp#L1471'},
-      {label: '배포 확인', url: gahyeon + '.github/workflows/verify-production.yml#L40'},
+      {label: '배포 검증 워크플로', url: gahyeon + '.github/workflows/verify-production.yml#L40'},
     ],
   },
 ];
@@ -54,6 +56,8 @@ export default function EngineeringPractice({ calm }: { calm: boolean }) {
   const [selected, setSelected] = useState(0), [visible, setVisible] = useState(false);
   const section = useRef<HTMLElement>(null), tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const current = practices[selected];
+  const [scrollProgress,setScrollProgress]=useState([0,0,0,0]);
+  useEffect(()=>{let frame=0;const update=()=>{frame=0;setScrollProgress(Array.from(section.current?.querySelectorAll('.practice-story')??[],el=>{const r=el.getBoundingClientRect();return Math.max(0,Math.min(1,(innerHeight*.8-r.top)/(r.height+innerHeight*.35)));}));};const queue=()=>{if(!frame)frame=requestAnimationFrame(update);};addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue);update();return()=>{cancelAnimationFrame(frame);removeEventListener('scroll',queue);removeEventListener('resize',queue);};},[]);
   const stage = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<number | null>(null);
   const [focused, setFocused] = useState(0);
@@ -128,8 +132,12 @@ export default function EngineeringPractice({ calm }: { calm: boolean }) {
       </div>
       <div id="engineering-panel" className="engineering-panel" role="tabpanel" aria-labelledby={`engineering-tab-${selected}`} tabIndex={0}>
         <div className="engineering-value"><span className="engineering-fact">{current.fact}</span><h3>{current.title}</h3></div>
-        <div className="engineering-evidence"><p>{current.example}</p>{current.note&&<p className="engineering-note">{current.note}</p>}<div className="engineering-sources">{current.sources.map(source=><a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer">{source.label}<span aria-hidden="true">↗</span></a>)}</div></div>
+        <div className="engineering-evidence"><p>{current.example}</p>{current.note&&<p className="engineering-note">{current.note}</p>}<div className="engineering-sources">{current.sources.map(source=><GitHubLink key={source.url} href={source.url}>{source.label}</GitHubLink>)}</div></div>
       </div>
     </div>
+    <div className={`project-story ${calm?'is-calm':''}`}>{practices.map((item,i)=><section className="story-chapter practice-story" key={item.label} style={{'--scene-progress':scrollProgress[i]} as CSSProperties}>
+      <div className="story-copy"><span className="story-kicker">0{i+1} / {item.label}</span><h2>{item.title}</h2><p>{item.example}</p>{item.note&&<p>{item.note}</p>}<div className="engineering-sources">{item.sources.map(source=><GitHubLink key={source.url} href={source.url}>{source.label}</GitHubLink>)}</div></div>
+      <div className="story-visual"><ProcessScene scenario={i<2?scenarios.palamedes[i+1]:scenarios.gahyeon[i===2?0:3]} index={i} progress={scrollProgress[i]??0}/></div>
+    </section>)}</div>
   </section>;
 }
