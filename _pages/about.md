@@ -9,4 +9,4 @@ alternate_url: /en/about/
 
 에이전트 시스템 · 풀스택 개발 · 장기 운영
 
-<a class="prose-action" href="https://github.com/LEE-Kyungjae">GitHub에서 보기 ↗</a>
+<a class="prose-action github-link" href="https://github.com/LEE-Kyungjae" target="_blank" rel="noopener noreferrer"><span class="github-mark" aria-hidden="true"></span>GitHub에서 보기</a>

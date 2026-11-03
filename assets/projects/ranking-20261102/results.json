@@ -1,0 +1,188 @@
+{
+  "origin": "Local deterministic scoring run; synthetic repository gold fixtures, no model or Qdrant call",
+  "sourceRevision": "cf7de8634ccbfb20eafffacce5e95b9ab55d0674",
+  "cases": [
+    {
+      "id": "rank-caching-agent-redis-over-wrapper",
+      "problem": "대량 요청 캐싱 필요",
+      "ranked": [
+        {
+          "id": "agent-redis-cache",
+          "final_score": 0.824
+        },
+        {
+          "id": "redis-get-set-wrapper",
+          "final_score": 0.6605
+        }
+      ],
+      "candidates": [
+        {
+          "id": "agent-redis-cache",
+          "semantic": 0.72,
+          "component": "RedisCacheManager"
+        },
+        {
+          "id": "redis-get-set-wrapper",
+          "semantic": 0.78,
+          "component": "BasicRedisWrapper"
+        }
+      ]
+    },
+    {
+      "id": "rank-observability-runtime-over-dashboard",
+      "problem": "관찰성 좋은 레포있나?",
+      "ranked": [
+        {
+          "id": "runtime-telemetry",
+          "final_score": 0.7793
+        },
+        {
+          "id": "dashboard-demo",
+          "final_score": 0.6019
+        }
+      ],
+      "candidates": [
+        {
+          "id": "runtime-telemetry",
+          "semantic": 0.7,
+          "component": "RequestTelemetryMiddleware"
+        },
+        {
+          "id": "dashboard-demo",
+          "semantic": 0.76,
+          "component": "DashboardJson"
+        }
+      ]
+    },
+    {
+      "id": "rank-query-harness-over-sql-snippet",
+      "problem": "쿼리튜닝 좋은습관 레포 찾아줘",
+      "ranked": [
+        {
+          "id": "query-review-harness",
+          "final_score": 0.7894
+        },
+        {
+          "id": "sql-snippet",
+          "final_score": 0.6279
+        }
+      ],
+      "candidates": [
+        {
+          "id": "query-review-harness",
+          "semantic": 0.69,
+          "component": "QueryReviewHarness"
+        },
+        {
+          "id": "sql-snippet",
+          "semantic": 0.77,
+          "component": "IndexHintExample"
+        }
+      ]
+    },
+    {
+      "id": "rank-layered-api-over-observability-middleware",
+      "problem": "API 서버에서 레이어 분리한다할때 어떤 layer를 만들어둬야할까 아키텍처 표준 알려줘",
+      "ranked": [
+        {
+          "id": "layered-api-standard",
+          "final_score": 0.796
+        },
+        {
+          "id": "observability-middleware",
+          "final_score": 0.6944
+        }
+      ],
+      "candidates": [
+        {
+          "id": "layered-api-standard",
+          "semantic": 0.7,
+          "component": "LayeredApiStandard"
+        },
+        {
+          "id": "observability-middleware",
+          "semantic": 0.75,
+          "component": "RequestTelemetryMiddleware"
+        }
+      ]
+    },
+    {
+      "id": "rank-stream-mux-over-websocket-wrapper",
+      "problem": "모바일 agent 채널에서 stream multiplex 잘한 구현 찾아줘",
+      "ranked": [
+        {
+          "id": "stream-mux-manager",
+          "final_score": 0.7782
+        },
+        {
+          "id": "websocket-wrapper",
+          "final_score": 0.5624
+        }
+      ],
+      "candidates": [
+        {
+          "id": "stream-mux-manager",
+          "semantic": 0.68,
+          "component": "StreamMuxManager"
+        },
+        {
+          "id": "websocket-wrapper",
+          "semantic": 0.77,
+          "component": "SimpleSocketWrapper"
+        }
+      ]
+    },
+    {
+      "id": "rank-synergy-integration-over-co-location",
+      "problem": "원래는 안 그러는데 이 상황에서는 두 기술 조합이 시너지가 난 사례 찾아줘",
+      "ranked": [
+        {
+          "id": "synergy-integration",
+          "final_score": 0.7015
+        },
+        {
+          "id": "co-location-only",
+          "final_score": 0.6165
+        }
+      ],
+      "candidates": [
+        {
+          "id": "synergy-integration",
+          "semantic": 0.66,
+          "component": "RedisElasticBridge"
+        },
+        {
+          "id": "co-location-only",
+          "semantic": 0.74,
+          "component": "InfraBundle"
+        }
+      ]
+    },
+    {
+      "id": "rank-full-analysis-over-budget-limited",
+      "problem": "대량 요청 캐싱 필요",
+      "ranked": [
+        {
+          "id": "fully-analyzed-cache",
+          "final_score": 0.7977
+        },
+        {
+          "id": "budget-limited-cache",
+          "final_score": 0.7927
+        }
+      ],
+      "candidates": [
+        {
+          "id": "fully-analyzed-cache",
+          "semantic": 0.7,
+          "component": "OrderCache"
+        },
+        {
+          "id": "budget-limited-cache",
+          "semantic": 0.72,
+          "component": "MegaCache"
+        }
+      ]
+    }
+  ]
+}

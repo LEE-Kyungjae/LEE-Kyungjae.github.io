@@ -1,0 +1,36 @@
+{
+  "source": "ssh land:/home/ubuntu/astronaut-concepts/web/astronaut.glb",
+  "sha256": "f02ed1e549c77e4a46bff79e2f654a0d33e18d22622bfc831c8bb7d82cd42ff3",
+  "bytes": 3764348,
+  "importedAt": "2026-10-29",
+  "selection": "User requested land astronaut integration into LEE-Kyungjae.github.io",
+  "integration": "RoomAvatar shared room/brain avatar; original GLB bytes preserved. Runtime height normalized to 4.1 units; Idle and Crouch clips; procedural movement offsets around model lateral axis. GloveCurl retained in asset, no new control added.",
+  "previousAsset": "assets/projects/avatar-model-20261027/avatar.glb retained",
+  "deployment": "Local integration only; not published",
+  "validation": {
+    "build": "npm run build passed",
+    "typescript": "npx tsc --noEmit passed",
+    "browser": "Chromium local static production export at http://127.0.0.1:3162",
+    "checks": [
+      "65 bones and expected model identity",
+      "idle animation advances",
+      "keyboard movement",
+      "brain enter and Escape return",
+      "sit to computer and Escape stand",
+      "reduced motion freezes Idle",
+      "390x844 no horizontal overflow",
+      "mobile brain enter and return"
+    ],
+    "visualReview": [
+      "desktop room",
+      "mobile room",
+      "sitting transition",
+      "transparent helmet around brain"
+    ],
+    "limits": [
+      "No live deployment",
+      "Procedural walking overlays the imported Idle; no authored walking clip exists",
+      "Crouch clip used for existing seated transition; not a newly authored chair animation"
+    ]
+  }
+}

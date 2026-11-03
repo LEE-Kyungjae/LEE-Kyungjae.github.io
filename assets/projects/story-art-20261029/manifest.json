@@ -1,0 +1,25 @@
+{
+  "generator": "built-in image_gen",
+  "createdAt": "2026-10-29",
+  "selectedBy": "agent",
+  "assets": [
+    {
+      "name": "evidence-desk",
+      "source": "exec-0732e339-28bb-4096-83b1-dc029b49908f.png",
+      "original": "evidence-desk.png",
+      "runtime": "evidence-desk.webp",
+      "purpose": "Palamedes competing evidence stage",
+      "prompt": "Premium editorial landscape 1536x1024 top-down forensic research workbench. Warm charcoal desk, cream archival paper, abstract evidence photographs, brass clips, thin amber threads connecting alternate evidence groups. Left half empty for HTML explanation, right half two competing evidence clusters with open paper space, archived folders at bottom. Tactile physical miniature aesthetic, ochre and cream, directional light. No text, letters, numbers, logos, people or UI.",
+      "selectionReason": "Distinct physical evidence scene with live hypothesis controls; no baked-in text."
+    },
+    {
+      "name": "memory-core",
+      "source": "exec-c8f56a65-0d43-4c8f-b292-2c4cdac1abf6.png",
+      "original": "memory-core.png",
+      "runtime": "memory-core.webp",
+      "purpose": "Gahyeon persistent Core object inside interactive client orbit",
+      "prompt": "Single exquisite conceptual memory core sculpture isolated on fully transparent background. Frosted glass orb holding layered translucent ribbons and suspended pearl memory fragments, subtle brushed silver circular cradle. Cyan-white inner light, faint lavender, physically convincing glass product rendering. Entire object visible with transparent margin. No human, robot, brain anatomy, lettering, logo, UI, rectangle or floor. Represents persistent memory across three clients with live orbital controls.",
+      "selectionReason": "Transparent sculptural core remains present while client selection changes; complements rather than replaces source-grounded architecture."
+    }
+  ]
+}

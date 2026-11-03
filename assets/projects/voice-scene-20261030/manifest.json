@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-30",
+  "method": "Composition study → isolated image layers → editable HTML/SVG reconstruction",
+  "reference": "https://www.skills.sh/binggandata/bggg-skills/bggg-creator-image2ppt",
+  "selectedBy": "agent",
+  "selectionReason": "Character-centered scene preserves original runtime identity; input and cancellation paths remain readable and interactive.",
+  "scope": "Browser illustration, not live voice/model/server integration",
+  "layers": [
+    {
+      "id": "composition-study",
+      "file": "composition-study.png",
+      "shipped": false,
+      "prompt": "Design one refined complete visual concept for an interactive AI character portfolio scene, landscape 16:9. This is an art-directed website scene composition, not a dashboard or slide deck. Use the provided character reference in the center-left, keep her exact identity, hairstyle, teal-white jacket, black shirt and denim shorts, no new outfit. A dark midnight-teal architectural listening chamber, wide curved frosted-glass acoustic walls, elegant restrained thin copper tracks in the floor, soft warm ivory vertical light behind the character, grounded low circular stage beneath her feet. Character occupies x=35%, y=60%, height about 55%. Upper quarter dark quiet negative space for live HTML headings. Right third quiet dark negative space reserved for live response controls. A luminous thin mint voice arc traces from far left into the character and a restrained warm amber arc exits toward the right, not chaotic swirls. Lower 15% has a thin translucent glass desk edge that can later be extracted as a foreground layer, long graceful horizontal curve, subtle bevel, no heavy machinery. Premium contemporary art direction, cinematic depth, tactile frosted glass, controlled light, readable quiet composition, NOT cyberpunk HUD. No text, no letters, no numbers, no logos, no interface widgets. This is the composition study; implementation will reuse the exact existing character capture and animate paths with SVG."
+    },
+    {
+      "id": "background",
+      "file": "background.webp",
+      "original": "background.png",
+      "z": -3,
+      "placement": "Full viewport cover; desktop focal point 38%, mobile 34%",
+      "prompt": "Create the clean background layer from this exact composition. Preserve camera framing, midnight teal frosted-glass curved room, trees, brass/copper tracks, warm light and empty circular stage exactly. Remove the character completely, remove BOTH glowing mint and amber voice ribbons completely, remove the foreground glass railing along the bottom completely. Reconstruct the obscured floor and wall naturally. The circle stage must remain EMPTY. No people, figures, silhouettes, text, logos, UI, glowing voice trails, foreground rail. Keep exact original landscape composition and dimensions. This background will be layered underneath the existing separately rendered character and animated SVG routes; do not bake any character or signal into the image."
+    },
+    {
+      "id": "character",
+      "file": "character-upright.webp",
+      "type": "Blender render of existing character model; not an Unreal runtime capture",
+      "placement": "Desktop center-left; mobile left of controls",
+      "z": 2,
+      "original": "character-upright-original.png",
+      "source": "/Users/ze/work/gahyeonbot/artifacts/land-characters/macos-gahyeon-v001/interchange-v003/Gahyeon_Land_Idle_v001.blend",
+      "frame": 1,
+      "renderScript": "docs/evidence/character-upright-20261030/render.py",
+      "reason": "Replace off-center weight-shift capture with frontal upright frame. Original mesh, material, animation and source file unchanged.",
+      "sha256": "8e2767d41a64f69173248f2f75772da76adb1deb8b058e6f98b8ee814d60e109"
+    },
+    {
+      "id": "foreground",
+      "file": "foreground.webp",
+      "original": "foreground.png",
+      "z": 1,
+      "placement": "Full canvas aligned; omitted on short viewports",
+      "prompt": "Extract ONLY the curved thin translucent glass foreground railing/desk edge running across the bottom of this composition as an isolated asset on TRUE TRANSPARENT background. Preserve the original full landscape canvas and exact alignment: the rail occupies only the bottom 16 percent, the upper 84 percent is entirely transparent. Preserve subtle glass tint, mint edge highlight, bevel and slight warm reflected light on the rail. Remove everything else: character, room, floor, platform, ribbons, trees. No text, no people, no scene visible through the glass, no opaque rectangle. Do not center or enlarge the rail. Keep its full-width graceful curve at the exact original bottom position for overlay compositing."
+    },
+    {
+      "id": "signals-controls-copy",
+      "type": "editable HTML/SVG",
+      "z": 3,
+      "triggers": [
+        "native scroll phases",
+        "generation cancellation",
+        "delay slider",
+        "disconnect/reconnect"
+      ],
+      "responsive": "Mobile compact controls; short viewports flow without sticky lock"
+    },
+    {
+      "id": "live-character",
+      "file": "character-idle.glb",
+      "type": "existing rig and original animation, browser WebGL playback",
+      "source": "/Users/ze/work/gahyeonbot/artifacts/land-characters/macos-gahyeon-v001/interchange-v003/Gahyeon_Land_Idle_v001.blend",
+      "frames": [
+        1,
+        90
+      ],
+      "playback": "30 fps cap, ping-pong, no lateral travel segment; pause offscreen/hidden/reduced-motion",
+      "exportScript": "docs/evidence/character-motion-20261030/export.py",
+      "sha256": "2078b5cb56348acb2efbdd124aa6b3503fa2a1e703b9fa3f02623c6517f29513",
+      "fallback": "character-upright.webp",
+      "limitations": "Existing idle only, no speech lip-sync or model/server connection."
+    }
+  ],
+  "validation": "See docs/evidence/voice-scene-20261030/qa.md"
+}

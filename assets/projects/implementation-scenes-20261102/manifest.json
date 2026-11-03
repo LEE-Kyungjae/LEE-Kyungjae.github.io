@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-11-02",
+  "kind": "actual-function-output",
+  "source": {
+    "repository": "promdeck",
+    "path": "src/render.ts",
+    "function": "renderButtonSvg",
+    "sha256": "e48bf741044297d4281153968dee9a7bf271157bc68e746b7caac0cfe1505d44",
+    "commit": "2e576dd76447444aebfa4ae21d2c8228533899fc"
+  },
+  "inputs": "Synthetic CPU / memory / latency / DOWN / NO CONN / ERR ButtonModel fixtures; no Prometheus or hardware connection",
+  "files": [
+    {
+      "path": "cpu.svg",
+      "sha256": "f3969c001e0e50f391b0e9729585c05ab94be1426ba7bab432e239a814eea1b8"
+    },
+    {
+      "path": "down.svg",
+      "sha256": "67aaba74119bc3d987881c5d0145bd0a6da3c15720eb6d468891426293ee002b"
+    },
+    {
+      "path": "error.svg",
+      "sha256": "3c76b8fa08cdf2b326616eb8aef4725422215d967786eb4cdc4a935d71e0bcd9"
+    },
+    {
+      "path": "latency.svg",
+      "sha256": "b8069e6e86eb8a9e0715e184cd15543ce94f130b6fd4922c56e3f2507392d0f7"
+    },
+    {
+      "path": "memory.svg",
+      "sha256": "68aedfd13a239b664f6322d1a7d62ce5ee12c5e313d2eb75939f859eec133afe"
+    },
+    {
+      "path": "offline.svg",
+      "sha256": "bd2667020ee97a9561426e43d16edf2b6baaa1a1cffff10d82c932952622dcfd"
+    },
+    {
+      "path": "uptime.svg",
+      "sha256": "9c3d1a192cab90f35ed6486099b5fdc01c53e757b85ab4bbdfd74314c26595a0"
+    }
+  ]
+}

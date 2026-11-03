@@ -1,0 +1,18 @@
+{
+  "project": "palamedes",
+  "recordedAt": "2026-10-30T02:13:41.931607+00:00",
+  "sourceHead": "9c1e292f7c3f1a04bd63c697342b00fa92a4ff9b",
+  "sourceHasUncommittedChanges": true,
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "tests.test_palamedes_gate_resolution",
+    "tests.test_palamedes_lifecycle",
+    "-v"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "test_stale_evidence_is_rejected (tests.test_palamedes_gate_resolution.PalamedesGateResolutionTests) ... ok\ntest_two_phase_resolution_is_evidence_bound_and_append_only (tests.test_palamedes_gate_resolution.PalamedesGateResolutionTests) ... ok\ntest_apply_is_idempotent_and_keeps_handoff_immutable (tests.test_palamedes_lifecycle.PalamedesLifecycleTests) ... ok\ntest_apply_requires_exact_fresh_dry_run_fingerprint (tests.test_palamedes_lifecycle.PalamedesLifecycleTests) ... ok\ntest_dry_run_never_mutates_and_proposes_projection_event (tests.test_palamedes_lifecycle.PalamedesLifecycleTests) ... ok\ntest_open_gate_projects_follow_up_and_missing_contract_fails_closed (tests.test_palamedes_lifecycle.PalamedesLifecycleTests) ... ok\ntest_semantic_audit_proposes_append_only_correction_for_bad_state (tests.test_palamedes_lifecycle.PalamedesLifecycleTests) ... ok\ntest_semantic_audit_replays_supported_event_without_mutation (tests.test_palamedes_lifecycle.PalamedesLifecycleTests) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.016s\n\nOK\n",
+  "scope": "Local source verification only. Not live service, full application or performance validation."
+}

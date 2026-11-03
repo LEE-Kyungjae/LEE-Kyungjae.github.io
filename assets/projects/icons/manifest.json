@@ -1,0 +1,9 @@
+{
+  "asset": "mark-github-16.svg",
+  "source": "https://github.com/primer/octicons/blob/main/icons/mark-github-16.svg",
+  "license": "MIT",
+  "licenseFile": "OCTICONS-LICENSE",
+  "retrievedAt": "2026-10-30",
+  "sha256": "7421820090b50ac79d7c2bf7c951a433d7098a8a9c474809207bdd45f62d9d46",
+  "usage": "GitHub destinations only; original SVG unchanged, rendered with currentColor CSS mask."
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+  <rect width="144" height="144" rx="14" fill="#2e2410"/>
+  <rect x="0" y="0" width="144" height="5" rx="2.5" fill="#f5b544"/>
+  <text x="72" y="34" text-anchor="middle" font-family="sans-serif"
+        font-size="17" font-weight="600" fill="#b39a6b"
+        letter-spacing="1">MEM</text>
+  <text x="72" y="86" text-anchor="middle" font-family="sans-serif"
+        font-size="46" font-weight="700" fill="#fdf3e0">71%</text>
+  <polyline points="10.0,132.0 51.3,113.3 92.7,119.2 134.0,104.0" fill="none" stroke="#f5b544" stroke-width="3"
+         stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

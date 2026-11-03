@@ -1,0 +1,27 @@
+{
+  "purpose": "Portfolio implementation evidence, separate from generated concept art",
+  "artifacts": [
+    {
+      "file": "palamedes-cli.json",
+      "kind": "recorded local CLI execution",
+      "source": "/Users/ze/work/palamedes/palamedes.py",
+      "captureScript": "docs/evidence/product-clarity-20261029/capture-palamedes.py",
+      "supports": "plan/evidence persistence, revision history and validation output",
+      "limitations": "Manual illustrative input, no model calls, QA incomplete; not proof of autonomous planning quality."
+    },
+    {
+      "file": "gahyeon-runtime.webp",
+      "original": "gahyeon-runtime.png",
+      "kind": "actual Unreal render capture",
+      "source": "/Users/ze/work/gahyeonbot/artifacts/land-characters/macos-gahyeon-v001/focus-v005-visible-1.png",
+      "validation": "/Users/ze/work/gahyeonbot/artifacts/land-characters/macos-gahyeon-v001/focus-v005-validation.json",
+      "supports": "rendered character candidate",
+      "limitations": "humanApproved=false; voiceValidation=not performed; not evidence of packaged release."
+    }
+  ],
+  "currentRuntimeEvidence": "/Users/ze/work/gahyeonbot/config/canonical-character-runtime.json",
+  "currentRuntime": "unreal",
+  "retiredRuntime": "electron",
+  "packagedApp": false,
+  "visualReview": "candidate"
+}
