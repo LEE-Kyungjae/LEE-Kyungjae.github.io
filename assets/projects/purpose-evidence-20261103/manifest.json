@@ -40,6 +40,7 @@
     "reference-lab/editorial.js": "1f9301bbdafc50bc82f2347ad44bb1643813e0ec1d36b56d8afddd4520a34be0",
     "reference-lab/vendor/three.module.js": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
     "reference-lab/vendor/LICENSE-three.txt": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
-    "reference-lab/vendor/three.js": "2c3bd726f1702da38d5276eb21d426ceef03c892131cee04892ebcccd1aa3111"
+    "reference-lab/vendor/three.js": "2c3bd726f1702da38d5276eb21d426ceef03c892131cee04892ebcccd1aa3111",
+    "rag-graph.json": "56eff795beeaca9fc2e46ba0415362f1885e3a04208729777255201e4f38e0eb"
   }
 }

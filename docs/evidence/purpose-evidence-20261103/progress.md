@@ -50,3 +50,8 @@ Complete remaining evidence runs and purpose-specific compositions, verify origi
 - Verified OpenClaw GitHub repository metadata via gh api repos/openclaw/openclaw: created_at2025-11-24T10:16:47Z. Looper original commit c6baecd2025-09-18 predates that timestamp. Presentation explicitly distinguishes repository creation from first development/public release.
 - Final six-route desktop/mobile check passed with no pageerrors/overflow. Source outputs and captures remain bounded; no secret patterns found in new public JSON/Markdown. New assets total approximately5.1MB.
 - Preparing commit/Pages deployment; final live verification pending. Product limitations remain: no physical Stream Deck capture, Looper automatic crash restart failed, Adelie external network/account/AI not covered, RAG autonomous investigation not executed. These must not be represented as successful tests.
+
+## Deployed revision
+- Commit12ed94475a74c2873f189e93c0d84618b42d02ef pushed main. Pages workflow41632582689 completed success.
+- Actual public six routes checked at1440/390: core sections render, no horizontal overflow or pageerrors. Live artifacts7/7 SHA256 equal local source, including actual recorded RAG video and runnable Ocean engine. Evidence logs /tmp/purpose-live-qa.log and output/purpose-evidence-20261103/live-assets.json; screenshots *-live-*.png.
+- This deployment delivers the bounded actual evidence documented above. Goal remains active pending final requirement-level assessment of whether agent research execution/device behavior gaps are sufficiently represented; do not silently turn disclosed unverified behavior into product success.

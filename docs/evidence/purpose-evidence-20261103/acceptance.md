@@ -1,0 +1,20 @@
+# Portfolio purpose evidence acceptance — 2026-11-03
+
+Scope: communicate the six purposes corrected by the user through actual project artifacts and distinct, inspectable presentations. This is not certification that all six underlying products are production-complete.
+
+| User requirement | Implemented evidence | Verification / boundary |
+|---|---|---|
+| Palamedes: actual judgment outcome, influences and ordinary-AI difference | Same frozen input, actual 1-call vs4-call outputs; all four candidates with their actual adversary critiques; final choice and usage | Fingerprint matches; candidate selection exposes corresponding source; 1-case unequal compute and no causal ablation/superiority claim are visible |
+| Ocean: collected interaction references and managed reusable assets, scene direction rather than scroll alone | Original five-sample library, shared engine consumers, tuning/reset, source and reuse contracts; original Ocean application recording | All five original interactions and tuning/reset exercised. A shared sample bundle, not an extracted npm package |
+| promdeck: infrastructure monitoring extended to an unusual device | Actual Prometheus responses -> original Stream Deck renderer outputs, selectable exact queries; original property inspector | Values and34samples match original result; no physical device present, so display/button operation unverified and clearly disclosed |
+| Looper: early continuous-agent-work attempt | Sep2025 original commits, original controller/queue delivering two pending messages into a restarted actual process | Controlled subprocess and explicit manual restart. Separate automatic-crash failure preserved. OpenClaw comparison limited to official repository creation metadata |
+| Adelie: remote access infrastructure for local AI/terminal environments | Original web->relay->outbound connector->isolated tmux; command submitted, browser leaves, original resume control returns completed output; complementary Android capture | Real local stack, not mocked shell. Mobile viewport capture; no internet/OAuth/AI claim from this run |
+| insight-rag: research, visual information and execution observability | Original API/SQLite/graph generator/UI records8-source analysis with17events; native Ingest analysis119discovered/105selected/51candidates; original video and inspectable raw graph/events | Instrumented external source-inspection driver, not autonomous LLM planning. Native dry-run not Qdrant persistence. Stale overall status UI preserved and disclosed |
+| Distinct presentation, real evidence and meaningful interactions | Judgment comparisons; runnable reference lab; live-query snapshots to key output; dated process timeline; three-stage session continuity; original observation video plus event-record explorer | Core summaries remain readable through native scroll. Optional controls inspect actual records; portfolio replay identified as such. No generated screen substitutes |
+| Verification and publication | Builds, six-route desktop/mobile checks, original controls, record replay and source hashes |12ed944 deployment successful; live6routes1440/390 and7asset hashes matched. Final replay follow-up deployment pending below |
+
+## Review of limits
+The disclosures describe limits of the demonstrated project implementations. They must not be converted into successful product guarantees. In particular, the portfolio does not claim autonomous research, a connected physical Stream Deck, automatic Looper crash recovery or an external-network Adelie test. Further testing those claims would be additional product validation, not evidence already obtained.
+
+## Follow-up viewer validation
+Actual17event stream and original flow graph API artifact drive the viewer. Eight completion states verified, selecting queued_task.py exposes actual QueuedTask/to_dict/from_dict, scrubbing to0 removes future payloads, play/pause and full-result reset pass. Desktop/mobile render inspected. Native video remains separate, capped in display height to preserve surrounding context.
