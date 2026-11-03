@@ -1,0 +1,373 @@
+{
+  "scope": "Original API, SQLite registry, architecture generator and UI. External capture driver reads and AST-parses original public ClaudeCodeLooper models; no LLM planning or retrieval invocation.",
+  "sourceRevision": "cf7de8634ccbfb20eafffacce5e95b9ab55d0674",
+  "run": {
+    "run_id": 2,
+    "dataset_id": 1,
+    "trace_id": "",
+    "kind": "source_inspection",
+    "status": "done",
+    "items": 8,
+    "summary": "Read and parsed original source modules; no model invocation",
+    "started_at": "2026-11-03 11:35:29",
+    "finished_at": "2026-11-03 11:35:56",
+    "events": [
+      {
+        "seq": 1,
+        "event_type": "artifact.created",
+        "tool": "",
+        "target": "",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "",
+        "payload": {
+          "source": "original map generator"
+        },
+        "at": "2026-11-03 11:35:29"
+      },
+      {
+        "seq": 2,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "__init__.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "__init__.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:50"
+      },
+      {
+        "seq": 3,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "__init__.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "__init__.py",
+        "payload": {
+          "definitions": [],
+          "count": 0
+        },
+        "at": "2026-11-03 11:35:51"
+      },
+      {
+        "seq": 4,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "limit_detection_event.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "limit_detection_event.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:51"
+      },
+      {
+        "seq": 5,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "limit_detection_event.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "limit_detection_event.py",
+        "payload": {
+          "definitions": [
+            "LimitDetectionEvent",
+            "validate_non_empty_strings",
+            "validate_session_id",
+            "validate_duration",
+            "validate_confidence",
+            "validate_cooldown_sequence",
+            "start_cooldown",
+            "is_cooldown_active",
+            "is_cooldown_expired",
+            "get_remaining_cooldown",
+            "get_remaining_cooldown_seconds",
+            "is_limit_hit",
+            "mark_processed",
+            "mark_error",
+            "get_cooldown_progress",
+            "format_remaining_time",
+            "to_dict",
+            "from_dict",
+            "__str__",
+            "__repr__"
+          ],
+          "count": 20
+        },
+        "at": "2026-11-03 11:35:52"
+      },
+      {
+        "seq": 6,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "monitoring_session.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "monitoring_session.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:52"
+      },
+      {
+        "seq": 7,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "monitoring_session.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "monitoring_session.py",
+        "payload": {
+          "definitions": [
+            "SessionStatus",
+            "MonitoringSession",
+            "validate_claude_command",
+            "validate_counts",
+            "start_monitoring",
+            "stop_monitoring",
+            "mark_crashed",
+            "enter_waiting_period",
+            "resume_from_waiting",
+            "record_error",
+            "update_activity",
+            "get_uptime_seconds",
+            "is_active",
+            "is_waiting",
+            "is_stopped",
+            "to_dict",
+            "from_dict",
+            "__str__",
+            "__repr__"
+          ],
+          "count": 19
+        },
+        "at": "2026-11-03 11:35:53"
+      },
+      {
+        "seq": 8,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "queued_task.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "queued_task.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:53"
+      },
+      {
+        "seq": 9,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "queued_task.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "queued_task.py",
+        "payload": {
+          "definitions": [
+            "QueuedTask",
+            "to_dict",
+            "from_dict"
+          ],
+          "count": 3
+        },
+        "at": "2026-11-03 11:35:53"
+      },
+      {
+        "seq": 10,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "restart_command_config.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "restart_command_config.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:53"
+      },
+      {
+        "seq": 11,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "restart_command_config.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "restart_command_config.py",
+        "payload": {
+          "definitions": [
+            "RestartCommandConfiguration",
+            "validate_command_template",
+            "validate_working_directory",
+            "validate_retry_count",
+            "validate_retry_delay",
+            "validate_timeout",
+            "validate_environment_variables",
+            "build_full_command",
+            "get_working_directory",
+            "get_environment",
+            "validate_execution_context",
+            "add_argument",
+            "remove_argument",
+            "set_environment_variable",
+            "remove_environment_variable",
+            "clone",
+            "to_dict",
+            "from_dict",
+            "create_default",
+            "__str__",
+            "__repr__"
+          ],
+          "count": 21
+        },
+        "at": "2026-11-03 11:35:54"
+      },
+      {
+        "seq": 12,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "system_configuration.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "system_configuration.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:54"
+      },
+      {
+        "seq": 13,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "system_configuration.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "system_configuration.py",
+        "payload": {
+          "definitions": [
+            "LogLevel",
+            "_default_monitoring",
+            "SystemConfiguration",
+            "validate_detection_patterns",
+            "validate_log_size",
+            "normalize_log_level",
+            "validate_backup_count",
+            "merge_monitoring_defaults",
+            "validate_monitoring_settings",
+            "validate_timing_settings",
+            "validate_performance_settings",
+            "get_log_file_path",
+            "get_persistence_file_path",
+            "get_backup_directory_path",
+            "is_pattern_case_sensitive",
+            "get_detection_timeout",
+            "should_validate_commands",
+            "is_shell_allowed",
+            "get_max_command_length",
+            "is_directory_restricted",
+            "get_notification_settings",
+            "allows_process_simulation",
+            "is_test_mode_enabled",
+            "update_setting",
+            "create_backup_config",
+            "validate_directories",
+            "create_default",
+            "to_file",
+            "__str__",
+            "__repr__",
+            "_merge_dict",
+            "from_file"
+          ],
+          "count": 32
+        },
+        "at": "2026-11-03 11:35:55"
+      },
+      {
+        "seq": 14,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "task_completion_monitor.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "task_completion_monitor.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:55"
+      },
+      {
+        "seq": 15,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "task_completion_monitor.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "task_completion_monitor.py",
+        "payload": {
+          "definitions": [
+            "TaskStatus",
+            "TaskCompletionMonitor",
+            "validate_patterns",
+            "validate_timeout",
+            "validate_check_interval",
+            "get_compiled_patterns",
+            "start_monitoring",
+            "stop_monitoring",
+            "process_output_line",
+            "_is_system_message",
+            "_matches_start_patterns",
+            "_matches_completion_patterns",
+            "_is_task_related",
+            "is_task_in_progress",
+            "set_task_in_progress",
+            "is_waiting_for_completion",
+            "is_task_completed",
+            "has_timed_out",
+            "get_task_duration",
+            "get_task_duration_seconds",
+            "get_time_since_last_activity",
+            "should_wait_for_completion",
+            "force_completion",
+            "reset_for_new_task",
+            "get_task_summary",
+            "add_custom_pattern",
+            "to_dict",
+            "from_dict",
+            "__str__",
+            "__repr__"
+          ],
+          "count": 30
+        },
+        "at": "2026-11-03 11:35:55"
+      },
+      {
+        "seq": 16,
+        "event_type": "tool.started",
+        "tool": "python.ast",
+        "target": "waiting_period.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "waiting_period.py",
+        "payload": {},
+        "at": "2026-11-03 11:35:55"
+      },
+      {
+        "seq": 17,
+        "event_type": "tool.completed",
+        "tool": "python.ast",
+        "target": "waiting_period.py",
+        "artifact_id": "art-fcde6c4225ef",
+        "node_id": "waiting_period.py",
+        "payload": {
+          "definitions": [
+            "PeriodStatus",
+            "WaitingPeriod",
+            "validate_duration",
+            "validate_check_interval",
+            "validate_notification_intervals",
+            "start_waiting",
+            "complete",
+            "cancel",
+            "is_active",
+            "is_completed",
+            "is_cancelled",
+            "is_expired",
+            "get_remaining_time",
+            "get_remaining_seconds",
+            "get_elapsed_time",
+            "get_elapsed_seconds",
+            "get_progress",
+            "get_progress_percentage",
+            "format_remaining_time",
+            "should_check_completion",
+            "update_check_time",
+            "check_and_complete",
+            "get_notification_triggers",
+            "should_notify",
+            "to_dict",
+            "from_dict",
+            "__str__",
+            "__repr__"
+          ],
+          "count": 28
+        },
+        "at": "2026-11-03 11:35:56"
+      }
+    ]
+  }
+}

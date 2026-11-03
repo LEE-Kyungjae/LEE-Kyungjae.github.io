@@ -1,0 +1,13 @@
+{
+  "source": "/Users/ze/work/termi",
+  "commit": "78dd684c11616b0a9dcac63a4afd3dbd7019f340",
+  "capturedAt": "2026-11-03",
+  "method": "Unmodified original web UI, relay, outbound agent, isolated tmux. Original source copied excluding env files; dependencies reused. No credential or personal-session capture. Browser viewport not physical phone.",
+  "files": {
+    "termi-mobile-running.png": "b7af404cede97a4c130bdb87cbf3bdc70b396e0b7acee6ed40ccccf57e8073a6",
+    "termi-mobile-return.png": "77f8dc69ecadf1a28b4f7a1bb321601f5e373149d8f0bd2e92ed3efc2f51fce0",
+    "termi-mobile-completed.png": "e39e25ea8f51510fd849503c528517f39052f8dfa8261d9657717c2f57660458",
+    "termi-desktop-completed.png": "badfc110cd7ce498c8f38d210247f914a37496827c98b028f09bcfe1c5584339",
+    "termi-session.json": "2617e16fbe19e6b3f0bf284ee26bccb8111d58c318b19fe9dca5a285adc10e91"
+  }
+}

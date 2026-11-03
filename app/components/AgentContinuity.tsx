@@ -1,0 +1,9 @@
+import result from '../../assets/projects/purpose-evidence-20261103/looper-process.json';
+import './purpose-runtime.css';
+export default function AgentContinuity(){return <section className="agent-continuity" aria-label="에이전트 루프 구현 이력과 실행 기록">
+ <header><small>구현 이력 · 실제 프로세스 실행</small><h2>대기 작업을 다음 실행으로 넘기는 구조</h2><p>Claude Code의 반복 실행과 작업 지속을 위해 프로세스 감시, 재시작, 작업 큐를 구성했습니다. 초기 구현은 2025년 9월 18일 커밋에 남아 있습니다.</p></header>
+ <ol className="continuity-history"><li><time>2025.09.18</time><a href="https://github.com/LEE-Kyungjae/ClaudeCodeLooper/commit/c6baecd">자동 재시작 시스템 초기 구현 ↗</a></li><li><time>2025.10.18</time><a href="https://github.com/LEE-Kyungjae/ClaudeCodeLooper/commit/2c6ae0d">재시작 후 작업 자동화 ↗</a></li></ol><p className="runtime-scope">시점 비교: GitHub API에 기록된 <a href="https://api.github.com/repos/openclaw/openclaw" target="_blank" rel="noreferrer">OpenClaw 공개 저장소 생성일은 2025-11-24</a>입니다. 위 초기 구현 커밋은 그보다 앞섭니다. 저장소 생성일을 제품의 최초 개발일이나 공개 출시일로 해석하지는 않습니다.</p>
+ <div className="continuity-run"><div><small>최초 프로세스</small><h3>종료</h3><p>통제된 Python 자식 프로세스를 실제로 종료했습니다.</p></div><span aria-hidden="true">→</span><div><small>원본 재시작 함수 호출</small><h3>{result.manual.restarts}회 재시작</h3><p>검증 드라이버가 재시작 진입점을 직접 호출했습니다.</p></div><span aria-hidden="true">→</span><div><small>새 프로세스의 실제 수신</small><h3>{result.manual.received.length}건 전달</h3>{result.manual.received.map(item=><code key={item.received}>{item.received}</code>)}</div></div>
+ <div className="continuity-outcome"><p>원본 작업 큐에 넣었던 두 메시지가 재시작한 프로세스의 표준 입력으로 전달됐고, 대기 큐는 {result.manual.queuedRemaining}건이 됐습니다.</p><p>별도 자동 감시 시험에서는 프로세스 종료 후 재시작이 발생하지 않아 작업 {result.automatic.queuedRemaining}건이 남았습니다. 따라서 이 기록은 자동 복구나 AI의 자율 작업 완료를 증명하지 않습니다.</p></div>
+ <p className="runtime-scope">2026-11-03 격리 실행. 실제 Claude 모델과 사용량 제한 대기는 실행하지 않았습니다.</p><a href="/assets/projects/purpose-evidence-20261103/looper-process.json">실제 프로세스·작업 수신 기록 ↗</a>
+ </section>}

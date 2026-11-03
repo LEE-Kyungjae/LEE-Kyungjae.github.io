@@ -186,3 +186,21 @@ No deployment in this change. No representative artwork deleted or regenerated.
 - Show Gahyeon's historical hardcoded QA model response verbatim and retain non-selected candidate status. Run Looper's original detector/event code with synthetic stdout; do not claim process monitoring or automatic restart. Present its executed result ahead of --help.
 - Preserve Palamedes' documented Yut scope divergence beside its original app screenshot. A mostly static source recording is not presented as a gameplay demonstration. Move insight-rag's existing actual scoring output before explanatory diagrams.
 - Keep outstanding Qdrant/model, physical Stream Deck, PocketTerm device, voice/Unreal and process restart evidence explicit. Do not fill missing proof with generated screens. Claims/provenance and remaining gaps: docs/evidence/core-features-20261103/audit.md and assets/projects/core-features-20261103/manifest.json.
+
+## 2026-11-03 — user correction: project purpose before feature evidence
+- Palamedes must expose actual judgment/output differences against an ordinary same-input AI request and the recorded factors behind the choice; do not equate storage CLI or downstream game screenshot with its core value.
+- Ocean Atlas is a reference/interaction asset research and reuse collection, not merely scrolling. Reference Lab and reusable implementation/tuning/contracts lead; Ocean scroll is one application.
+- promdeck demonstrates infrastructure monitoring extended to a physical device. Looper represents an early continuous-agent-work attempt; preserve verified implementation dates and do not infer historical priority from rhetoric.
+- Adelie is remote-access infrastructure enabling local-machine AI/terminal use across devices/networks; ease of use supports that goal.
+- insight-rag is research/visualization/agent-observation infrastructure; live operation diagrams and evidence/artifact inspection lead. Ranking alone is not its definition.
+- Goal remains active; acceptance and concrete source/evidence/process state are tracked in docs/evidence/purpose-evidence-20261103/progress.md. Corrected metadata is not completion of the required actual workflows.
+
+- Runtime follow-up: promdeck first shows original key renderer output from actual aggregate infrastructure queries, with date and absent hardware scope. Looper first shows historical commits and actual queue delivery after an explicitly driver-triggered restart; automatic crash restart failed separately and remains disclosed. Neither a generated device mockup nor a successful manual trigger may substitute for missing hardware/automatic behavior proof.
+
+- Adelie: real original web → relay → outbound connector → isolated tmux workflow now leads. Show command execution, leaving app, and reopening the same session after host completion. Treat mobile viewport capture and loopback-only integration as such; do not claim physical-phone, external-network, account OAuth or AI execution validation.
+
+- Judgment comparison uses real candidate/adversary outputs rather than a generic four-stage list. Ocean shows actual shared-engine consumers and tested live tuning. Core content remains available through normal scroll; optional controls inspect original details.
+- Remove redundant purpose simulations after introducing stronger actual evidence; preserve complementary original product surfaces. Research ranking is optional detail, not insight-rag's main definition.
+
+- insight-rag now pairs original live graph recording with native Ingest analysis results, including partial coverage and source paths. Dry-run output is not described as stored vectors or autonomous investigation.
+- Historical timing comparison is limited to verified Git commits and GitHub repository creation metadata; never infer first product invention or release from these timestamps.

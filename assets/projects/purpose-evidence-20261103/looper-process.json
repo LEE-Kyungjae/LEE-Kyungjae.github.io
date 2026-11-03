@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-11-03",
+  "automatic": {
+    "scope": "Original RestartController + ProcessMonitor + TaskQueue with real controlled Python child; initial child exits intentionally. No Claude model, usage-limit cooldown or autonomous AI claim.",
+    "simulation": false,
+    "restarts": 0,
+    "events": [],
+    "received": [],
+    "queuedRemaining": 2
+  },
+  "manual": {
+    "scope": "Original RestartController + ProcessMonitor + TaskQueue with real controlled Python child; initial child exits intentionally; harness explicitly calls the original restart entry point after 4 seconds (automatic crash restart failed in the separate run). No Claude model, usage-limit cooldown or autonomous AI claim.",
+    "simulation": false,
+    "restarts": 1,
+    "events": [
+      {
+        "event": "restart_initiated",
+        "at": 1212870.92
+      },
+      {
+        "event": "restart_completed",
+        "at": 1212871.446
+      }
+    ],
+    "received": [
+      {
+        "attempt": 2,
+        "received": "Inspect pending work"
+      },
+      {
+        "attempt": 2,
+        "received": "Write a completion summary"
+      }
+    ],
+    "queuedRemaining": 0
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+  <rect width="144" height="144" rx="14" fill="#12261a"/>
+  <rect x="0" y="0" width="144" height="5" rx="2.5" fill="#3ddc84"/>
+  <text x="72" y="34" text-anchor="middle" font-family="sans-serif"
+        font-size="17" font-weight="600" fill="#7fa98d"
+        letter-spacing="1">CPU</text>
+  <text x="72" y="86" text-anchor="middle" font-family="sans-serif"
+        font-size="46" font-weight="700" fill="#e8f5ec">4.8%</text>
+  <polyline points="10.0,126.9 13.8,126.9 17.5,130.1 21.3,130.1 25.0,130.1 28.8,127.8 32.5,127.8 36.3,127.8 40.1,127.8 43.8,129.4 47.6,129.4 51.3,129.4 55.1,124.6 58.8,124.6 62.6,124.6 66.4,132.0 70.1,132.0 73.9,132.0 77.6,132.0 81.4,104.0 85.2,104.0 88.9,104.0 92.7,111.2 96.4,111.2 100.2,111.2 103.9,105.1 107.7,105.1 111.5,105.1 115.2,105.1 119.0,117.2 122.7,117.2 126.5,117.2 130.2,110.1 134.0,110.1" fill="none" stroke="#3ddc84" stroke-width="3"
+         stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

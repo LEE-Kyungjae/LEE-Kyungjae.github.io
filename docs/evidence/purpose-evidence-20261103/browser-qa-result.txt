@@ -1,0 +1,10 @@
+### Result
+{"results":["palamedes","insight-rag","ocean-atlas-scroll"],"errors":[]}
+### Ran Playwright code
+```js
+await (async(page)=>{const errors=[];page.on('pageerror',e=>errors.push(e.message));const results=[];for(const [id,selector] of [['palamedes','.judgment-comparison'],['insight-rag','.research-observation'],['ocean-atlas-scroll','.interaction-library']]){await page.setViewportSize({width:1440,height:1000});await page.goto('http://127.0.0.1:3163/projects/'+id+'/');const area=page.locator(selector);await area.scrollIntoViewIfNeeded();if(id==='insight-rag'){await area.locator('video').evaluate(async v=>{v.muted=true;await v.play()});await page.waitForFunction(()=>document.querySelector('.research-observation video').currentTime>.5);await area.locator('video').evaluate(v=>v.pause());}if(id==='ocean-atlas-scroll'){await area.getByRole('button',{name:'메뉴·커서·타이포그래피',exact:true}).click();await area.locator('iframe').scrollIntoViewIfNeeded();await page.frameLocator('.library-runtime iframe').locator('body').waitFor();if(!(await area.locator('iframe').getAttribute('src')).endsWith('dennis.html'))throw Error('sample switch');}await page.screenshot({path:'output/purpose-evidence-20261103/'+id+'-desktop.png'});await page.setViewportSize({width:390,height:844});await area.scrollIntoViewIfNeeded();if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('overflow '+id);await page.screenshot({path:'output/purpose-evidence-20261103/'+id+'-mobile.png'});results.push(id);}return {results,errors};}
+)(page);
+```
+### Page
+- Page URL: http://127.0.0.1:3163/projects/ocean-atlas-scroll/
+- Page Title: ocean-atlas-scroll | 이경재

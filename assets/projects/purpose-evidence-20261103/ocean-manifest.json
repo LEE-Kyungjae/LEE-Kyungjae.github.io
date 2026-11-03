@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-11-03",
+  "source": "ocean-atlas-scroll/reference-lab",
+  "kind": "original runnable application and browser captures",
+  "scope": "Five independently interpreted samples and documented tuning/reuse contracts; not original reference-site code or packaged SDK",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "e9dd018311e0506fb26bc71151a6bcb14cf88c2668d2b5a0566b8e398d269f4d"
+    },
+    {
+      "path": "bruno.html",
+      "sha256": "6d8697b4332f0f5bc77b850634adfab7f8020283278f320831a4c687a69034a9"
+    },
+    {
+      "path": "dennis.html",
+      "sha256": "6705b050e9a739edc8096e20eb6d0efa738aecabec9dc173cbce62a2cee09037"
+    },
+    {
+      "path": "editorial.js",
+      "sha256": "1f9301bbdafc50bc82f2347ad44bb1643813e0ec1d36b56d8afddd4520a34be0"
+    },
+    {
+      "path": "engine.js",
+      "sha256": "b79658d20e18ac3e040299081f0046bf908588ae2f71087346393cbc168b07b1"
+    },
+    {
+      "path": "igloo.html",
+      "sha256": "70c14d95a51045efe5b2a37bd7325bd221ce8f85405c60f96d9495ff94858b79"
+    },
+    {
+      "path": "index.html",
+      "sha256": "1cbfff83396f04fb6342f6ba760eae4ca930e6b9284cddd3ab1340131a3d9daa"
+    },
+    {
+      "path": "lab.css",
+      "sha256": "73fb581a6a00f08c06eaa0aa655f111393a6af4bf24e066426946638bdcdd407"
+    },
+    {
+      "path": "lusion.html",
+      "sha256": "23e83b0ae848de75d40ab84703ded08e1a7d5ee0510cb874a4d4ad88b3f358e1"
+    },
+    {
+      "path": "techniques.html",
+      "sha256": "5ec06321c9dd9ea853de1eb4ef56b25a45bdbbe2cb195b4f8be3a848c9e6e4e7"
+    },
+    {
+      "path": "tuner.js",
+      "sha256": "18ccddd458c675587bb03cd9b87d7715c7376ecb110bed0a1438d17e8b965b5d"
+    },
+    {
+      "path": "unseen.html",
+      "sha256": "f80fe8e0a12ae1ebf16454189ba064807dd282345f4fa8239f75577b534815cf"
+    },
+    {
+      "path": "vendor/LICENSE-three.txt",
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    {
+      "path": "vendor/three.js",
+      "sha256": "2c3bd726f1702da38d5276eb21d426ceef03c892131cee04892ebcccd1aa3111"
+    },
+    {
+      "path": "vendor/three.module.js",
+      "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb"
+    }
+  ]
+}
