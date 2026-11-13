@@ -832,3 +832,14 @@ a.github-link{display:inline-flex;align-items:center;justify-content:center;gap:
 .room-brain-nodes button[hidden]{display:none!important}
 @media(max-width:759px){.brain-field-legend{left:12px;top:72px}}
 .brain-field-legend button[aria-pressed=true] span{display:block}
+/* Always-visible project entry in the room, plus a plain list link in room and brain views. */
+.room-entry{position:absolute;top:24px;left:24px;z-index:6;display:flex;align-items:center;gap:16px}
+.room-entry .room-entry-primary{min-height:44px;padding:0 18px;border:1px solid #e8e9dd;border-bottom:0;border-radius:10px;background:linear-gradient(145deg,#f5f2e4,#d7d8c9);color:#274b49;font-family:inherit;font-weight:600;font-size:15px;line-height:1;box-shadow:0 5px 0 #828f88,0 7px 10px #0005,inset 0 1px 0 #fff;cursor:pointer;transition:transform .08s,box-shadow .08s}
+.room-entry .room-entry-primary:hover{transform:translateY(-1px)}.room-entry .room-entry-primary:active{transform:translateY(4px);box-shadow:0 1px 0 #828f88,0 2px 4px #0004,inset 0 1px 0 #fff}
+.room-entry-list,.brain-list-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px;text-decoration:none;color:#e6f3ee;border-bottom:1px solid #e6f3ee80}
+.room-entry .room-entry-primary:focus-visible,.room-entry-list:focus-visible,.brain-list-link:focus-visible{outline:3px solid #b77837;outline-offset:5px}
+.brain-list-link{position:absolute;top:20px;left:20px;z-index:8;min-height:40px;padding:0 15px;border:1px solid #78c7d16b;border-radius:22px;background:#111d2bc9;color:#d6f9f2;backdrop-filter:blur(12px)}
+/* Back-facing labels stay opaque for legibility; depth is shown by a dashed edge and a softer tone. */
+.room-brain-nodes button[data-depth=back]{border-left-style:dashed;background:#0b1a28;color:color-mix(in srgb,var(--node-color) 78%,#c9d4dc)}
+@media(max-width:760px){.room-entry{top:16px;left:16px;gap:12px}.room-entry .room-entry-primary{font-size:14px;padding:0 14px}.room-entry-list{font-size:12px}.brain-list-link{top:16px;left:12px}}
+@media(prefers-reduced-motion:reduce){.room-entry .room-entry-primary{transition:none}}

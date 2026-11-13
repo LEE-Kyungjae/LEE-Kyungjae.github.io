@@ -1,92 +1,85 @@
 ---
-version: "0.1"
-name: "Operational Atlas"
-description: "An evidence-led portfolio for systems that decide, speak, and keep running."
+version: "0.2"
+name: "Room → Brain → Project stories"
+description: "Portfolio as a small 3D workroom in space: enter the character's brain to reach project stories, with a plain list for direct access."
 colors:
-  ink: "#11110f"
-  paper: "#f2f0e9"
-  paper-muted: "#ddd9ce"
-  violet: "#8069ff"
-  mint: "#3ed598"
-  amber: "#ffb547"
-  rule: "#34342f"
+  space: "#07121e"          # page and transition background (room-project-fade)
+  space-panel: "#091624"    # brain label background
+  paper: "#f5f2e4"          # keycap/paper surfaces (movement keys, entry button)
+  paper-shadow: "#828f88"   # keycap bottom edge
+  room-ink: "#274b49"       # text on paper surfaces
+  room-mint: "#65b9a7"      # chair ring and room accents
+  catalog-ink: "#111819"    # project list and project story pages
+  field-ai: "#c7a5ff"       # brainFields.ai
+  field-tools: "#78d9bc"    # brainFields.tools
+  field-web: "#7cc7ff"      # brainFields.web
+  field-backend: "#f3bd76"  # brainFields.backend
+  focus: "#b77837"          # room focus ring
 typography:
-  display:
-    fontFamily: "Arial Narrow, Arial, sans-serif"
-    fontSize: "clamp(3.8rem, 10vw, 9rem)"
-    fontWeight: 700
-    lineHeight: 0.84
-    letterSpacing: "-0.075em"
+  hand:
+    fontFamily: "PortfolioHand (Nanum Pen Script), cursive"
+    use: "intro card name, chair hint — handwritten room voice only"
   body:
-    fontFamily: "Arial, sans-serif"
-    fontSize: "1rem"
-    lineHeight: 1.6
-  utility:
-    fontFamily: "ui-monospace, SFMono-Regular, Consolas, monospace"
-    fontSize: "0.72rem"
-    lineHeight: 1.35
-rounded:
-  none: "0px"
-  control: "999px"
-spacing:
-  xs: "6px"
-  sm: "12px"
-  md: "24px"
-  lg: "48px"
-  xl: "96px"
-components:
-  rule:
-    backgroundColor: "{colors.rule}"
-    height: "1px"
-  action:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "12px 18px"
+    fontFamily: "Arial, 'Apple SD Gothic Neo', sans-serif"
+  keycap:
+    fontFamily: "ui-monospace, monospace"
+    use: "WASD/SPACE movement keys"
 ---
 
 ## Overview
 
-Operational Atlas presents Kyungjae Lee as a builder of persistent systems, not a collector of technologies. The visual language borrows from engineering field notes: broad identifying type, explicit status, visible routes, and evidence attached to every claim.
+The home page is a small isometric workroom floating in space (Three.js). An astronaut avatar stands in the room next to a desk, a constellation frame and a bear. The intro card on the right is a paper card with tape, hand lettering and bear stickers. Entering the character's head (avatar click, "Click me", or the "프로젝트 보기" button) moves the camera into the helmet, where a 3D brain shows every project as a labeled node. Selecting a node dives into that project's story page. The chair opens a small playable game on the room computer.
+
+Flow: room (`/`) → brain (`/#brain`) → project story (`/projects/<id>/`) → single ← back to `/#brain`. The plain list (`/projects/`) is reachable from the room and the brain for visitors who skip 3D.
 
 ## Colors
 
-Ink and paper carry the shared identity. Project colors identify domains rather than decorate: violet for mission cognition, mint for Gahyeon's living runtime, and amber for remote tooling.
+The room is warm paper and mint against dark space. The brain view is dark space with project labels colored by field (`brainFields` in `app/components/brainProjects.ts`): AI·판단 violet, 개발·운영 도구 mint, 인터랙티브 웹 blue, 백엔드 amber. Field colors identify categories, not decoration. Project list and story pages use the dark catalog ink with muted light text.
 
 ## Typography
 
-The display face is compressed and loud only at thesis moments. Body copy stays plain. Monospace is reserved for state, evidence, paths, and machine-readable facts.
+PortfolioHand (Nanum Pen Script) is reserved for the room's handwritten voice. Body text stays plain Arial/Apple SD Gothic Neo. Keycaps use monospace. Korean copy keeps `word-break: keep-all`.
 
 ## Layout
 
-The page uses a twelve-column field with hard rules. Sections change rhythm according to their job: the hero is expansive, project records are editorial, and architecture is compact and directional.
+- Room: canvas fills the viewport; the intro card sits right on desktop and below the room on mobile; movement keys bottom-left; project entry (primary keycap button + "목록으로 보기") top-left; motion toggle top-right.
+- Brain: labels are offset from projected anchor points on the brain surface, connected by leader lines, relaxed against each other so they do not overlap, and clamped inside the viewport. Field legend top-left under the list link.
+- Project story pages: representative artwork first, then product purpose, actual workflow/results, scope and status, then architecture (see `docs/project-presentation-decisions.md`). Native vertical scroll, one fixed ← to `/#brain`.
 
 ## Elevation & Depth
 
-Depth comes from overlapping fields and color contrast, not generic card shadows or glass blur.
-
-## Shapes
-
-Content containers are square. Pills are reserved for controls and runtime status only.
+Depth comes from the 3D scene itself. Brain labels facing away from the camera keep full contrast and are distinguished by a dashed left edge, a softer text tone and a dimmer anchor pin, never by fading text below readable contrast. Paper surfaces use a keycap bottom shadow; dark panels use a soft blur.
 
 ## Components
 
-Every project record contains a problem, a mechanism, an honest status, a primary artifact, and a source link. Architecture routes remain visible before motion begins.
+- Keycap button: paper gradient, 1px light border, bottom shadow that compresses on press (movement keys, "프로젝트 보기").
+- Brain label: dark panel, field-colored 3px left edge and text, ↘ affordance, min height 44px.
+- Field legend: round dot buttons that filter labels by field.
+- Project list item: number (brain order), field · kind, name, one-line description, stack and private-repo note. Data comes from `brainProjects`, `projectDetails`, `extraProjects` and `backendProject`; do not duplicate project copy.
+
+## Accessibility
+
+- Every 3D entry has a DOM equivalent: "프로젝트 보기" button, "목록으로 보기" links and the `/projects/` list.
+- Interactive targets are at least 40–44px; focus rings stay visible.
+- Reduced motion (system setting or the ◌ toggle) shortens camera transitions and disables ambient animation.
 
 ## Do's and Don'ts
 
 - Do attach evidence or an explicit limit to technical claims.
-- Do use one orchestrated trace motion for system flow.
-- Do keep all primary projects visible without requiring tabs.
-- Don't add GitHub statistics, technology clouds, invented metrics, or decorative node maps.
+- Do keep every project reachable without the 3D scene.
+- Do keep generated illustrations, recorded outputs and live services distinguishable.
+- Don't add GitHub statistics, technology clouds or invented metrics.
 - Don't describe Palamedes as proven AGI or Gahyeon as a finished AAA character.
 
+## Decision history
 
-## 2026-10-27 home revision
+The entries below are earlier design decisions kept for provenance. Sections about floating islands, circuits and the ivory home describe a superseded home page; the current home is the room described above.
+
+### 2026-10-27 home revision (superseded)
 
 The home now uses an ivory surface with deep green and mint, a compact header, a scroll-driven 3D brain composition, selectable project nodes, and two-column project cards. The earlier dark editorial treatment above remains relevant to existing document pages only. Implementation and asset provenance: `docs/portfolio-reference-integration-20261027.md`.
 
-## Copy and interaction corrections (2026-10-27, latest user decisions)
+### Copy and interaction corrections (2026-10-27, latest user decisions)
 
 - Write for someone evaluating this developer's work: what the project does, what was implemented, and where to inspect it. Keep implementation limits where materially relevant.
 - No rhetorical paired titles (e.g. “문제 정의부터 실패 복구까지”), middle-dot keyword chains, decorative English labels, generic competence claims, or repeated summaries across hero, cards and case studies.
