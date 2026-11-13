@@ -8,4 +8,6 @@ export const extraProjects=[
  {id:'laplaces-demon',name:'laplaces-demon',kind:'투자 판단 근거·검증 시스템',private:true,stack:'Python · Evidence ledger',description:'시장 관찰과 가설, 의사결정, 사후 결과를 연결해 판단의 근거를 추적하는 연구 시스템입니다.',input:'시점이 있는 관찰·가설·반증 조건',output:'판단 기록·검토 조건·결과 이력',mechanism:'추가 전용 원장에 이전 해시와 현재 이벤트 해시를 연결합니다. 오래된 상태를 기준으로 한 쓰기 충돌과 원장 무결성을 검사합니다.',limit:'연구 및 모의 실행 범위의 소개입니다. 실거래 성과나 투자 수익을 입증하는 자료가 아닙니다.'},
  {id:'pocketterm-touch-trackpad',name:'pocketterm-touch-trackpad',kind:'Linux 터치 입력 브리지',private:false,stack:'Python · evdev · uinput · systemd',description:'PocketTerm의 터치스크린을 상대 좌표 트랙패드처럼 사용할 수 있게 만든 입력 브리지입니다.',input:'한 손가락·두 손가락 터치',output:'포인터 이동·클릭·스크롤·드래그',mechanism:'evdev에서 터치 이벤트를 읽고 uinput으로 포인터 이벤트를 보냅니다. 탭·드래그·두 손가락 스크롤과 관성을 처리합니다.',limit:'Raspberry Pi 5 / Waveshare PocketTerm 환경을 대상으로 합니다. 이 소개의 입력 그림은 실제 장치 검증을 대신하지 않습니다.'},
 ] as const;
+// Shared summary for the Backend page metadata and the plain project list.
+export const backendProject={id:'backend',name:'Backend',kind:'Java·Spring 서버 개발',description:'Java와 Spring 기반 서버 개발'} as const;
 export type ExtraProject=typeof extraProjects[number];
