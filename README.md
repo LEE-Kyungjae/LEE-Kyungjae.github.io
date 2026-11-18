@@ -1,6 +1,7 @@
 # LEE-Kyungjae.github.io
 
-개인 앱/서비스 소개와 법적 문서(개인정보처리방침, 이용약관)를 제공하는 Jekyll 기반 GitHub Pages 사이트입니다.
+개인 앱/서비스 소개와 법적 문서(개인정보처리방침, 이용약관)를 제공하는 Next.js(정적 export) 기반 GitHub Pages 사이트입니다.
+`_pages/`, `_legal/`의 마크다운은 `app/[...slug]/page.tsx`가 front matter의 `permalink`로 정적 페이지를 생성합니다.
 
 ## 핵심 구조
 
@@ -14,11 +15,13 @@
 ## 로컬 실행
 
 ```bash
-bundle install
-bundle exec jekyll serve
+npm ci
+npm run dev
 ```
 
-브라우저에서 `http://127.0.0.1:4000` 접속.
+브라우저에서 `http://localhost:3000` 접속.
+
+정적 빌드 결과(`out/`)를 확인하려면 `npm run build`를 실행합니다. `prebuild`가 `scripts/prepare-public.mjs`로 `public/`을 먼저 채웁니다.
 
 ## 새 서비스 문서 추가 방법
 
@@ -55,9 +58,10 @@ permalink: /legal/my-service/terms/
 ### 3) 확인
 
 - `/legal/` 페이지에서 문서가 자동으로 목록에 표시됩니다.
-- 필요 시 `/services/` 페이지에 서비스 소개를 추가하세요.
+- 영문 문서는 front matter에 `lang: en`을 추가하고 `/en/legal/...` permalink를 사용합니다.
+- `/services/` 카드 목록은 `app/[...slug]/page.tsx`의 `serviceData` 배열에서 관리합니다.
 
 ## 배포
 
 - 기본 배포 대상: GitHub Pages
-- 저장소 기본 브랜치에 푸시하면 Pages 빌드로 반영됩니다.
+- `main`에 푸시하면 `.github/workflows/deploy.yml`이 `npm run build`로 `out/`을 만들어 Pages에 배포합니다.
